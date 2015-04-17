@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:padding="5dp"
+    android:background="@drawable/cicle_back"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <com.example.administrator.mengbaofushiji.extras.CircleImageView
+            android:id="@+id/share_alldata_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher"
+            />
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/share_alldata_tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="陈久旭"
+                />
+            <TextView
+                android:layout_below="@+id/share_alldata_tv_name"
+                android:id="@+id/share_alldata_tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2015-4-13 11:09 am"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="不仅是对健康圣诞节快乐圣诞快乐收到后女生都按时和ioasjiasis多跑跑啊哈圣诞节收多少地哦脑袋vnsodvnosdvsmn 是vndovsnvosnovn会弄死的vnsdonosdvno很难弄上的vnnvsdl"
+        />
+    <GridView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="3"
+        android:verticalSpacing="10dp"
+        ></GridView>
+</LinearLayout>
