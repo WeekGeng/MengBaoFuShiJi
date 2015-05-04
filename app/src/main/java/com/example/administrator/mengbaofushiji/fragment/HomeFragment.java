@@ -1,4 +1,5 @@
 package com.example.administrator.mengbaofushiji.fragment;
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -14,6 +15,7 @@ import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+
 import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.HomeFragAdapter;
 
@@ -27,7 +29,7 @@ public class HomeFragment extends Fragment{
     // 包裹滑动图片LinearLayout
     private ViewGroup main;
     // 包裹小圆点的LinearLayout
-    private ViewGroup group;
+    private LinearLayout group;
     private int indexItem=0;
     protected boolean flag=true;
     private int[] imgs;
@@ -73,6 +75,7 @@ public class HomeFragment extends Fragment{
     }
 
     private void initView(LayoutInflater inflater,View view) {
+        group=(LinearLayout)view.findViewById(R.id.home_fragment_viewGroup);
         viewPager= (ViewPager)view.findViewById(R.id.home_frag_viewpager);
         pageViews = new ArrayList<View>();
         for (int i = 0; i < imgs.length; i++) {
@@ -92,7 +95,35 @@ public class HomeFragment extends Fragment{
         lv_item.setAdapter(homeAdapter);
         ImageView iv= (ImageView) view.findViewById(R.id.home_frag_iv);
         iv.setImageResource(R.drawable.guanggao);
+        addCircleView();
     }
+
+    private void addCircleView() {
+        imageViews=new ImageView[pageViews.size()];
+        for (int i = 0; i < pageViews.size(); i++) {
+            LinearLayout.LayoutParams margin = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
+            //设置每个小圆点距离左边的间距
+            margin.setMargins(10, 0, 0, 0);
+            imageView = new ImageView(getActivity());
+            //设置每个小圆点的宽高
+            imageView.setLayoutParams(new LinearLayout.LayoutParams(15, 15));
+            imageViews[i] = imageView;
+            if (i == 0) {
+                // 默认选中第一张图片
+                imageViews[i]
+                        .setBackgroundResource(R.drawable.page_indicator_focused);
+            } else {
+                //其他图片都设置未选中状态
+                imageViews[i]
+                        .setBackgroundResource(R.drawable.page_indicator_unfocused);
+            }
+            group.addView(imageViews[i], margin);
+        }
+        viewPager.setOnPageChangeListener(new GuidePageChangeListener());
+    }
+
     public void setListViewHeightBasedOnChildren(ListView listView) {
         ListAdapter adapter =listView.getAdapter();
         if (adapter == null) {
@@ -153,6 +184,34 @@ public class HomeFragment extends Fragment{
             ((ViewPager) container).addView(
                     pageViews.get(position % pageViews.size()), 0);
             return pageViews.get(position % pageViews.size());
+        }
+    }
+    // 指引页面更改事件监听器
+    class GuidePageChangeListener implements ViewPager.OnPageChangeListener {
+
+        @Override
+        public void onPageScrollStateChanged(int arg0) {
+
+        }
+
+        @Override
+        public void onPageScrolled(int arg0, float arg1, int arg2) {
+
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+            indexItem=position;
+            //遍历数组让当前选中图片下的小圆点设置颜色
+            for (int i = 0; i <imageViews.length; i++) {
+                imageViews[position % imageViews.length]
+                        .setBackgroundResource(R.drawable.page_indicator_focused);
+
+                if (position % imageViews.length != i) {
+                    imageViews[i]
+                            .setBackgroundResource(R.drawable.page_indicator_unfocused);
+                }
+            }
         }
     }
 }

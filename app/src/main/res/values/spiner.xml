@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinnername">
+        <item>健康食疗</item>
+        <item>健脑益智</item>
+        <item>明眸健齿</item>
+        <item>开胃消食</item>
+        <item>便秘</item>
+        <item>感冒</item>
+        <item>腹泻</item>
+        <item>贫血</item>
+        <item>发烧</item>
+        <item>中暑</item>
+        <item>湿疹</item>
+    </string-array>
+</resources>

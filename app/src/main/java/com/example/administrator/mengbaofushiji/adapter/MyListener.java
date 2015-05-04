@@ -39,7 +39,11 @@ public class MyListener implements OnClickListener {
                 Intent intent=new Intent(v.getContext(), NotifityActivity.class);
                 v.getContext().startActivity(intent);
                 break;
-            case R.id.iv_1:
+			case R.id.relative_two:
+				Intent intent2=new Intent(v.getContext(), NotifityActivity.class);
+				v.getContext().startActivity(intent2);
+				break;
+			case R.id.iv_1:
             case R.id.iv2_1:
             case R.id.iv2_2:
                 final AlertDialog db=new AlertDialog.Builder(v.getContext()).create();
@@ -68,7 +72,7 @@ public class MyListener implements OnClickListener {
 	}
 	public  void saveImageview(Context context,Bitmap bitmap){
 		File sdDir = Environment.getExternalStorageDirectory();
-		File path = new File(sdDir+"/�ȱ���");
+		File path = new File(sdDir+"/萌宝派");
 		if (!path.exists()) {
 			path.mkdirs();
 		}
@@ -81,10 +85,10 @@ public class MyListener implements OnClickListener {
 			bos = new BufferedOutputStream(new FileOutputStream(file));
 			boolean a = bitmap.compress(Bitmap.CompressFormat.PNG, 80, bos);
 			if(a){
-				Toast.makeText(context, "�Ա��浽���", Toast.LENGTH_LONG).show();
-				MediaScannerConnection.scanFile(context, new String[]{file.toString()}, null, null);//ϵͳ���ˢ��
+				Toast.makeText(context, "生成成功", Toast.LENGTH_LONG).show();
+				MediaScannerConnection.scanFile(context, new String[]{file.toString()}, null, null);
 			}else {
-				Toast.makeText(context, "����ʧ�ܣ�", Toast.LENGTH_LONG).show();
+				Toast.makeText(context, "生成失败", Toast.LENGTH_LONG).show();
 			}
 			bos.flush();
 			bos.close();

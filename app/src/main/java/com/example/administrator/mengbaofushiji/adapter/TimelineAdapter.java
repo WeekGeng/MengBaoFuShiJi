@@ -1,6 +1,4 @@
 package com.example.administrator.mengbaofushiji.adapter;
-import java.util.List;
-import java.util.Map;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,7 +10,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.example.administrator.mengbaofushiji.R;
+
+import java.util.List;
+import java.util.Map;
 
 public class TimelineAdapter extends BaseAdapter {
 	private List<Map<String, Object>> list;
@@ -55,11 +57,11 @@ public class TimelineAdapter extends BaseAdapter {
 			viewHolder.content_bottom = (TextView) convertView.findViewById(R.id.content_bottom);
 			viewHolder.content_top = (TextView) convertView.findViewById(R.id.content_top);
             viewHolder.relative_one_img=(RelativeLayout)convertView.findViewById(R.id.relative_one_img);
+            viewHolder.relative_two_img=(RelativeLayout)convertView.findViewById(R.id.relative_two);
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
-        viewHolder.relative_one_img.setOnClickListener(listener);
 		String yearStr = list.get(position).get("year").toString();
 		String monthStr = list.get(position).get("month").toString();
 		String titleStr = list.get(position).get("title").toString();
@@ -87,6 +89,7 @@ public class TimelineAdapter extends BaseAdapter {
 			viewHolder.month_one_img.setText(monthStr);
 			RelativeLayout relative_two_img=(RelativeLayout)convertView.findViewById(R.id.relative_two);
 			relative_two_img.setVisibility(View.GONE);
+			viewHolder.relative_one_img.setOnClickListener(listener);
 		}else {
 			if (ONESIZE) {
 				RelativeLayout relative_two_img=(RelativeLayout)convertView.findViewById(R.id.relative_two);
@@ -99,6 +102,7 @@ public class TimelineAdapter extends BaseAdapter {
 				Bitmap bitmap = BitmapFactory.decodeResource(parent.getContext().getResources(), imgs[0]);
 				viewHolder.iv_one.setImageBitmap(bitmap);
 				viewHolder.iv_one.setOnClickListener(listener);
+				viewHolder.relative_one_img.setOnClickListener(listener);
 			}else {
 				RelativeLayout relative_two_img=(RelativeLayout)convertView.findViewById(R.id.relative_two);
 				relative_two_img.setVisibility(View.VISIBLE);
@@ -110,6 +114,7 @@ public class TimelineAdapter extends BaseAdapter {
 				viewHolder.iv_two_first.setOnClickListener(listener);
 				viewHolder.iv_two_second.setImageResource(imgs[1]);
 				viewHolder.iv_two_second.setOnClickListener(listener);
+				viewHolder.relative_two_img.setOnClickListener(listener);
 			}
 		}
 		if (position==list.size()-1) {
@@ -122,7 +127,7 @@ public class TimelineAdapter extends BaseAdapter {
 
 	@Override
 	public int getCount() {
-		return 20;
+		return list.size();
 	}
 
 	@Override
@@ -148,5 +153,6 @@ public class TimelineAdapter extends BaseAdapter {
 		public ImageView iv_two_second;
 		public View view_2;
 		public RelativeLayout relative_one_img;
+		public RelativeLayout relative_two_img;
 	}
 }

@@ -8,5 +8,8 @@
     <string name="drawer_close">关闭</string>
     <string name="title_activity_notifity">NotifityActivity</string>
     <string name="title_activity_yao_yi_yao">YaoYiYaoActivity</string>
+    <string name="settingsctivity">设置中心</string>
+    <string name="settingdirectxionactivity">设置向导</string>
+    <string name="title_activity_wel">WelActivity</string>
 
 </resources>

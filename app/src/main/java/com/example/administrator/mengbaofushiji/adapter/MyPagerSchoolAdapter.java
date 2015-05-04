@@ -13,17 +13,16 @@ import java.util.List;
 /**
  * 论坛中的fragment  adapter
  */
-public class MyPagerTalkAdapter extends FragmentPagerAdapter {
+public class MyPagerSchoolAdapter extends FragmentPagerAdapter {
     private List<Fragment> list;
-    public MyPagerTalkAdapter(FragmentManager fm, List<Fragment> list) {
+    public MyPagerSchoolAdapter(FragmentManager fm, List<Fragment> list) {
         super(fm);
         this.list=list;
     }
 
-    public MyPagerTalkAdapter(FragmentManager fm) {
+    public MyPagerSchoolAdapter(FragmentManager fm) {
         super(fm);
     }
-
     @Override
     public Fragment getItem(int position) {
         return list.get(position);

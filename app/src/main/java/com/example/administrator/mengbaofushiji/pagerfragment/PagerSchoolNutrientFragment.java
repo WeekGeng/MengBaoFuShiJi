@@ -12,7 +12,7 @@ import com.example.administrator.mengbaofushiji.R;
 /**
  * Created by Administrator on 2015/4/8.
  */
-public class PagerTalkYunYing extends Fragment {
+public class PagerSchoolNutrientFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

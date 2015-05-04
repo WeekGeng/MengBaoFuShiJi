@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.administrator.mengbaofushiji.R;
 
@@ -17,6 +18,7 @@ import com.example.administrator.mengbaofushiji.R;
 public class HomeFragAdapter extends BaseAdapter{
     private String[] data;
     private int height;
+    private int[] resId={R.drawable.mengbaozaocan,R.drawable.jinrizhixing,R.drawable.chunrixiaoshi,R.drawable.fushidaren,R.drawable.fenxiangdaren};
     public HomeFragAdapter(String[] data) {
         this.data=data;
     }
@@ -43,6 +45,8 @@ public class HomeFragAdapter extends BaseAdapter{
         }
         TextView tv=(TextView)v.findViewById(R.id.home_frag_tv_list_biaoti);
         tv.setText(data[position]);
+        ImageView iv=(ImageView)v.findViewById(R.id.home_frag_iv_list_left);
+        iv.setImageResource(resId[position]);
         return v;
     }
 }

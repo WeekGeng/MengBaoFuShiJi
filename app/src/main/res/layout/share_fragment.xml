@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:background="#11000000"
+    android:orientation="vertical"
     android:layout_height="match_parent">
-        <ListView
-            android:layout_width="match_parent"
-            android:id="@+id/share_showalldata_lv"
-            android:layout_below="@+id/liner"
-            android:layout_height="match_parent"/>
     <LinearLayout
         android:orientation="horizontal"
         android:id="@+id/liner"
+        android:background="#fff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:padding="5dp"
             android:layout_height="wrap_content">
             <TextView
                 android:layout_width="wrap_content"
@@ -24,6 +22,8 @@
                 android:layout_alignParentRight="true"
                 android:layout_height="wrap_content"
                 android:text="好友分享"
+                android:gravity="center"
+                android:drawablePadding="5dp"
                 android:drawableTop="@drawable/friend_share"
                 />
         </RelativeLayout>
@@ -31,6 +31,7 @@
             android:layout_width="0dp"
             android:gravity="center_horizontal"
             android:layout_weight="1"
+            android:padding="5dp"
             android:layout_height="wrap_content">
 
             <TextView
@@ -38,6 +39,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="附近"
+                android:drawablePadding="5dp"
+                android:gravity="center"
                 android:drawableTop="@drawable/local_share"
                 />
 
@@ -45,15 +48,55 @@
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:padding="5dp"
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/share_my_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:gravity="center"
                 android:text="我的分享"
                 android:drawableTop="@drawable/my_share"
                 />
         </RelativeLayout>
     </LinearLayout>
-
-</RelativeLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:id="@+id/share_showalldata_lv"
+        android:layout_below="@+id/liner"
+        android:background="#fff"
+        android:descendantFocusability="beforeDescendants"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:id="@+id/share_huifu_input_liner"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="说点什么吧....."
+            android:padding="10dp"
+            android:focusable="true"
+            android:layout_margin="5dp"
+            android:id="@+id/share_dialog"
+            android:background="@drawable/cicle_back"
+            />
+        <TextView
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#a00f"
+            android:textColor="#fff"
+            android:layout_marginLeft="5dp"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:layout_marginRight="5dp"
+            android:text="发送"
+            />
+    </LinearLayout>
+</LinearLayout>

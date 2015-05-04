@@ -9,7 +9,8 @@
         android:background="@drawable/cicle_back"
         android:id="@+id/home_frag_iv_list_left"
         android:src="@drawable/ic_launcher"
-        android:layout_height="match_parent" />
+        android:scaleType="fitXY"
+        android:layout_height="48dp" />
     <RelativeLayout
         android:layout_width="0dp"
         android:layout_weight="1"
@@ -34,9 +35,10 @@
             />
     </RelativeLayout>
     <ImageView
-        android:layout_width="48dp"
+        android:layout_width="24dp"
         android:id="@+id/home_frag_iv_list_right"
-        android:layout_height="match_parent"
-        android:src="@drawable/fangxiaobiao"
+        android:layout_height="24dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/xiangyou"
         />
 </LinearLayout>

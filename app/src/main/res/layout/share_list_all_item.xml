@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:padding="5dp"
-    android:background="@drawable/cicle_back"
+    android:padding="10dp"
+    android:background="#fff"
+    android:id="@+id/liner"
+    android:descendantFocusability="afterDescendants"
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,6 +19,7 @@
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:layout_marginLeft="10dp"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical"
             android:layout_height="wrap_content">
@@ -48,4 +51,49 @@
         android:numColumns="3"
         android:verticalSpacing="10dp"
         ></GridView>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_gravity="right"
+        android:paddingRight="10dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/share_dianzan_icon"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:focusable="true"
+            android:src="@drawable/dianzan_before"
+            android:padding="5dp"
+            android:background="@drawable/conner_back"
+            />
+        <ImageView
+            android:id="@+id/share_pinglun_icon"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="70dp"
+            android:layout_alignLeft="@+id/share_dianzan_icon"
+            android:src="@drawable/pinglun"
+            android:padding="5dp"
+            android:background="@drawable/conner_back"
+            />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/share_huifu_content_liner"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/share_person_name"
+            android:textColor="#a00a"
+            android:text="猪八戒："
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="做的不错,学习了"
+            />
+    </LinearLayout>
+    <!--<include layout="@layout/share_pinglun_dialog"></include>-->
 </LinearLayout>

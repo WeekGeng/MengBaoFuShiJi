@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:descendantFocusability="blocksDescendants"
     android:layout_height="match_parent"
-    android:background="#220000aa" >
+    android:background="#000"
+    >
 
     <RelativeLayout
         android:id="@+id/layout_1"
@@ -19,6 +20,7 @@
             android:gravity="center"
             android:text="2015"
             android:textSize="12sp" />
+
         <View android:id="@+id/shuxian"
             android:layout_width="1dp"
             android:layout_height="63dp"
@@ -27,7 +29,6 @@
             android:textSize="12sp" 
             />
     </RelativeLayout>
-	
     <View
         android:id="@+id/view_0"
         android:layout_width="1dp"
@@ -66,7 +67,7 @@
             android:id="@+id/tv_show_month_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#220000aa"
+            android:background="#2200aaaa"
             android:text="12/16 09:45"
             android:paddingLeft="10dp"
             android:textSize="12sp" />
@@ -115,6 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="-25dp"
         android:visibility="gone"
+        android:focusable="false"
         android:layout_toRightOf="@+id/image"
         android:background="@drawable/timeline_content"
         android:padding="10dp" >
@@ -122,7 +124,7 @@
             android:id="@+id/tv_show_month"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#220000aa"
+            android:background="#2200aaaa"
             android:text="12/16 09:45"
             android:paddingLeft="10dp"
             android:textSize="12sp" />
