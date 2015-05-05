@@ -48,11 +48,9 @@ public class TimelineAdapter extends BaseAdapter {
 			viewHolder.month_two_img = (TextView) convertView.findViewById(R.id.tv_show_month);
 			viewHolder.title_one_img = (TextView) convertView.findViewById(R.id.title_one_img);
 			viewHolder.title_two_img = (TextView) convertView.findViewById(R.id.title_two_img);
-
 			viewHolder.iv_one=(ImageView)convertView.findViewById(R.id.iv_1);
 			viewHolder.iv_two_first=(ImageView)convertView.findViewById(R.id.iv2_1);
 			viewHolder.iv_two_second=(ImageView)convertView.findViewById(R.id.iv2_2);
-
 			viewHolder.content_one_img=(TextView)convertView.findViewById(R.id.content_one_img);
 			viewHolder.content_bottom = (TextView) convertView.findViewById(R.id.content_bottom);
 			viewHolder.content_top = (TextView) convertView.findViewById(R.id.content_top);
