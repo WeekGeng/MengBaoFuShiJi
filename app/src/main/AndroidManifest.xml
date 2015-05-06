@@ -31,12 +31,11 @@
         android:name=".application.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
+        android:label="萌宝辅食"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:label="@string/app_name" >
+            android:windowSoftInputMode="adjustPan" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -140,13 +139,23 @@
             android:name=".view.SettingActivity"
             android:label="@string/settingsctivity" >
         </activity>
-        <activity
-            android:name=".view.SettingDirectionActivity"
-            android:label="@string/settingdirectxionactivity" >
+        <activity android:name=".view.SettingDirectionActivity" >
         </activity>
         <activity
             android:name=".view.WelActivity"
             android:label="@string/title_activity_wel" >
+        </activity>
+        <activity
+            android:name=".view.HomeBreakfistActivity"
+            android:label="萌宝早餐" >
+        </activity>
+        <activity
+            android:name=".view.FoodDisplayActivity"
+            android:label="@string/title_activity_food_display" >
+        </activity>
+        <activity
+            android:name=".view.AllShareActivity"
+            android:label="@string/title_activity_all_share" >
         </activity>
     </application>
 

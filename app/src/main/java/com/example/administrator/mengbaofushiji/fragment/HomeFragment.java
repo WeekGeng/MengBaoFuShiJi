@@ -1,5 +1,6 @@
 package com.example.administrator.mengbaofushiji.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -19,6 +20,8 @@ import android.widget.ListView;
 
 import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.HomeFragAdapter;
+import com.example.administrator.mengbaofushiji.consts.Const;
+import com.example.administrator.mengbaofushiji.view.HomeBreakfistActivity;
 
 import java.util.ArrayList;
 
@@ -43,7 +46,7 @@ public class HomeFragment extends Fragment{
         super.onCreate(savedInstanceState);
         imgs = new int[] { R.drawable.vpa, R.drawable.vpb, R.drawable.vpc,
                 R.drawable.vpd, R.drawable.vpe };
-        datas=new String[]{"萌宝早餐","今日之星","春日小食","辅食达人","分享达人"};
+        datas= Const.HOMEITEMS;
         myHandle=new MyHandle();
         homeAdapter=new HomeFragAdapter(datas);
 
@@ -76,7 +79,21 @@ public class HomeFragment extends Fragment{
         lv_item.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                switch (position){
+                    case 0:
+                        Intent intent=new Intent(getActivity(),HomeBreakfistActivity.class);
+                        intent.putExtra("position",0);
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                }
             }
         });
     }

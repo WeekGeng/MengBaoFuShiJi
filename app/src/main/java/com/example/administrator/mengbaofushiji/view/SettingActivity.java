@@ -2,16 +2,18 @@ package com.example.administrator.mengbaofushiji.view;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -27,46 +29,63 @@ public class SettingActivity extends ActionBarActivity {
 	private LinearLayout liner_clear;
 	private TextView tv_cancle;
 	private MyFinalListener listener;
-	private ImageView iv_back;
+	private Toolbar toolbar;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_setting_main);
 		getData();
+		initToolBar();
 		initView();
 		setListeners();
 	}
+
+	private void initToolBar() {
+		try {
+			toolbar = (Toolbar) findViewById(R.id.toolbar);
+//            toolbar.setTitleTextColor(Color.parseColor("#440000ff"));
+			setSupportActionBar(toolbar);
+					toolbar.setTitle("设置中心");
+			toolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+			getSupportActionBar().setHomeButtonEnabled(true);
+			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		} catch (NullPointerException e) {
+
+		}
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()){
+			case android.R.id.home:
+				finish();
+				break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
 	private void setListeners() {
 		liner_clear.setOnClickListener(listener);
 		tv_cancle.setOnClickListener(listener);
-		iv_back.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				finish();
-			}
-		});
 		lv_show_settings.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
+									int position, long id) {
 				if (lists[position].equals("使用说明")) {
-					Intent intent=new Intent(SettingActivity.this, SettingDirectionActivity.class);
+					Intent intent = new Intent(SettingActivity.this, SettingDirectionActivity.class);
 					intent.putExtra("position", position);
 					startActivity(intent);
-				}else if (lists[position].equals("关于萌宝派")) {
-					Intent intent=new Intent(SettingActivity.this, SettingDirectionActivity.class);
+				} else if (lists[position].equals("关于萌宝辅食")) {
+					Intent intent = new Intent(SettingActivity.this, SettingDirectionActivity.class);
 					intent.putExtra("position", position);
 					startActivity(intent);
-				}else if(lists[position].equals("免责声明")) {
-					Intent intent=new Intent(SettingActivity.this, SettingDirectionActivity.class);
+				} else if (lists[position].equals("免责声明")) {
+					Intent intent = new Intent(SettingActivity.this, SettingDirectionActivity.class);
 					intent.putExtra("position", position);
 					startActivity(intent);
-				}else if(lists[position].equals("意见反馈")) {
-					Intent intent=new Intent(SettingActivity.this, SettingDirectionActivity.class);
-					intent.putExtra("position", position);
-					startActivity(intent);
-				}else if(lists[position].equals("去评分")) {
-					Intent intent=new Intent(SettingActivity.this, SettingDirectionActivity.class);
+				} else if (lists[position].equals("意见反馈")) {
+					Intent intent = new Intent(SettingActivity.this, SettingDirectionActivity.class);
 					intent.putExtra("position", position);
 					startActivity(intent);
 				}
@@ -84,7 +103,6 @@ public class SettingActivity extends ActionBarActivity {
 		lv_show_settings.setAdapter(adapter);
 		liner_clear=(LinearLayout)findViewById(R.id.clear_catch);
 		tv_cancle=(TextView)findViewById(R.id.tv_cancle);
-		iv_back=(ImageView)findViewById(R.id.setting_back);
 	}
 
 	public void setListViewHeightBasedOnChildren(ListView listView) {

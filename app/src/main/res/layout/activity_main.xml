@@ -91,6 +91,7 @@
                         />
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/home_liner_nick"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -110,7 +111,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#fff"
-
                         android:text="哈哈哈"
                         />
                     <TextView
@@ -130,6 +130,7 @@
                     >
                 </View>
                 <LinearLayout
+                    android:id="@+id/home_liner_share"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -140,7 +141,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:text="辅食笔记"
+                        android:text="好友分享"
                         android:textColor="#fff"
                         android:layout_marginLeft="15dp"
                         />
@@ -308,11 +309,18 @@
             </LinearLayout>
         </ScrollView>
     </android.support.v4.widget.DrawerLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#aaa0"
+        android:layout_marginBottom="-10dp"
+        ></View>
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:background="#1f0f"
-        android:layout_height="wrap_content">
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="-10dp"
+        android:layout_height="55dp">
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -339,7 +347,7 @@
         <ImageView
             android:layout_width="48dp"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="center|top"
             android:src="@drawable/addimg"
             android:id="@+id/add_logs"
             android:layout_height="48dp"

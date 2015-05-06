@@ -1,9 +1,11 @@
 package com.example.administrator.mengbaofushiji;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,8 +25,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -61,7 +67,9 @@ public class MainActivity extends ActionBarActivity {
     private final int FROM_GALLERY=200;
     private String filePath;
     private ImageView iv_setImg;
-
+    private LinearLayout home_liner_share;
+    private LinearLayout home_liner_nick;
+    private TextView cebian_person_tv_name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,19 +88,23 @@ public class MainActivity extends ActionBarActivity {
      * 设置RadioGroup的监听器
      */
     private void setListeners() {
-//        lv_show.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (data[position].equals("好友分享")){
-//                    Intent intent = new Intent(Intent.ACTION_SEND);
-//                    intent.setType("text/plain");
-//                    intent.putExtra(Intent.EXTRA_SUBJECT, "试试看");          // 分享的主题
-//                    intent.putExtra(Intent.EXTRA_TEXT,"http://www.baidu.com");  // 分享的内容
-//                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                    startActivity(Intent.createChooser(intent, "分享gif测试"));
-//                }
-//            }
-//        });
+        home_liner_nick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reviseNick();
+            }
+        });
+        home_liner_share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "试试看");          // 分享的主题
+                intent.putExtra(Intent.EXTRA_TEXT, "http://www.baidu.com");  // 分享的内容
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(Intent.createChooser(intent, "分享gif测试"));
+            }
+        });
         iv_setImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,7 +138,7 @@ public class MainActivity extends ActionBarActivity {
                 transaction.replace(R.id.content, home);
                 transaction.commit();
                 setToolBarTitle(tv_shouye.getText().toString());
-                Drawable[] drawable=tv_shouye.getCompoundDrawables();
+                Drawable[] drawable = tv_shouye.getCompoundDrawables();
                 getSupportActionBar().setLogo(drawable[1]);
             }
         });
@@ -161,7 +173,33 @@ public class MainActivity extends ActionBarActivity {
             }
         });
     }
-
+    private void reviseNick() {
+        final AlertDialog dialog = new AlertDialog.Builder(MainActivity.this).create();
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+        Window window = dialog.getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
+        window.setContentView(R.layout.revise_nick_record_dialog);
+        final EditText ed = (EditText) window.findViewById(R.id.revise_nick_record_dialog_ed);
+        window.findViewById(R.id.revise_nick_record_dialog_bt_ok).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String s = ed.getText().toString();
+                if (s != null && s.length() != 0) {
+                    cebian_person_tv_name.setText(s);
+                    dialog.cancel();
+                } else {
+                    Toast.makeText(MainActivity.this, "昵称不能为空！", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        window.findViewById(R.id.revise_nick_record_dialog_bt_cancle).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.cancel();
+            }
+        });
+    }
     /**
      * 设置toolbar的标题
      */
@@ -174,6 +212,9 @@ public class MainActivity extends ActionBarActivity {
      * 初始化参数
      */
     private void initViews() {
+        home_liner_share=(LinearLayout)findViewById(R.id.home_liner_share);
+        home_liner_nick=(LinearLayout)findViewById(R.id.home_liner_nick);
+        cebian_person_tv_name=(TextView)findViewById(R.id.cebian_person_tv_name);
         tv_fushi=(TextView)findViewById(R.id.shipu);
         tv_shouye=(TextView)findViewById(R.id.shouye);
         tv_ketang=(TextView)findViewById(R.id.ketang);
@@ -192,6 +233,7 @@ public class MainActivity extends ActionBarActivity {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("主页");
+        mToolbar.setTitleTextColor(Color.parseColor("#ffffff"));
 //        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
 	    /* 菜单的监听可以在toolbar里设置，也可以像ActionBar那样，通过下面的两个回调方法来处理 */

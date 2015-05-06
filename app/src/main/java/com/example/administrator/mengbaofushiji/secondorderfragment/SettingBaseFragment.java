@@ -15,7 +15,7 @@ public class SettingBaseFragment extends Fragment {
 	public SettingBaseFragment(int position) {
 		this.position=position;
 	}
-	private int[] layout={R.layout.activity_setting_use_detail, R.layout.activity_settings_self_main,R.layout.activity_settings_responsible,R.layout.activity_setting_feedback};
+	private int[] layout={R.layout.activity_setting_use_detail,R.layout.activity_settings_responsible,R.layout.activity_setting_feedback,R.layout.activity_settings_self_main};
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
