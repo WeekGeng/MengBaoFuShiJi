@@ -146,7 +146,7 @@
             android:label="@string/title_activity_wel" >
         </activity>
         <activity
-            android:name=".view.HomeBreakfistActivity"
+            android:name=".view.HomeBreakfirstActivity"
             android:label="萌宝早餐" >
         </activity>
         <activity
@@ -156,6 +156,14 @@
         <activity
             android:name=".view.AllShareActivity"
             android:label="@string/title_activity_all_share" >
+        </activity>
+        <activity
+            android:name=".view.StarTodayActivity"
+            android:label="@string/title_activity_star_today" >
+        </activity>
+        <activity
+            android:name=".view.AddLogsLayoutActivity"
+            android:label="@string/title_activity_add_logs_layout" >
         </activity>
     </application>
 

@@ -4,6 +4,9 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/mengbaofushiji/adapter/AddLogsAdapter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/mengbaofushiji/adapter/MyListShareAdapter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/mengbaofushiji/adapter/SchoolListAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/mengbaofushiji/db/MyOpenHelper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/mengbaofushiji/db/PersonContentProvider.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/mengbaofushiji/extras/ParallaxScollListView.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/mengbaofushiji/fragment/AddLogs.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/mengbaofushiji/fragment/SchoolFragment.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/mengbaofushiji/fragment/ShareFragment.java" charset="UTF-8" />
@@ -12,8 +15,30 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/mengbaofushiji/secondorderfragment/SettingBaseFragment.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/mengbaofushiji/shipupagerfragment/SuperAwesomeCardFragment.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/mengbaofushiji/view/AllShareActivity.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/mengbaofushiji/view/HomeBreakfistActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/mengbaofushiji/view/HomeBreakfirstActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/mengbaofushiji/view/SettingDirectionActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/add_log_del.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/baby1.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/baby2.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/baby3.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/baby4.jpeg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/guanggao.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/home_star_taday_header.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/img_header.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/spinner_ab_default_smartkids.9.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/star_today_back.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/star_today_back.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/add.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/sp_back.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/spinner_ab_default_smartkids.9.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/spinner_ab_default_smartkids.9.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/spinner_ab_default_smartkids.9.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/spinner_ab_default_smartkids.9.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/spinner_ab_default_smartkids.9.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/spinner_ab_default_smartkids.9.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/add_log_add_img.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/spinner_ab_default_smartkids.9.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/home_star_today_lv_header.xml" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

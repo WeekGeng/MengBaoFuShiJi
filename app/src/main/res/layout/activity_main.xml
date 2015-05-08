@@ -318,13 +318,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:layout_gravity="bottom"
+        android:layout_gravity="center_vertical"
         android:layout_marginBottom="-10dp"
-        android:layout_height="55dp">
+        android:layout_height="65dp">
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
             android:id="@+id/shouye"
+            android:layout_marginBottom="2dp"
             android:gravity="center_horizontal"
             android:textSize="16sp"
             android:text="主页"
@@ -338,6 +339,7 @@
             android:layout_gravity="bottom"
             android:gravity="center"
             android:id="@+id/shipu"
+            android:layout_marginBottom="2dp"
             android:text="食谱"
             android:drawableTop="@drawable/shipu"
             android:textSize="16sp"
@@ -345,12 +347,12 @@
             android:layout_height="wrap_content" />
 
         <ImageView
-            android:layout_width="48dp"
+            android:layout_width="60dp"
             android:layout_weight="1"
             android:gravity="center|top"
             android:src="@drawable/addimg"
             android:id="@+id/add_logs"
-            android:layout_height="48dp"
+            android:layout_height="60dp"
             />
         <TextView
             android:layout_width="0dp"
@@ -359,6 +361,7 @@
             android:textColor="#5000"
             android:textSize="16sp"
             android:id="@+id/ketang"
+            android:layout_marginBottom="2dp"
             android:layout_gravity="bottom"
             android:drawableTop="@drawable/ketang"
             android:text="课堂"
@@ -369,6 +372,7 @@
             android:gravity="center"
             android:id="@+id/share"
             android:textColor="#5000"
+            android:layout_marginBottom="2dp"
             android:textSize="16sp"
             android:layout_gravity="bottom"
             android:drawableTop="@drawable/share"

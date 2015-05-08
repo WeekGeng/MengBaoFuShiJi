@@ -16,6 +16,11 @@ import com.example.administrator.mengbaofushiji.animation.AnimationAdapter;
 import com.example.administrator.mengbaofushiji.animation.SwingBottomInAnimationAdapter;
 import com.example.administrator.mengbaofushiji.view.AllShareActivity;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class ShareFragment extends Fragment{
     private ListView lv;
     private MyListShareAdapter adapter;
@@ -23,6 +28,10 @@ public class ShareFragment extends Fragment{
     TextView tv;
     TextView share_fried_tv;
     TextView share_my_tv;
+    private List<Map<String,Object>> list;
+    private Map<String,Object> map;
+    private List<Map<String,Object>> chats;
+    private Map<String,Object> chatMap;
     @Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -51,16 +60,16 @@ public class ShareFragment extends Fragment{
         share_fried_tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), AllShareActivity.class);
-                intent.putExtra("position",0);
+                Intent intent = new Intent(getActivity(), AllShareActivity.class);
+                intent.putExtra("position", 0);
                 startActivity(intent);
             }
         });
         share_my_tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), AllShareActivity.class);
-                intent.putExtra("position",1);
+                Intent intent = new Intent(getActivity(), AllShareActivity.class);
+                intent.putExtra("position", 1);
                 startActivity(intent);
             }
         });
@@ -70,7 +79,7 @@ public class ShareFragment extends Fragment{
         share_fried_tv=(TextView)view.findViewById(R.id.share_fried_tv);
         linearLayout= (LinearLayout) view.findViewById(R.id.share_huifu_input_liner);
         lv=(ListView)view.findViewById(R.id.share_showalldata_lv);
-        adapter=new MyListShareAdapter(linearLayout,getActivity());
+        adapter=new MyListShareAdapter(linearLayout,getActivity(),list);
         linearLayout.setVisibility(View.GONE);
         tv= (TextView) view.findViewById(R.id.send);
         lv.setAdapter(adapter);
@@ -82,7 +91,87 @@ public class ShareFragment extends Fragment{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getData();
 	}
+
+    private void getData() {
+        list=new ArrayList<Map<String, Object>>();
+
+        chats=new ArrayList<>();
+        chatMap=new HashMap<>();
+        map=new HashMap<String,Object>();
+        map.put("nickName","萨瓦尼卡");
+        map.put("time","2015-4-13 05:50 am");
+        map.put("photo",R.drawable.baby);
+        map.put("content","偶爱v号店v拉回到v省道v圣地哦你不是v奇偶的v号屎尿多v怕v索赔v建瓯盘数据哦哈哈哈哈哈哈哈哈哈哈哈哈姐姐姐姐姐姐姐姐姐姐姐看看结构和广告法方法姐姐快来了官方反对党 健康快乐乐乐");
+        map.put("iszan",0);
+        chatMap.put("0","环境手动挡车搜到");
+        chatMap.put("1","鼻手术的和i哦啊山顶");
+        chatMap.put("2","isviOS的v欧赔加上产品");
+        chats.add(chatMap);
+        map.put("chat",chats);
+        list.add(map);
+
+        chats=new ArrayList<>();
+        chatMap=new HashMap<>();
+        map=new HashMap<String,Object>();
+        map.put("nickName","嘿嘿你吗");
+        map.put("time","2015-4-13 05:50 am");
+        map.put("photo",R.drawable.baby);
+        map.put("content","偶爱v号店v拉回到v省道v圣地哦你不是v奇偶的v号屎尿多v怕v索赔v建瓯盘数据哦哈哈哈哈哈哈哈哈哈哈哈哈姐姐姐姐姐姐姐姐姐姐姐看看结构和广告法方法姐姐快来了官方反对党 健康快乐乐乐");
+        map.put("iszan",1);
+        chatMap.put("0","环境手动挡车搜到");
+        chatMap.put("1","鼻手术的和i哦啊山顶");
+        chatMap.put("2","isviOS的v欧赔加上产品");
+        chats.add(chatMap);
+        map.put("chat",chats);
+        list.add(map);
+
+        chats=new ArrayList<>();
+        chatMap=new HashMap<>();
+        map=new HashMap<String,Object>();
+        map.put("nickName","达赖喇嘛");
+        map.put("time","2015-4-13 05:50 am");
+        map.put("photo",R.drawable.baby);
+        map.put("content","偶爱v号店v拉回到v省道v圣地哦你不是v奇偶的v号屎尿多v怕v索赔v建瓯盘数据哦哈哈哈哈哈哈哈哈哈哈哈哈姐姐姐姐姐姐姐姐姐姐姐看看结构和广告法方法姐姐快来了官方反对党 健康快乐乐乐");
+        map.put("iszan",0);
+        chatMap.put("0","环境手动挡车搜到");
+        chatMap.put("1","鼻手术的和i哦啊山顶");
+        chatMap.put("2","isviOS的v欧赔加上产品");
+        chats.add(chatMap);
+        map.put("chat",chats);
+        list.add(map);
+
+        chats=new ArrayList<>();
+        chatMap=new HashMap<>();
+        map=new HashMap<String,Object>();
+        map.put("nickName","很爱很爱");
+        map.put("time","2015-4-13 05:50 am");
+        map.put("photo",R.drawable.baby);
+        map.put("content","偶爱v号店v拉回到v省道v圣地哦你不是v奇偶的v号屎尿多v怕v索赔v建瓯盘数据哦哈哈哈哈哈哈哈哈哈哈哈哈姐姐姐姐姐姐姐姐姐姐姐看看结构和广告法方法姐姐快来了官方反对党 健康快乐乐乐");
+        map.put("iszan",0);
+        chatMap.put("0","环境手动挡车搜到");
+        chatMap.put("1","鼻手术的和i哦啊山顶");
+        chatMap.put("2","isviOS的v欧赔加上产品");
+        chats.add(chatMap);
+        map.put("chat",chats);
+        list.add(map);
+
+        chats=new ArrayList<>();
+        chatMap=new HashMap<>();
+        map=new HashMap<String,Object>();
+        map.put("nickName","你们所感动");
+        map.put("time","2015-4-13 05:50 am");
+        map.put("photo",R.drawable.baby);
+        map.put("content","偶爱v号店v拉回到v省道v圣地哦你不是v奇偶的v号屎尿多v怕v索赔v建瓯盘数据哦哈哈哈哈哈哈哈哈哈哈哈哈姐姐姐姐姐姐姐姐姐姐姐看看结构和广告法方法姐姐快来了官方反对党 健康快乐乐乐");
+        map.put("iszan",0);
+        chatMap.put("0","环境手动挡车搜到");
+        chatMap.put("1","鼻手术的和i哦啊山顶");
+        chatMap.put("2","isviOS的v欧赔加上产品");
+        chats.add(chatMap);
+        map.put("chat",chats);
+        list.add(map);
+    }
 }
 
 

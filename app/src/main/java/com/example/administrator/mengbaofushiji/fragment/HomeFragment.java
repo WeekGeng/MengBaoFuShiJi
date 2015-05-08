@@ -21,7 +21,8 @@ import android.widget.ListView;
 import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.HomeFragAdapter;
 import com.example.administrator.mengbaofushiji.consts.Const;
-import com.example.administrator.mengbaofushiji.view.HomeBreakfistActivity;
+import com.example.administrator.mengbaofushiji.view.HomeBreakfirstActivity;
+import com.example.administrator.mengbaofushiji.view.StarTodayActivity;
 
 import java.util.ArrayList;
 
@@ -80,18 +81,21 @@ public class HomeFragment extends Fragment{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position){
-                    case 0:
-                        Intent intent=new Intent(getActivity(),HomeBreakfistActivity.class);
-                        intent.putExtra("position",0);
-                        startActivity(intent);
-                        break;
                     case 1:
+                        Intent intentBreakfirst=new Intent(getActivity(),HomeBreakfirstActivity.class);
+                        intentBreakfirst.putExtra("position",0);
+                        startActivity(intentBreakfirst);
                         break;
                     case 2:
+                        Intent intentStar=new Intent(getActivity(),StarTodayActivity.class);
+                        intentStar.putExtra("position",1);
+                        startActivity(intentStar);
                         break;
                     case 3:
                         break;
                     case 4:
+                        break;
+                    case 5:
                         break;
                 }
             }
@@ -116,6 +120,8 @@ public class HomeFragment extends Fragment{
         viewPager.setAdapter(adapter);
         lv_item=(ListView)view.findViewById(R.id.home_frag_lv);
         setListViewHeightBasedOnChildren(lv_item);
+        View v=LayoutInflater.from(getActivity()).inflate(R.layout.home_list_header,null);
+        lv_item.addHeaderView(v);
         lv_item.setAdapter(homeAdapter);
         ImageView iv= (ImageView) view.findViewById(R.id.home_frag_iv);
         iv.setImageResource(R.drawable.guanggao);

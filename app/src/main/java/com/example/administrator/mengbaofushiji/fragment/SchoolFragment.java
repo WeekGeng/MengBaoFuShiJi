@@ -1,13 +1,19 @@
 package com.example.administrator.mengbaofushiji.fragment;
+
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.administrator.mengbaofushiji.R;
@@ -25,26 +31,23 @@ public class SchoolFragment extends Fragment {
     private PagerSchoolToolsFragment toolsFragment;//工具
     private PagerSchoolSeasonerFragment seasonerFragment;//调味料
     private PagerSchoolNutrientFragment nutrientFragment;//营养素
-    List<Fragment> list;
+    private List<Fragment> list;
     private TextView tools_tv;
     private ImageView tools_iv;
     private TextView seasoner_tv;
-    private ImageView seasoner_iv;
     private TextView nutrient_tv;
-    private ImageView nutrient_iv;
     private int index;
     private TextView[] tv;
-    private ImageView[] iv;
     private SlidingTabLayout school_slidingtabLayout;
+    private int offset;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
-
     }
     private void initView() {
         tv=new TextView[3];
-        iv=new ImageView[3];
         list=new ArrayList<Fragment>();
         toolsFragment=new PagerSchoolToolsFragment();
         seasonerFragment=new PagerSchoolSeasonerFragment();
@@ -62,6 +65,18 @@ public class SchoolFragment extends Fragment {
         vp.setAdapter(adapter);
         setTvAndIv(view);
         setListeners();
+
+        DisplayMetrics dm = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int screenW = dm.widthPixels;// 获取分辨率宽度
+        offset =screenW / 3 ;// 计算偏移量
+        LinearLayout.LayoutParams para= (LinearLayout.LayoutParams) tools_iv.getLayoutParams();
+        para.width = offset;
+        tools_iv.setLayoutParams(para);
+        Matrix matrix = new Matrix();
+        matrix.postTranslate(offset, 0);
+        tools_iv.setImageMatrix(matrix);
+
         return view;
     }
 
@@ -69,15 +84,10 @@ public class SchoolFragment extends Fragment {
         tools_tv =(TextView)view.findViewById(R.id.tools_tv);
         tools_iv =(ImageView)view.findViewById(R.id.tools_iv);
         seasoner_tv=(TextView)view.findViewById(R.id.seasoner_tv);
-        seasoner_iv=(ImageView)view.findViewById(R.id.seasoner_iv);
         nutrient_tv=(TextView)view.findViewById(R.id.nutrient_tv);
-        nutrient_iv=(ImageView)view.findViewById(R.id.nutrient_iv);
         tv[0]=tools_tv;
         tv[1]=seasoner_tv;
         tv[2]=nutrient_tv;
-        iv[0]=tools_iv;
-        iv[1]=seasoner_iv;
-        iv[2]=nutrient_iv;
     }
 
     private void setListeners() {
@@ -106,14 +116,18 @@ public class SchoolFragment extends Fragment {
             }
         });
         vp.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            int positionOffsetPixel;
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                index=position;
-                setBackGroundColor(index);
             }
             @Override
             public void onPageSelected(int position) {
-
+                Animation animation = new TranslateAnimation(offset*index, offset*position, 0, 0);//显然这个比较简洁，只有一行代码。
+                index = position;
+                animation.setFillAfter(true);// True:图片停在动画结束位置
+                animation.setDuration(300);
+                tools_iv.startAnimation(animation);
+                setBackGroundColor(index);
             }
             @Override
             public void onPageScrollStateChanged(int state) {
@@ -123,26 +137,18 @@ public class SchoolFragment extends Fragment {
     }
 
     private void setBackGroundColor(int position) {
-        if (position==0){
+        if (position == 0) {
             tools_tv.setTextColor(Color.RED);
-            tools_iv.setBackgroundColor(Color.RED);
-
-            seasoner_tv.setTextColor(Color.BLACK);
-            seasoner_iv.setBackgroundColor(Color.WHITE);
+            seasoner_tv.setTextColor(Color.GRAY);
+            nutrient_tv.setTextColor(Color.GRAY);
         }else if (position==1){
-            tools_tv.setTextColor(Color.BLACK);
-            tools_iv.setBackgroundColor(Color.WHITE);
-
+            tools_tv.setTextColor(Color.GRAY);
             seasoner_tv.setTextColor(Color.RED);
-            seasoner_iv.setBackgroundColor(Color.RED);
-
-            nutrient_tv.setTextColor(Color.BLACK);
-            nutrient_iv.setBackgroundColor(Color.WHITE);
+            nutrient_tv.setTextColor(Color.GRAY);
         }else if (position==2){
-            seasoner_tv.setTextColor(Color.BLACK);
-            seasoner_iv.setBackgroundColor(Color.WHITE);
+            seasoner_tv.setTextColor(Color.GRAY);
+            tools_tv.setTextColor(Color.GRAY);
             nutrient_tv.setTextColor(Color.RED);
-            nutrient_iv.setBackgroundColor(Color.RED);
         }
     }
 }

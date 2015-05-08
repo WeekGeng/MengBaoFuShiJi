@@ -2,8 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
     android:background="#100a" >
-
+    <ImageView
+        android:id="@+id/add_log_iv_del"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:focusable="false"
+        android:visibility="gone"
+        android:src="@drawable/add_log_del"
+        />
     <RelativeLayout
         android:id="@+id/layout_1"
         android:layout_width="60dp"
@@ -117,6 +128,7 @@
                 android:layout_width="match_parent"
                 android:scrollbars="none"
                 android:layout_marginLeft="5dp"
+                android:focusable="false"
                 android:layout_marginRight="5dp"
                 android:layout_height="wrap_content" >
 
@@ -174,6 +186,7 @@
                     android:layout_height="100dp"
                     android:layout_margin="2dp"
                     android:padding="5dp"
+                    android:focusable="false"
                     android:src="@drawable/c"
                     />
 
@@ -198,6 +211,7 @@
                     android:layout_height="100dp"
                     android:layout_margin="2dp"
                     android:padding="5dp"
+                    android:focusable="false"
                     android:src="@drawable/b" />
 
                 <TextView

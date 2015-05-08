@@ -6,7 +6,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.example.administrator.mengbaofushiji.R;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.download.ImageDownloader;
 
 /**
  * Created by Administrator on 2015/4/7.
@@ -46,7 +49,9 @@ public class HomeFragAdapter extends BaseAdapter{
         TextView tv=(TextView)v.findViewById(R.id.home_frag_tv_list_biaoti);
         tv.setText(data[position]);
         ImageView iv=(ImageView)v.findViewById(R.id.home_frag_iv_list_left);
-        iv.setImageResource(resId[position]);
+//        iv.setImageResource(resId[position]);
+        String url = ImageDownloader.Scheme.DRAWABLE.wrap(String.valueOf(resId[position]));
+        ImageLoader.getInstance().displayImage(url,iv);
         return v;
     }
 }

@@ -17,7 +17,7 @@ import com.example.administrator.mengbaofushiji.homefragment.MengBaoBreakFirstFr
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeBreakfistActivity extends ActionBarActivity {
+public class HomeBreakfirstActivity extends ActionBarActivity {
     private Toolbar toolbar;
     private Intent intent;
     private int position;

@@ -12,14 +12,34 @@
             android:id="@+id/home_breakfirst_sp_agesel"
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:popupBackground="#fff"
+            android:gravity="center_horizontal"
+            android:background="@drawable/spinner_ab_default_smartkids"
             android:layout_height="wrap_content"></Spinner>
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#4000"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            ></View>
         <Spinner
             android:id="@+id/home_breakfirst_sp_functionsel"
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:popupBackground="#fff"
+            android:background="@drawable/spinner_ab_default_smartkids"
             android:layout_height="wrap_content"></Spinner>
 
     </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#4000"
+        android:layout_marginTop="5dp"
+        ></View>
     <ListView
         android:id="@+id/home_breakfirst_lv"
         android:layout_width="match_parent"

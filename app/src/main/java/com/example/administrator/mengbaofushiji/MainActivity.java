@@ -1,4 +1,5 @@
 package com.example.administrator.mengbaofushiji;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -6,7 +7,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -45,6 +45,8 @@ import com.example.administrator.mengbaofushiji.view.YaoYiYaoActivity;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import java.util.List;
+
 import cn.jpush.android.api.JPushInterface;
 
 public class MainActivity extends ActionBarActivity {
@@ -57,11 +59,14 @@ public class MainActivity extends ActionBarActivity {
     private String[] data;
     private FragmentManager fragmentManager;
     private FragmentTransaction transaction;
+
     private TextView tv_shouye;
     private TextView tv_fushi;
     private TextView tv_ketang;
     private TextView tv_share;
     private ImageView iv_addlogs;
+    private String[] tv_title;
+
     public static MainActivity instance;
     private TextView tv_mysetting;
     private final int FROM_GALLERY=200;
@@ -70,20 +75,28 @@ public class MainActivity extends ActionBarActivity {
     private LinearLayout home_liner_share;
     private LinearLayout home_liner_nick;
     private TextView cebian_person_tv_name;
+    List<Fragment> list;
+    public int position;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent=getIntent();
+        int index=intent.getIntExtra("position",0);
         instance=this;
+        Fragment home = new HomeFragment();
         fragmentManager=getSupportFragmentManager();
         transaction = fragmentManager.beginTransaction();
-        Fragment home = new HomeFragment();
-        transaction.add(R.id.content, home);
+        transaction.add(R.id.content,home);
         transaction.commit();
+        if (index==4){
+            Log.i("info",""+position);
+            Fragment share=new AddLogs();
+            setFragmentChose(share);
+        }
         initViews();
         setListeners();
     }
-
     /**
      * 设置RadioGroup的监听器
      */
@@ -118,61 +131,58 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        tv_fushi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                transaction = fragmentManager.beginTransaction();
-                Fragment shipu = new ShipuFragment();
-                transaction.replace(R.id.content, shipu);
-                transaction.commit();
-                setToolBarTitle(tv_fushi.getText().toString());
-                Drawable[] drawable=tv_fushi.getCompoundDrawables();
-                getSupportActionBar().setLogo(drawable[1]);
-            }
-        });
         tv_shouye.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction = fragmentManager.beginTransaction();
-                Fragment home = new HomeFragment();
-                transaction.replace(R.id.content, home);
-                transaction.commit();
-                setToolBarTitle(tv_shouye.getText().toString());
-                Drawable[] drawable = tv_shouye.getCompoundDrawables();
-                getSupportActionBar().setLogo(drawable[1]);
+                Fragment home=new HomeFragment();
+                position=0;
+                setFragmentChose(home);
             }
         });
-        tv_ketang.setOnClickListener(new View.OnClickListener() {
+        tv_fushi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction = fragmentManager.beginTransaction();
-                Fragment talk = new SchoolFragment();
-                transaction.replace(R.id.content, talk);
-                transaction.commit();
-                setToolBarTitle(tv_ketang.getText().toString());
-            }
-        });
-        tv_share.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                transaction = fragmentManager.beginTransaction();
-                Fragment share = new ShareFragment();
-                transaction.replace(R.id.content, share);
-                transaction.commit();
-                setToolBarTitle(tv_share.getText().toString());
+                Fragment fushi=new ShipuFragment();
+                position=1;
+                setFragmentChose(fushi);
             }
         });
         iv_addlogs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction = fragmentManager.beginTransaction();
                 Fragment addlogs = new AddLogs();
-                transaction.replace(R.id.content, addlogs);
-                transaction.commit();
-                setToolBarTitle("日志");
+                position=2;
+                setFragmentChose(addlogs);
             }
         });
+        tv_ketang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment ketang=new SchoolFragment();
+                position=3;
+                setFragmentChose(ketang);
+            }
+        });
+        tv_share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment share=new ShareFragment();
+                position=4;
+                setFragmentChose(share);
+            }
+        });
+
     }
+
+    private void setFragmentChose(Fragment fragment) {
+        transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.content,fragment);
+        transaction.commit();
+        setToolBarTitle(tv_title[position]);
+//        Drawable[] drawable=tv_fushi.getCompoundDrawables();
+//        getSupportActionBar().setLogo(drawable[1]);
+    }
+
     private void reviseNick() {
         final AlertDialog dialog = new AlertDialog.Builder(MainActivity.this).create();
         dialog.setCanceledOnTouchOutside(false);
@@ -215,11 +225,19 @@ public class MainActivity extends ActionBarActivity {
         home_liner_share=(LinearLayout)findViewById(R.id.home_liner_share);
         home_liner_nick=(LinearLayout)findViewById(R.id.home_liner_nick);
         cebian_person_tv_name=(TextView)findViewById(R.id.cebian_person_tv_name);
+        tv_title=new String[5];
         tv_fushi=(TextView)findViewById(R.id.shipu);
         tv_shouye=(TextView)findViewById(R.id.shouye);
         tv_ketang=(TextView)findViewById(R.id.ketang);
         tv_share=(TextView)findViewById(R.id.share);
         iv_addlogs=(ImageView)findViewById(R.id.add_logs);
+
+        tv_title[0]=tv_shouye.getText().toString();
+        tv_title[1]=tv_fushi.getText().toString();
+        tv_title[2]="日志";
+        tv_title[3]=tv_ketang.getText().toString();
+        tv_title[4]=tv_share.getText().toString();
+
         tv_mysetting=(TextView)findViewById(R.id.my_setting_main);
         iv_setImg=(ImageView)findViewById(R.id.cebian_person_img);
 //        listViewSet();

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/toolbar"></include>
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入宝宝的月份....."
+        android:id="@+id/addlogs_layout_ed"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入标题...."
+        android:id="@+id/addlogs_layout_ed_title"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入内容...."
+        android:id="@+id/addlogs_layout_ed_content"
+        android:layout_gravity="center_horizontal" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/addlogs_layout_iv_tools"
+        android:src="@drawable/add"
+        android:scaleType="fitXY"
+        android:padding="1dp"
+        android:background="@drawable/cicle_back"
+        android:layout_gravity="center_horizontal" />
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/addlogs_layout_iv_tiaoweiliao"
+        android:src="@drawable/add"
+        android:scaleType="fitXY"
+        android:padding="1dp"
+        android:background="@drawable/cicle_back"
+        android:layout_gravity="center_horizontal" />
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="确定"
+        />
+</LinearLayout>

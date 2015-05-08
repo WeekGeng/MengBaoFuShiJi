@@ -29,31 +29,99 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="-20dp"
                 />
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:padding="5dp"
-                android:background="@drawable/cicle_back"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/ic_launcher"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="@drawable/cicle_back"
-                    android:id="@+id/home_frag_iv"
-                    />
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:layout_marginBottom="5dp"-->
+                <!--android:padding="5dp"-->
+                <!--android:background="@drawable/cicle_back"-->
+                <!--android:layout_height="wrap_content">-->
                 <com.example.administrator.mengbaofushiji.overrideview.MyListView
                     android:layout_width="match_parent"
                     android:id="@+id/home_frag_lv"
                     android:dividerHeight="0.0dip"
-                    android:layout_below="@id/home_frag_iv"
+                    android:background="@color/white"
+                    android:layout_marginTop="11dp"
                     android:fadingEdge="none"
                     android:layout_height="wrap_content"/>
-            </RelativeLayout>
+            <!--android:layout_below="@id/home_frag_iv"-->
+            <!--</RelativeLayout>-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="推荐达人"
+                android:textSize="18sp"
+                android:background="@color/white"
+                android:padding="10dp"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#3a00"
+                ></View>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                >
+                <com.example.administrator.mengbaofushiji.extras.CircleImageView
+                    android:id="@+id/home_tuijian_iv_first"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/baby"
+                    ></com.example.administrator.mengbaofushiji.extras.CircleImageView>
+                <com.example.administrator.mengbaofushiji.extras.CircleImageView
+                    android:id="@+id/home_tuijian_iv_second"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/baby1"
+                    ></com.example.administrator.mengbaofushiji.extras.CircleImageView>
+                <com.example.administrator.mengbaofushiji.extras.CircleImageView
+                    android:id="@+id/home_tuijian_iv_third"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/baby2"
+                    ></com.example.administrator.mengbaofushiji.extras.CircleImageView>
+                <com.example.administrator.mengbaofushiji.extras.CircleImageView
+                    android:id="@+id/home_tuijian_iv_force"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/baby3"
+                    ></com.example.administrator.mengbaofushiji.extras.CircleImageView>
+                <com.example.administrator.mengbaofushiji.extras.CircleImageView
+                    android:id="@+id/home_tuijian_iv_five"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="60dp"
+                    android:src="@drawable/baby4"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    ></com.example.administrator.mengbaofushiji.extras.CircleImageView>
+            </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher"
+                android:paddingTop="5dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/white"
+                android:paddingBottom="5dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/home_frag_iv"
+                />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
