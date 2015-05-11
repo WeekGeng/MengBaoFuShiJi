@@ -13,4 +13,15 @@
         <item>中暑</item>
         <item>湿疹</item>
     </string-array>
+    <string-array name="nanduspinnername">
+        <item>初级</item>
+        <item>中级</item>
+        <item>高级</item>
+    </string-array>
+    <string-array name="timespinnername">
+        <item>10分钟以内</item>
+        <item>30分钟以内</item>
+        <item>1小时以内</item>
+        <item>1小时以上</item>
+    </string-array>
 </resources>

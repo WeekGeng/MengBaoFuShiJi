@@ -123,7 +123,13 @@
             android:layout_below="@+id/addlogs_title_tv"
             android:layout_marginTop="10dp"
             android:orientation="vertical" >
-			<HorizontalScrollView
+            <TextView
+                android:id="@+id/addlogs_tv_show_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="那就少弄点饭就能进淡定福建农大附近呢的浓度发生浓缩的覅哦的烦恼的烦恼东方尿片的烦恼多废话【 东方红i哦东方红i哦到地方接受电话iOS的v号iOS的v速度v女生DVI速度v 你看vifvi偶读说说说的v 所受的vi哦 囧死屌丝大 iOS地欧舒丹viOSDVI欧舒丹v" />
+            <HorizontalScrollView
                 android:id="@+id/horizontalScrollView1"
                 android:layout_width="match_parent"
                 android:scrollbars="none"
@@ -131,8 +137,8 @@
                 android:focusable="false"
                 android:layout_marginRight="5dp"
                 android:layout_height="wrap_content" >
-
                 <LinearLayout
+                    android:id="@+id/add_logs_list_item_scroll_liner"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
@@ -156,72 +162,65 @@
                 </LinearLayout>
 
             </HorizontalScrollView>
-            <TextView
-                android:id="@+id/addlogs_tv_show_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="那就少弄点饭就能进淡定福建农大附近呢的浓度发生浓缩的覅哦的烦恼的烦恼东方尿片的烦恼多废话【 东方红i哦东方红i哦到地方接受电话iOS的v号iOS的v速度v女生DVI速度v 你看vifvi偶读说说说的v 所受的vi哦 囧死屌丝大 iOS地欧舒丹viOSDVI欧舒丹v" />
-            
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/huanrao_liner"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:orientation="horizontal" >
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/huanrao_liner"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:orientation="horizontal" >-->
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical" >
+            <!--<LinearLayout-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:orientation="vertical" >-->
 
-                <com.example.administrator.mengbaofushiji.extras.CircleImageView
-                    android:id="@+id/andlogs_iv_tools"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_margin="2dp"
-                    android:padding="5dp"
-                    android:focusable="false"
-                    android:src="@drawable/c"
-                    />
+                <!--<com.example.administrator.mengbaofushiji.extras.CircleImageView-->
+                    <!--android:id="@+id/andlogs_iv_tools"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="100dp"-->
+                    <!--android:layout_margin="2dp"-->
+                    <!--android:padding="5dp"-->
+                    <!--android:focusable="false"-->
+                    <!--android:src="@drawable/c"-->
+                    <!--/>-->
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="工具"
-                    />
-            </LinearLayout>
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:gravity="center_horizontal"-->
+                    <!--android:text="工具"-->
+                    <!--/>-->
+            <!--</LinearLayout>-->
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical" >
+            <!--<LinearLayout-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:orientation="vertical" >-->
 
-                <com.example.administrator.mengbaofushiji.extras.CircleImageView
-                    android:id="@+id/andlogs_iv_tiaoweiliao"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_margin="2dp"
-                    android:padding="5dp"
-                    android:focusable="false"
-                    android:src="@drawable/b" />
+                <!--<com.example.administrator.mengbaofushiji.extras.CircleImageView-->
+                    <!--android:id="@+id/andlogs_iv_tiaoweiliao"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="100dp"-->
+                    <!--android:layout_margin="2dp"-->
+                    <!--android:padding="5dp"-->
+                    <!--android:focusable="false"-->
+                    <!--android:src="@drawable/b" />-->
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="调味料"
-                    />
-            </LinearLayout>
-        </LinearLayout>
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:gravity="center_horizontal"-->
+                    <!--android:text="调味料"-->
+                    <!--/>-->
+            <!--</LinearLayout>-->
+        <!--</LinearLayout>-->
     </RelativeLayout>
 
 </RelativeLayout>

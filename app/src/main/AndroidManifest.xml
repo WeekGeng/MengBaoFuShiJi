@@ -165,6 +165,14 @@
             android:name=".view.AddLogsLayoutActivity"
             android:label="@string/title_activity_add_logs_layout" >
         </activity>
+        <activity
+            android:name=".view.AddLogsShiPuActivity"
+            android:label="@string/title_activity_add_logs_shi_pu" >
+        </activity>
+        <activity
+            android:name=".view.AddLogsStepActivity"
+            android:label="@string/title_activity_add_logs_step" >
+        </activity>
     </application>
 
 </manifest>

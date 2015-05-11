@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="wrap_content">
+    <EditText
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:hint="食材：如香蕉"
+        android:textColorHint="@color/transparent_gray"
+        android:background="@null"
+        android:padding="2dp"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="1dp"
+        android:layout_marginLeft="13dp"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_gray"
+        />
+    <EditText
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:padding="2dp"
+        android:layout_marginLeft="10dp"
+        android:hint="用量：如50g"
+        android:layout_marginRight="5dp"
+        android:textColorHint="@color/transparent_gray"
+        android:background="@null"
+        android:layout_height="wrap_content" />
+</LinearLayout>

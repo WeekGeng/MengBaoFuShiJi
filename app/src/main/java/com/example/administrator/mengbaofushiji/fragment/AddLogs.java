@@ -6,16 +6,21 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.AddLogsAdapter;
 import com.example.administrator.mengbaofushiji.animation.AnimationAdapter;
 import com.example.administrator.mengbaofushiji.animation.SwingBottomInAnimationAdapter;
-import com.example.administrator.mengbaofushiji.view.AddLogsLayoutActivity;
+import com.example.administrator.mengbaofushiji.view.AddLogsShiPuActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,20 +32,29 @@ import java.util.Map;
  */
 public class AddLogs extends Fragment {
     private ListView listview;
-//    TimelineAdapter adapter;
+    private Animation retateOut;
     AddLogsAdapter adapter;
     ImageView add_logs;
     public static List<Map<String, Object>> list;
     public static AddLogs instance;
     private int visiblePosition=-1;
+    private TextView fushibiji;
+    private TextView suishoubiji;
+    private int state=0;
+    private LinearLayout biji_liner;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         instance=this;
+        retateOut= AnimationUtils.loadAnimation(getActivity(), R.anim.retateout);
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.activity_listview,container,false);
+        fushibiji=(TextView)view.findViewById(R.id.fushibiji);
+        suishoubiji=(TextView)view.findViewById(R.id.suishoubiji);
+        biji_liner=(LinearLayout)view.findViewById(R.id.biji_liner);
         add_logs=(ImageView)view.findViewById(R.id.add_logs);
         listview=(ListView)view.findViewById(R.id.listview);
         listview.setDividerHeight(0);
@@ -56,11 +70,42 @@ public class AddLogs extends Fragment {
     }
 
     private void setListeners() {
+        fushibiji.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), AddLogsShiPuActivity.class);
+                startActivityForResult(intent, 0);
+            }
+        });
+        suishoubiji.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         add_logs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), AddLogsLayoutActivity.class);
-                startActivityForResult(intent, 0);
+                Animation animationIn=new AlphaAnimation(0f,1.0f);
+                animationIn.setDuration(1000);
+
+                Animation animationOut=new AlphaAnimation(1.0f,0f);
+                animationOut.setDuration(1000);
+
+                Animation retateIn= AnimationUtils.loadAnimation(getActivity(), R.anim.retatein);
+                if (state==0){
+                    biji_liner.setVisibility(View.VISIBLE);
+                    biji_liner.startAnimation(animationIn);
+                    add_logs.startAnimation(retateIn);
+                    state=1;
+                }else if(state==1){
+                    biji_liner.startAnimation(animationOut);
+                    biji_liner.setVisibility(View.GONE);
+                    add_logs.startAnimation(retateOut);
+                    state=0;
+                }
+//                Intent intent=new Intent(getActivity(), AddLogsShiPuActivity.class);
+//                startActivityForResult(intent, 0);
             }
         });
 //        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {

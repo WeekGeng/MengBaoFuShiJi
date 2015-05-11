@@ -11,10 +11,12 @@
     <string name="settingdirectxionactivity">设置向导</string>
     <string name="title_activity_wel">WelActivity</string>
     <string name="title_activity_home_breakfist">HomeBreakfistActivity</string>
-    <string name="action_settings">确认</string>
+    <string name="action_settings">提交</string>
     <string name="title_activity_food_display">FoodDisplayActivity</string>
     <string name="title_activity_all_share">AllShareActivity</string>
     <string name="title_activity_star_today">StarTodayActivity</string>
     <string name="title_activity_add_logs_layout">AddLogsLayoutActivity</string>
+    <string name="title_activity_add_logs_shi_pu">AddLogsShiPuActivity</string>
+    <string name="title_activity_add_logs_step">AddLogsStepActivity</string>
 
 </resources>
