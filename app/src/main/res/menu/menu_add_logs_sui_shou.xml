@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.administrator.mengbaofushiji.view.AddLogsShiPuActivity">
-    <item android:id="@+id/commit" android:title="@string/action_tijiao"
+    tools:context="com.example.administrator.mengbaofushiji.view.AddLogsSuiShouActivity">
+    <item android:id="@+id/fabiao" android:title="@string/action_tijiao"
         android:orderInCategory="102" app:showAsAction="always" />
 </menu>

@@ -51,6 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
                 android:text="推荐达人"
+                android:textColor="@color/gray"
                 android:textSize="18sp"
                 android:background="@color/white"
                 android:padding="10dp"

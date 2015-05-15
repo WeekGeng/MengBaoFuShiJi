@@ -23,11 +23,13 @@
         android:layout_marginLeft="10dp"
         android:layout_height="match_parent">
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/shipu_list_item_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#5bbffd"
             android:textSize="18sp"
-            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/gray"
+            android:layout_marginLeft="5dp"
             android:text="香椿小米粥"
             />
         <View
@@ -51,8 +53,31 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="作者：萌宝专家"
+                    android:textColor="@color/gray"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
+                    />
+                <TextView
+                    android:id="@+id/gongneng"
+                    android:layout_below="@+id/author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="5dp"
+                    android:text="功能："
+                    android:textColor="@color/gray"
+                    />
+                <TextView
+                    android:id="@+id/shipu_list_item_function"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="润肺止咳"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/gongneng"
+                    android:layout_below="@+id/author"
+                    android:textColor="@color/gray"
+                    android:layout_alignParentRight="true"
                     />
                 <View
                     android:layout_width="match_parent"
@@ -77,6 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:textColor="@color/gray"
                     android:text="600088"
                     android:layout_above="@+id/bottom_view"
                     android:layout_marginBottom="5dp"
@@ -98,6 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:textColor="@color/gray"
                     android:layout_marginBottom="5dp"
                     android:layout_above="@+id/bottom_view"
                     android:text="5888"
@@ -120,6 +147,7 @@
                     android:gravity="center_horizontal"
                     android:textSize="12sp"
                     android:layout_marginTop="5dp"
+                    android:textColor="@color/gray"
                     android:text="适 合"
                     />
                 <TextView
@@ -127,6 +155,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:textColor="@color/gray"
                     android:lines="1"
                     android:layout_marginLeft="2dp"
                     android:textSize="12sp"
@@ -136,6 +165,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="儿童食用"
+                    android:textColor="@color/gray"
                     android:textSize="12sp"
                     android:gravity="center_horizontal"
                     android:layout_marginBottom="5dp"

@@ -22,6 +22,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_height="wrap_content"
                 android:text="好友分享"
+                android:textColor="@color/gray"
                 android:gravity="center"
                 android:drawablePadding="5dp"
                 android:drawableTop="@drawable/friend_share"
@@ -39,6 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="附近"
+                android:textColor="@color/gray"
                 android:drawablePadding="5dp"
                 android:gravity="center"
                 android:drawableTop="@drawable/local_share"
@@ -57,10 +59,12 @@
                 android:drawablePadding="5dp"
                 android:gravity="center"
                 android:text="我的分享"
+                android:textColor="@color/gray"
                 android:drawableTop="@drawable/my_share"
                 />
         </RelativeLayout>
     </LinearLayout>
+
     <ListView
         android:layout_width="match_parent"
         android:id="@+id/share_showalldata_lv"

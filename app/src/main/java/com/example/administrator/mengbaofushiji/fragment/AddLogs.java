@@ -6,14 +6,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.RotateAnimation;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.administrator.mengbaofushiji.R;
@@ -21,6 +22,7 @@ import com.example.administrator.mengbaofushiji.adapter.AddLogsAdapter;
 import com.example.administrator.mengbaofushiji.animation.AnimationAdapter;
 import com.example.administrator.mengbaofushiji.animation.SwingBottomInAnimationAdapter;
 import com.example.administrator.mengbaofushiji.view.AddLogsShiPuActivity;
+import com.example.administrator.mengbaofushiji.view.AddLogsSuiShouActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +34,8 @@ import java.util.Map;
  */
 public class AddLogs extends Fragment {
     private ListView listview;
-    private Animation retateOut;
+    private Animation retateCircle;
+    private Animation animationOut;
     AddLogsAdapter adapter;
     ImageView add_logs;
     public static List<Map<String, Object>> list;
@@ -40,21 +43,33 @@ public class AddLogs extends Fragment {
     private int visiblePosition=-1;
     private TextView fushibiji;
     private TextView suishoubiji;
-    private int state=0;
     private LinearLayout biji_liner;
-
+    private RelativeLayout retate_iv;
+    private TextView top_fushi;
+    private TextView bottom_suishouji;
+    private Animation retateIn;
+    private Animation retateOut;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         instance=this;
-        retateOut= AnimationUtils.loadAnimation(getActivity(), R.anim.retateout);
+        retateCircle= AnimationUtils.loadAnimation(getActivity(), R.anim.retateout);
+        retateOut = new RotateAnimation(0f, -90f,360,360);
+        retateOut.setDuration(500);
+        retateIn = new RotateAnimation(-90, 0,360,360);
+        retateIn.setDuration(500);
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = initView(inflater, container);
+        setListeners();
+        return view;
+    }
+    private View initView(LayoutInflater inflater, ViewGroup container) {
         View view=inflater.inflate(R.layout.activity_listview,container,false);
-        fushibiji=(TextView)view.findViewById(R.id.fushibiji);
-        suishoubiji=(TextView)view.findViewById(R.id.suishoubiji);
-        biji_liner=(LinearLayout)view.findViewById(R.id.biji_liner);
+        top_fushi=(TextView)view.findViewById(R.id.top_fushi);
+        bottom_suishouji=(TextView)view.findViewById(R.id.bottom_suishouji);
+        retate_iv=(RelativeLayout)view.findViewById(R.id.retate_liner);
         add_logs=(ImageView)view.findViewById(R.id.add_logs);
         listview=(ListView)view.findViewById(R.id.listview);
         listview.setDividerHeight(0);
@@ -64,48 +79,39 @@ public class AddLogs extends Fragment {
         AnimationAdapter animAdapter = new SwingBottomInAnimationAdapter(adapter);
         animAdapter.setAbsListView(listview);
         listview.setAdapter(animAdapter);
-        setListeners();
-
         return view;
     }
 
     private void setListeners() {
-        fushibiji.setOnClickListener(new View.OnClickListener() {
+        top_fushi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                retate_iv.setVisibility(View.INVISIBLE);
                 Intent intent=new Intent(getActivity(), AddLogsShiPuActivity.class);
-                startActivityForResult(intent, 0);
+                startActivity(intent);
             }
         });
-        suishoubiji.setOnClickListener(new View.OnClickListener() {
+        bottom_suishouji.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                retate_iv.setVisibility(View.INVISIBLE);
+                Intent intent=new Intent(getActivity(), AddLogsSuiShouActivity.class);
+                startActivity(intent);
             }
         });
         add_logs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Animation animationIn=new AlphaAnimation(0f,1.0f);
-                animationIn.setDuration(1000);
-
-                Animation animationOut=new AlphaAnimation(1.0f,0f);
-                animationOut.setDuration(1000);
-
-                Animation retateIn= AnimationUtils.loadAnimation(getActivity(), R.anim.retatein);
-                if (state==0){
-                    biji_liner.setVisibility(View.VISIBLE);
-                    biji_liner.startAnimation(animationIn);
-                    add_logs.startAnimation(retateIn);
-                    state=1;
-                }else if(state==1){
-                    biji_liner.startAnimation(animationOut);
-                    biji_liner.setVisibility(View.GONE);
-                    add_logs.startAnimation(retateOut);
-                    state=0;
+                Animation retateCircleIn= AnimationUtils.loadAnimation(getActivity(), R.anim.retatein);
+                if (retate_iv.getVisibility()==View.INVISIBLE){
+                    retate_iv.startAnimation(retateIn);
+                    retate_iv.setVisibility(View.VISIBLE);
+                    add_logs.startAnimation(retateCircleIn);
+                }else{
+                    retate_iv.startAnimation(retateOut);
+                    retate_iv.setVisibility(View.INVISIBLE);
+                    add_logs.startAnimation(retateCircle);
                 }
-//                Intent intent=new Intent(getActivity(), AddLogsShiPuActivity.class);
-//                startActivityForResult(intent, 0);
             }
         });
 //        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -122,10 +128,10 @@ public class AddLogs extends Fragment {
             }
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-                if (visiblePosition!=-1){
-                    list.get(visiblePosition).put("isvisible", 0);
-                    adapter.notifyDataSetChanged();
-                    visiblePosition=-1;
+                if (retate_iv.getVisibility()==View.VISIBLE){
+                    retate_iv.startAnimation(retateOut);
+                    retate_iv.setVisibility(View.INVISIBLE);
+                    add_logs.startAnimation(retateCircle);
                 }
             }
         });
@@ -139,14 +145,13 @@ public class AddLogs extends Fragment {
             }
         });
     }
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode==0&&resultCode==0){
-            adapter.notifyDataSetChanged();
-        }
-    }
-
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode==0&&resultCode==0){
+//            adapter.notifyDataSetChanged();
+//        }
+//    }
     private List<Map<String, Object>> getAllData() {
         list = new ArrayList<Map<String, Object>>();
 

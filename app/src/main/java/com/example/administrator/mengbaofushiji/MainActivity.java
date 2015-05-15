@@ -81,19 +81,12 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent=getIntent();
-        int index=intent.getIntExtra("position",0);
         instance=this;
         Fragment home = new HomeFragment();
         fragmentManager=getSupportFragmentManager();
         transaction = fragmentManager.beginTransaction();
         transaction.add(R.id.content,home);
         transaction.commit();
-        if (index==4){
-            Log.i("info",""+position);
-            Fragment share=new AddLogs();
-            setFragmentChose(share);
-        }
         initViews();
         setListeners();
     }

@@ -1,17 +1,24 @@
 package com.example.administrator.mengbaofushiji.view;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.administrator.mengbaofushiji.R;
 
@@ -25,11 +32,15 @@ public class AddLogsShiPuActivity extends ActionBarActivity {
     private Toolbar toolbar;
     private Spinner add_logs_sp_nandu;
     private Spinner add_logs_sp_time;
-
+    private ArrayAdapter<String> adapter;
+    private AutoCompleteTextView edCaiLiao;
+    private AutoCompleteTextView edLiangDu;
+    private String[] books;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_logs_shi_pu);
+        books=new String[] { "Kg", "g", "L", "ml" ,"个","杯","勺","碗"};
         initView();
         initToolBar();
     }
@@ -46,7 +57,6 @@ public class AddLogsShiPuActivity extends ActionBarActivity {
 
         }
     }
-
     private void initView() {
         add_logs_add_shicai_liner=(LinearLayout) findViewById(R.id.add_logs_add_shicai_liner);
         list=new ArrayList<View>();
@@ -57,12 +67,64 @@ public class AddLogsShiPuActivity extends ActionBarActivity {
         liner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addViews(i);
-                add_logs_add_shicai_liner.removeAllViews();
-                i++;
-                for (View views : list) {
-                    add_logs_add_shicai_liner.addView(views);
-                }
+                final AlertDialog dialog = new AlertDialog.Builder(AddLogsShiPuActivity.this).create();
+                dialog.setCanceledOnTouchOutside(false);
+                dialog.show();
+                Window window = dialog.getWindow();
+                window.clearFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
+                window.setContentView(R.layout.add_fushi_shicai_dialog);
+                edCaiLiao = (AutoCompleteTextView) window.findViewById(R.id.add_shicai_dialog_ed);
+                edLiangDu = (AutoCompleteTextView) window.findViewById(R.id.add_shicai_liang_dialog_ed);
+
+                adapter=new ArrayAdapter<String>(AddLogsShiPuActivity.this, R.layout.add_logs_biji_spiner_item_top,books);
+                edLiangDu.setAdapter(adapter);
+                edLiangDu.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                        System.out.println("1");
+                        for (int i = 0; i < books.length; i++) {
+                            books[i]=edLiangDu.getText().toString()+books[i];
+                        }
+                        adapter=null;
+                        adapter=new ArrayAdapter<String>(AddLogsShiPuActivity.this,R.layout.add_logs_biji_spiner_item_top,books);
+                        edLiangDu.setAdapter(adapter);
+                    }
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count,
+                                                  int after) {
+                        books=null;
+                        System.gc();
+                        books=new String[] { "Kg", "g", "L", "ml" ,"个","杯","勺","碗"};
+                    }
+                    @Override
+                    public void afterTextChanged(Editable s) {
+
+                    }
+                });
+
+                window.findViewById(R.id.revise_nick_record_dialog_bt_ok).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String caiLiao = edCaiLiao.getText().toString();
+                        String liangdu = edLiangDu.getText().toString();
+                        if (caiLiao!=null) {
+                            addViews(i,caiLiao,liangdu);
+                            add_logs_add_shicai_liner.removeAllViews();
+                            i++;
+                            for (View views : list) {
+                                add_logs_add_shicai_liner.addView(views);
+                            }
+                        }
+                        dialog.cancel();
+
+                    }
+                });
+                window.findViewById(R.id.revise_nick_record_dialog_bt_cancle).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.cancel();
+                    }
+                });
             }
         });
         String[] nanDuSpinner=getResources().getStringArray(R.array.nanduspinnername);
@@ -76,8 +138,26 @@ public class AddLogsShiPuActivity extends ActionBarActivity {
         add_logs_sp_nandu.setAdapter(nanDuAdapter);
         add_logs_sp_time.setAdapter(timeAdapter);
     }
-    public void addViews(int i) {
+    public void addViews(int i,String cailiao,String liangdu) {
         View view=LayoutInflater.from(this).inflate(R.layout.add_logs_add_shicai_item_top, add_logs_add_shicai_liner,false);
+        TextView tvCailiao=(TextView)view.findViewById(R.id.shicai_add);
+        TextView tvLiangdu=(TextView)view.findViewById(R.id.liangdu_add);
+        tvCailiao.setText(cailiao);
+        tvLiangdu.setText(liangdu);
+
+
+        tvCailiao.setFocusable(false);
+        tvCailiao.setEnabled(false);
+        tvCailiao.setTextColor(getResources().getColor(R.color.transparent_gray));
+        tvLiangdu.setFocusable(false);
+        tvLiangdu.setEnabled(false);
+        tvLiangdu.setTextColor(getResources().getColor(R.color.transparent_gray));
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         list.add(i, view);
     }
     @Override

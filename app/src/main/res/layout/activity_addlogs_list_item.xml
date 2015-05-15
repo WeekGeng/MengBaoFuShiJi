@@ -84,6 +84,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
             android:text="12/16 09:45"
+            android:textColor="@color/gray"
             android:textSize="12sp" />
 
         <TextView
@@ -92,6 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
+            android:textColor="@color/gray"
             android:text="宝宝4个月大了"
             android:textSize="14sp" />
 		
@@ -111,6 +113,7 @@
             android:layout_marginTop="10dp"
             android:ellipsize="end"
             android:gravity="left"
+            android:textColor="@color/gray"
             android:layout_marginLeft="10dp"
             android:singleLine="true"
             android:text="弹道导弹核潜艇法国"
@@ -128,6 +131,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
+                android:textColor="@color/gray"
                 android:text="那就少弄点饭就能进淡定福建农大附近呢的浓度发生浓缩的覅哦的烦恼的烦恼东方尿片的烦恼多废话【 东方红i哦东方红i哦到地方接受电话iOS的v号iOS的v速度v女生DVI速度v 你看vifvi偶读说说说的v 所受的vi哦 囧死屌丝大 iOS地欧舒丹viOSDVI欧舒丹v" />
             <HorizontalScrollView
                 android:id="@+id/horizontalScrollView1"

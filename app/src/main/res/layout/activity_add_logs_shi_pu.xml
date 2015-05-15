@@ -18,6 +18,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:textCursorDrawable="@null"
+                android:textColorHint="@color/gray"
+                android:textColor="@color/black"
                 android:layout_marginTop="10dp"
                 android:hint="输入菜谱的名称..."
                 android:background="@drawable/cicle_back_create_baby"
@@ -31,8 +34,9 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:layout_width="wrap_content"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/gray"
                     android:text="难度:"
                     />
                 <Spinner
@@ -50,9 +54,10 @@
                     />
                 <TextView
                     android:layout_width="wrap_content"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:layout_height="wrap_content"
                     android:text="时间:"
+                    android:textColor="@color/gray"
                     android:layout_marginLeft="10dp"
                     />
                 <Spinner
@@ -72,12 +77,39 @@
                 android:orientation="vertical"
                 >
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:background="@color/white"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(选填)功能:"
+                    android:textSize="18sp"
+                    android:textColor="@color/gray"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="如清肺止咳"
+                    android:padding="5dp"
+                    android:background="@null"
+                    android:textColor="@color/gray"
+                    android:textColorHint="@color/transparent_gray"
+                    />
+            </LinearLayout>
             <EditText
                 android:id="@+id/add_logs_ed_xinde"
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 android:background="@color/white"
                 android:layout_width="match_parent"
+                android:textColorHint="@color/gray"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
                 android:layout_height="wrap_content"
                 android:hint="做这道菜的心得...."
                 />
@@ -86,8 +118,11 @@
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 android:background="@color/white"
+                android:textColorHint="@color/gray"
                 android:layout_width="match_parent"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
+                android:textCursorDrawable="@null"
                 android:hint="还想说点什么...."
                 />
         </LinearLayout>

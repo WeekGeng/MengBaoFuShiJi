@@ -173,6 +173,10 @@
             android:name=".view.AddLogsStepActivity"
             android:label="@string/title_activity_add_logs_step" >
         </activity>
+        <activity
+            android:name=".view.AddLogsSuiShouActivity"
+            android:label="@string/title_activity_add_logs_sui_shou" >
+        </activity>
     </application>
 
 </manifest>

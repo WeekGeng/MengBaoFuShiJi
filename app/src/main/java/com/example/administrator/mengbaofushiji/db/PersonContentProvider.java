@@ -12,7 +12,7 @@ import android.net.Uri;
 public class PersonContentProvider extends ContentProvider {
 	private MyOpenHelper helper;
 	private static final UriMatcher matcher = new UriMatcher(
-			UriMatcher.NO_MATCH);// ×¨ÃÅÓÃÀ´Æ¥ÅäURIµÄÀà
+			UriMatcher.NO_MATCH);// ×¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½URIï¿½ï¿½ï¿½ï¿½
 	private static final int PERSONS = 1;
 	private static final int PERSON = 2;
 	private ContentResolver resolver;
@@ -37,8 +37,7 @@ public class PersonContentProvider extends ContentProvider {
 		return rUri;
 	}
 	@Override
-	public Cursor query(Uri uri, String[] projection, String selection,
-			String[] selectionArgs, String sortOrder) {
+	public Cursor query(Uri uri, String[] projection, String selection,String[] selectionArgs, String sortOrder) {
 		Cursor cursor = null;
 		int flag = matcher.match(uri);
 		SQLiteDatabase database = helper.getReadableDatabase();

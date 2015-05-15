@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:textSize="18sp"
+            android:textColor="@color/gray"
             android:text="早餐特色"
             />
         <TextView
@@ -32,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:textSize="12sp"
+            android:textColor="@color/gray"
             android:text="一日之计在于晨"
             />
     </RelativeLayout>

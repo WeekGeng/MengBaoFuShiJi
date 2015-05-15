@@ -9,10 +9,10 @@
         android:layout_height="wrap_content"
         android:drawableLeft="@android:drawable/ic_input_add"
         android:gravity="center_vertical"
-        android:textColor="@color/red"
+        android:textColor="@color/theme_color"
         android:drawablePadding="10dp"
-        android:padding="2dp"
-        android:textSize="16sp"
+        android:padding="5dp"
+        android:textSize="18sp"
         android:text="添加食材"
         android:id="@+id/add_logs_add_shicai_item_tv" />
 </LinearLayout>

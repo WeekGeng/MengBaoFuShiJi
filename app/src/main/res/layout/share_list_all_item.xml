@@ -27,13 +27,15 @@
                 android:id="@+id/share_alldata_tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="陈久旭"
+                android:textColor="@color/black"
+                android:text="霍元甲"
                 />
             <TextView
                 android:layout_below="@+id/share_alldata_tv_name"
                 android:id="@+id/share_alldata_tv_data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/gray"
                 android:text="2015-4-13 11:09 am"
                 />
         </RelativeLayout>
@@ -42,6 +44,7 @@
         android:id="@+id/all_share_tv_content"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
+        android:textColor="@color/gray"
         android:layout_height="wrap_content"
         android:text="不仅是对健康圣诞节快乐圣诞快乐收到后女生都按时和ioasjiasis多跑跑啊哈圣诞节收多少地哦脑袋vnsodvnosdvsmn 是vndovsnvosnovn会弄死的vnsdonosdvno很难弄上的vnnvsdl"
         />
@@ -94,7 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="做的不错,学习了"
+            android:textColor="@color/gray"
             />
     </LinearLayout>
-    <!--<include layout="@layout/share_pinglun_dialog"></include>-->
 </LinearLayout>

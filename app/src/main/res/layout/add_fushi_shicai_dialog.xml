@@ -7,17 +7,36 @@
     android:gravity="center"
     android:padding="20dp"
     android:orientation="vertical">
-
-    <EditText
-        android:id="@+id/revise_nick_record_dialog_ed"
-        android:hint="请输入昵称..."
-        android:textColorHint="@color/gray"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:background="@drawable/cicle_back_create_baby"
-        android:padding="10dp"
-        android:textCursorDrawable="@null"
-        android:textColor="@color/gray"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+        <AutoCompleteTextView
+            android:id="@+id/add_shicai_dialog_ed"
+            android:hint="输入食材..."
+            android:textColorHint="@color/gray"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/cicle_back_create_baby"
+            android:padding="10dp"
+            android:textCursorDrawable="@null"
+            android:textColor="@color/gray"
+            android:layout_height="wrap_content" />
+        <AutoCompleteTextView
+            android:id="@+id/add_shicai_liang_dialog_ed"
+            android:hint="输入量度..."
+            android:textColorHint="@color/gray"
+            android:completionThreshold="1"
+            android:inputType="number"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/cicle_back_create_baby"
+            android:padding="10dp"
+            android:textCursorDrawable="@null"
+            android:textColor="@color/gray"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
