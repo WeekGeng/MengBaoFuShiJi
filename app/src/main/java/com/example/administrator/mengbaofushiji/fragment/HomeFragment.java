@@ -22,6 +22,8 @@ import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.HomeFragAdapter;
 import com.example.administrator.mengbaofushiji.consts.Const;
 import com.example.administrator.mengbaofushiji.view.HomeBreakfirstActivity;
+import com.example.administrator.mengbaofushiji.view.HomeFoodMasterActivity;
+import com.example.administrator.mengbaofushiji.view.HomeSpringActivity;
 import com.example.administrator.mengbaofushiji.view.StarTodayActivity;
 
 import java.util.ArrayList;
@@ -92,8 +94,14 @@ public class HomeFragment extends Fragment{
                         startActivity(intentStar);
                         break;
                     case 3:
+                        Intent intentSpring=new Intent(getActivity(),HomeSpringActivity.class);
+                        intentSpring.putExtra("position",2);
+                        startActivity(intentSpring);
                         break;
                     case 4:
+                        Intent intentFood=new Intent(getActivity(),HomeFoodMasterActivity.class);
+                        intentFood.putExtra("position",3);
+                        startActivity(intentFood);
                         break;
                     case 5:
                         break;

@@ -13,6 +13,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -54,7 +55,7 @@ public class StarTodayActivity extends ActionBarActivity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(StarTodayActivity.this,""+position,Toast.LENGTH_SHORT).show();
+                Toast.makeText(StarTodayActivity.this, "" + position, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -173,6 +174,11 @@ public class StarTodayActivity extends ActionBarActivity {
         if (hasFocus) {
             mListView.setViewsBounds(ParallaxScollListView.ZOOM_X2);
         }
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_star_today, menu);
+        return true;
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

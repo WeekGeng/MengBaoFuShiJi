@@ -177,6 +177,22 @@
             android:name=".view.AddLogsSuiShouActivity"
             android:label="@string/title_activity_add_logs_sui_shou" >
         </activity>
+        <activity
+            android:name=".view.HomeSpringActivity"
+            android:label="@string/title_activity_home_spring" >
+        </activity>
+        <activity
+            android:name=".view.HomeFoodMasterActivity"
+            android:label="@string/title_activity_home_food_master" >
+        </activity>
+        <activity
+            android:name=".view.MasterRecommendActivity"
+            android:label="@string/title_activity_master_recommend" >
+        </activity>
+        <activity
+            android:name=".view.HomeShareMasterActivity"
+            android:label="@string/title_activity_home_share_master" >
+        </activity>
     </application>
 
 </manifest>

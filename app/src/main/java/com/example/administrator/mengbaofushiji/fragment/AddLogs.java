@@ -12,7 +12,6 @@ import android.view.animation.RotateAnimation;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -40,10 +39,6 @@ public class AddLogs extends Fragment {
     ImageView add_logs;
     public static List<Map<String, Object>> list;
     public static AddLogs instance;
-    private int visiblePosition=-1;
-    private TextView fushibiji;
-    private TextView suishoubiji;
-    private LinearLayout biji_liner;
     private RelativeLayout retate_iv;
     private TextView top_fushi;
     private TextView bottom_suishouji;
@@ -66,7 +61,7 @@ public class AddLogs extends Fragment {
         return view;
     }
     private View initView(LayoutInflater inflater, ViewGroup container) {
-        View view=inflater.inflate(R.layout.activity_listview,container,false);
+        View view=inflater.inflate(R.layout.addlog_fragment,container,false);
         top_fushi=(TextView)view.findViewById(R.id.top_fushi);
         bottom_suishouji=(TextView)view.findViewById(R.id.bottom_suishouji);
         retate_iv=(RelativeLayout)view.findViewById(R.id.retate_liner);
@@ -140,7 +135,6 @@ public class AddLogs extends Fragment {
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 list.get(position).put("isvisible", 1);
                 adapter.notifyDataSetChanged();
-                visiblePosition=position;
                 return false;
             }
         });

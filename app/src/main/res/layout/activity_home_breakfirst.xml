@@ -43,5 +43,7 @@
     <ListView
         android:id="@+id/home_breakfirst_lv"
         android:layout_width="match_parent"
+        android:divider="@color/transparent_gray"
+        android:dividerHeight="1dp"
         android:layout_height="match_parent"></ListView>
 </LinearLayout>

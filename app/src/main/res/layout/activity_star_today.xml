@@ -13,6 +13,8 @@
         android:duplicateParentState="true"
         android:scrollingCache="false"
         android:headerDividersEnabled="false"
+        android:divider="@color/transparent_gray"
+        android:dividerHeight="0.5dp"
         android:footerDividersEnabled="false"
         android:overScrollMode="never"
         android:scrollbars="none"/>

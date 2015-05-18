@@ -15,6 +15,25 @@
         android:visibility="gone"
         android:src="@drawable/add_log_del"
         />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#4000"
+        android:layout_marginLeft="28dp"
+        android:layout_below="@+id/layout_1"
+        ></View>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="辅食笔记"
+        android:textSize="16sp"
+        android:layout_marginTop="-5dp"
+        android:textColor="@color/gray"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="27dp"
+        android:layout_below="@+id/layout_1"
+        ></TextView>
     <RelativeLayout
         android:id="@+id/layout_1"
         android:layout_width="60dp"
@@ -43,6 +62,7 @@
         android:id="@+id/view_0"
         android:layout_width="1dp"
         android:layout_height="15dp"
+        android:layout_marginTop="-2dp"
         android:layout_below="@+id/layout_1"
         android:layout_marginLeft="28dp"
         android:background="#4000" />
@@ -65,7 +85,6 @@
         android:layout_marginLeft="28dp"
         android:background="#4000"
         android:scaleType="fitXY" />
-
     <RelativeLayout
         android:id="@+id/relative_one_img"
         android:layout_width="fill_parent"

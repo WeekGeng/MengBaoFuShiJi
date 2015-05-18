@@ -6,6 +6,8 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:divider="@color/transparent_gray"
+        android:dividerHeight="1dp"
         android:id="@+id/pager_fushi_two_lv"
         />
 </LinearLayout>

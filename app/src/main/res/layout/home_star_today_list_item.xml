@@ -4,18 +4,19 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:padding="10dp"
+    android:background="@drawable/kuangjia"
     android:layout_height="match_parent">
     <LinearLayout
         android:orientation="vertical"
-        android:layout_marginLeft="5dp"
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:layout_height="wrap_content">
+        android:background="@color/theme_color"
+        android:layout_height="match_parent">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="香菇鸡肉包"
-            android:textColor="@color/gray"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:layout_marginTop="5dp"
             android:gravity="center_horizontal"
@@ -24,16 +25,17 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="2dp"
+            android:padding="5dp"
             android:layout_weight="1"
-            android:textColor="@color/gray"
+            android:textColor="@color/white"
             android:lines="3"
             android:ellipsize="end"
-            android:text="公布结果把价格今哦对女生昵称vOSv技快来收点卡啦噢啦啪啪把上次把持v爱哦啊术普及哦啊撒年快乐飞东方神如法国和i哦吼i偶尔会iOhio 和i偶尔给i哦i哦吼i哦婆婆问i我发我怕 hi哦我覅哦我vi哦我饿哦平"
+            android:text="公布结果把价格今OSv技快来收点卡啦噢啦啪啪把上次把持v爱哦啊术普及哦啊撒年快乐飞东方神如法国和i哦吼i偶尔会iOhio 和i偶尔给i哦i哦吼i哦婆婆问i我发我怕 hi哦我覅哦我vi哦我饿哦平"
             />
     </LinearLayout>
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:scaleType="fitXY"
         android:layout_marginLeft="10dp"
         android:background="@drawable/cicle_back_create_baby"

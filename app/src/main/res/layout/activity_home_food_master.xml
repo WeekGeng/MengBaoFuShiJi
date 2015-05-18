@@ -1,0 +1,13 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.mengbaofushiji.view.HomeFoodMasterActivity">
+    <include layout="@layout/toolbar"></include>
+    <ListView
+        android:id="@+id/home_food_master_lv"
+        android:layout_width="match_parent"
+        android:divider="@color/transparent_gray"
+        android:dividerHeight="1dp"
+        android:layout_height="match_parent" />
+</LinearLayout>
