@@ -158,7 +158,7 @@
             android:label="@string/title_activity_all_share" >
         </activity>
         <activity
-            android:name=".view.StarTodayActivity"
+            android:name=".view.HomeStarTodayActivity"
             android:label="@string/title_activity_star_today" >
         </activity>
         <activity
@@ -192,6 +192,14 @@
         <activity
             android:name=".view.HomeShareMasterActivity"
             android:label="@string/title_activity_home_share_master" >
+        </activity>
+        <activity
+            android:name=".view.DispalyImageActivity"
+            android:label="@string/title_activity_dispaly_image" >
+        </activity>
+        <activity
+            android:name=".view.DispalyFoodDetailActivity"
+            android:label="@string/title_activity_dispaly_food_detail" >
         </activity>
     </application>
 

@@ -11,7 +11,6 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -20,6 +19,7 @@ import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.AddLogsAdapter;
 import com.example.administrator.mengbaofushiji.animation.AnimationAdapter;
 import com.example.administrator.mengbaofushiji.animation.SwingBottomInAnimationAdapter;
+import com.example.administrator.mengbaofushiji.extras.CircleImageView;
 import com.example.administrator.mengbaofushiji.view.AddLogsShiPuActivity;
 import com.example.administrator.mengbaofushiji.view.AddLogsSuiShouActivity;
 
@@ -34,9 +34,10 @@ import java.util.Map;
 public class AddLogs extends Fragment {
     private ListView listview;
     private Animation retateCircle;
+    private Animation retateCircleIn;
     private Animation animationOut;
     AddLogsAdapter adapter;
-    ImageView add_logs;
+    CircleImageView add_logs;
     public static List<Map<String, Object>> list;
     public static AddLogs instance;
     private RelativeLayout retate_iv;
@@ -44,15 +45,13 @@ public class AddLogs extends Fragment {
     private TextView bottom_suishouji;
     private Animation retateIn;
     private Animation retateOut;
+    private int x;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         instance=this;
         retateCircle= AnimationUtils.loadAnimation(getActivity(), R.anim.retateout);
-        retateOut = new RotateAnimation(0f, -90f,360,360);
-        retateOut.setDuration(500);
-        retateIn = new RotateAnimation(-90, 0,360,360);
-        retateIn.setDuration(500);
+        retateCircleIn= AnimationUtils.loadAnimation(getActivity(), R.anim.retatein);
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -62,10 +61,10 @@ public class AddLogs extends Fragment {
     }
     private View initView(LayoutInflater inflater, ViewGroup container) {
         View view=inflater.inflate(R.layout.addlog_fragment,container,false);
+        retate_iv=(RelativeLayout)view.findViewById(R.id.retate_liner);
         top_fushi=(TextView)view.findViewById(R.id.top_fushi);
         bottom_suishouji=(TextView)view.findViewById(R.id.bottom_suishouji);
-        retate_iv=(RelativeLayout)view.findViewById(R.id.retate_liner);
-        add_logs=(ImageView)view.findViewById(R.id.add_logs);
+        add_logs=(CircleImageView)view.findViewById(R.id.add_logs);
         listview=(ListView)view.findViewById(R.id.listview);
         listview.setDividerHeight(0);
 //        adapter=new TimelineAdapter(getActivity(),getData());
@@ -97,15 +96,19 @@ public class AddLogs extends Fragment {
         add_logs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Animation retateCircleIn= AnimationUtils.loadAnimation(getActivity(), R.anim.retatein);
+                x=retate_iv.getWidth();
+                retateOut = new RotateAnimation(0f, 90f,x,x);
+                retateIn = new RotateAnimation(90, 0,x,x);
                 if (retate_iv.getVisibility()==View.INVISIBLE){
+                    retateIn.setDuration(500);
                     retate_iv.startAnimation(retateIn);
                     retate_iv.setVisibility(View.VISIBLE);
-                    add_logs.startAnimation(retateCircleIn);
+                    add_logs.startAnimation(retateCircle);
                 }else{
+                    retateOut.setDuration(500);
                     retate_iv.startAnimation(retateOut);
                     retate_iv.setVisibility(View.INVISIBLE);
-                    add_logs.startAnimation(retateCircle);
+                    add_logs.startAnimation(retateCircleIn);
                 }
             }
         });

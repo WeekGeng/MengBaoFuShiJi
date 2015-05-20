@@ -8,6 +8,6 @@
         android:id="@+id/home_food_master_lv"
         android:layout_width="match_parent"
         android:divider="@color/transparent_gray"
-        android:dividerHeight="1dp"
+        android:dividerHeight="0.1dp"
         android:layout_height="match_parent" />
 </LinearLayout>

@@ -29,7 +29,7 @@ import com.example.administrator.mengbaofushiji.extras.ParallaxScollListView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
-public class StarTodayActivity extends ActionBarActivity {
+public class HomeStarTodayActivity extends ActionBarActivity {
     private ParallaxScollListView mListView;
     private ImageView mImageView;
     private Toolbar toolbar;
@@ -55,7 +55,7 @@ public class StarTodayActivity extends ActionBarActivity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(StarTodayActivity.this, "" + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeStarTodayActivity.this, "" + position, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -83,14 +83,14 @@ public class StarTodayActivity extends ActionBarActivity {
         home_star_today_tv_dianzan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(StarTodayActivity.this,"点赞了",Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeStarTodayActivity.this,"点赞了",Toast.LENGTH_SHORT).show();
             }
         });
         home_star_today_para_iv=(CircleImageView)findViewById(R.id.home_star_today_para_iv);
         home_star_today_para_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchSys(StarTodayActivity.this,200);
+                launchSys(HomeStarTodayActivity.this,200);
             }
         });
         layout_header_image=(ImageView)findViewById(R.id.layout_header_image);
@@ -129,7 +129,7 @@ public class StarTodayActivity extends ActionBarActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
-            Toast.makeText(StarTodayActivity.this, "相册", Toast.LENGTH_SHORT).show();
+            Toast.makeText(HomeStarTodayActivity.this, "相册", Toast.LENGTH_SHORT).show();
             if (requestCode == 200) {
                 if (data != null) {//相册
                     filePath = getPhotoPathByLocalUri(this, data);

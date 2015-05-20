@@ -26,5 +26,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_master_recommend">MasterRecommendActivity</string>
     <string name="title_activity_home_share_master">HomeShareMasterActivity</string>
+    <string name="title_activity_dispaly_image">DispalyImageActivity</string>
+    <string name="title_activity_dispaly_food_detail">DispalyFoodDetailActivity</string>
 
 </resources>

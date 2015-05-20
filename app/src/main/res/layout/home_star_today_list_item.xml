@@ -4,19 +4,17 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:padding="10dp"
-    android:background="@drawable/kuangjia"
     android:layout_height="match_parent">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:background="@color/theme_color"
         android:layout_height="match_parent">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="香菇鸡肉包"
-            android:textColor="@color/white"
+            android:textColor="@color/gray"
             android:textSize="16sp"
             android:layout_marginTop="5dp"
             android:gravity="center_horizontal"
@@ -27,10 +25,16 @@
             android:layout_marginTop="2dp"
             android:padding="5dp"
             android:layout_weight="1"
-            android:textColor="@color/white"
+            android:textColor="@color/gray"
             android:lines="3"
             android:ellipsize="end"
-            android:text="公布结果把价格今OSv技快来收点卡啦噢啦啪啪把上次把持v爱哦啊术普及哦啊撒年快乐飞东方神如法国和i哦吼i偶尔会iOhio 和i偶尔给i哦i哦吼i哦婆婆问i我发我怕 hi哦我覅哦我vi哦我饿哦平"
+            android:text="1、豆腐切成长方片，在平底锅里煎成两面金黄色。（也可以炸）\n
+2、香菇去蒂，切成四块；红辣椒切段。\n
+3、葱切段，姜蒜切片，瘦肉切细丝。\n
+4、锅内放适量植物油，烧热后放入肉丝炒散。\n
+5、放入姜葱蒜炒出香味，加入豆腐片，翻炒。\n
+6、放入红辣椒、香菇块，加入盐、白糖、花椒粉、老抽。\n
+7、加一碗水（最好是高汤），小火焖至汁收浓，加少许味精翻炒出锅。 和i偶尔给i哦i哦吼i哦婆婆问i我发我怕 hi哦我覅哦我vi哦我饿哦平"
             />
     </LinearLayout>
     <ImageView

@@ -21,10 +21,13 @@ import android.widget.ListView;
 import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.HomeFragAdapter;
 import com.example.administrator.mengbaofushiji.consts.Const;
+import com.example.administrator.mengbaofushiji.extras.CircleImageView;
 import com.example.administrator.mengbaofushiji.view.HomeBreakfirstActivity;
 import com.example.administrator.mengbaofushiji.view.HomeFoodMasterActivity;
+import com.example.administrator.mengbaofushiji.view.HomeShareMasterActivity;
 import com.example.administrator.mengbaofushiji.view.HomeSpringActivity;
-import com.example.administrator.mengbaofushiji.view.StarTodayActivity;
+import com.example.administrator.mengbaofushiji.view.HomeStarTodayActivity;
+import com.example.administrator.mengbaofushiji.view.MasterRecommendActivity;
 
 import java.util.ArrayList;
 
@@ -43,7 +46,13 @@ public class HomeFragment extends Fragment{
     private MyHandle myHandle;
     private ListView lv_item;
     private String[] datas;
-    HomeFragAdapter homeAdapter;
+    private HomeFragAdapter homeAdapter;
+    private CircleImageView home_tuijian_iv_first;
+    private CircleImageView home_tuijian_iv_second;
+    private CircleImageView home_tuijian_iv_third;
+    private CircleImageView home_tuijian_iv_force;
+    private CircleImageView home_tuijian_iv_five;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +73,46 @@ public class HomeFragment extends Fragment{
     }
 
     private void setListener() {
+        home_tuijian_iv_first.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(),MasterRecommendActivity.class);
+                intent.putExtra("position",0);
+                startActivity(intent);
+            }
+        });
+        home_tuijian_iv_second.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(),MasterRecommendActivity.class);
+                intent.putExtra("position",1);
+                startActivity(intent);
+            }
+        });
+        home_tuijian_iv_third.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(),MasterRecommendActivity.class);
+                intent.putExtra("position",2);
+                startActivity(intent);
+            }
+        });
+        home_tuijian_iv_force.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(),MasterRecommendActivity.class);
+                intent.putExtra("position",3);
+                startActivity(intent);
+            }
+        });
+        home_tuijian_iv_five.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(),MasterRecommendActivity.class);
+                intent.putExtra("position",4);
+                startActivity(intent);
+            }
+        });
         viewPager.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -89,7 +138,7 @@ public class HomeFragment extends Fragment{
                         startActivity(intentBreakfirst);
                         break;
                     case 2:
-                        Intent intentStar=new Intent(getActivity(),StarTodayActivity.class);
+                        Intent intentStar=new Intent(getActivity(),HomeStarTodayActivity.class);
                         intentStar.putExtra("position",1);
                         startActivity(intentStar);
                         break;
@@ -104,6 +153,9 @@ public class HomeFragment extends Fragment{
                         startActivity(intentFood);
                         break;
                     case 5:
+                        Intent intentshare=new Intent(getActivity(),HomeShareMasterActivity.class);
+                        intentshare.putExtra("position",4);
+                        startActivity(intentshare);
                         break;
                 }
             }
@@ -134,6 +186,11 @@ public class HomeFragment extends Fragment{
         ImageView iv= (ImageView) view.findViewById(R.id.home_frag_iv);
         iv.setImageResource(R.drawable.guanggao);
         addCircleView();
+        home_tuijian_iv_first=(CircleImageView)view.findViewById(R.id.home_tuijian_iv_first);
+        home_tuijian_iv_second=(CircleImageView)view.findViewById(R.id.home_tuijian_iv_second);
+        home_tuijian_iv_third=(CircleImageView)view.findViewById(R.id.home_tuijian_iv_third);
+        home_tuijian_iv_force=(CircleImageView)view.findViewById(R.id.home_tuijian_iv_force);
+        home_tuijian_iv_five=(CircleImageView)view.findViewById(R.id.home_tuijian_iv_five);
     }
 
     private void addCircleView() {

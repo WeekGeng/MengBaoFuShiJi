@@ -1,0 +1,114 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.mengbaofushiji.view.DispalyFoodDetailActivity">
+    <include layout="@layout/toolbar"></include>
+    <com.example.administrator.mengbaofushiji.extras.MyScrollView
+        android:id="@+id/displayfood_detail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+                <ImageView
+                    android:id="@+id/display_food_top_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/baishaoxia"
+                    />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="-48dp"
+                    android:background="#8000"
+                    android:layout_height="wrap_content">
+                    <com.example.administrator.mengbaofushiji.extras.CircleImageView
+                        android:id="@+id/display_food_top_name_iv"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/baby"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="胡晓May"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="1000"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:drawablePadding="5dp"
+                        android:textColor="@color/white"
+                        android:gravity="right"
+                        android:drawableLeft="@drawable/shoucangliang"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/display_food_top_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="白勺虾"
+                    android:textColor="@color/black"
+                    android:padding="10dp"
+                    />
+                <TextView
+                    android:id="@+id/display_food_top_shuoming"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="    很抱歉，您的电脑或所在的局域网络有异常的访问，此刻我们无法响应您的请求。请输入以下验证码，即可恢复使用"
+                    android:textColor="@color/gray"
+                    android:padding="10dp"
+                    />
+                <include layout="@layout/display_food_detail_top"></include>
+                <com.example.administrator.mengbaofushiji.overrideview.MyListView
+                    android:id="@+id/display_food_compare_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    ></com.example.administrator.mengbaofushiji.overrideview.MyListView>
+
+            </LinearLayout>
+            <include layout="@layout/display_food_detail_top"></include>
+        </FrameLayout>
+    </com.example.administrator.mengbaofushiji.extras.MyScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingBottom="5dp"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:hint="说点什么吧....."
+            android:layout_marginLeft="5dp"
+            android:padding="8dp"
+            android:background="@drawable/cicle_back_create_baby"
+            android:textColorHint="@color/transparent_gray"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/send"
+            />
+    </LinearLayout>
+</LinearLayout>

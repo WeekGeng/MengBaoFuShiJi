@@ -1,4 +1,5 @@
 package com.example.administrator.mengbaofushiji.fragment;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,14 +13,14 @@ import android.widget.TextView;
 
 import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.MyListShareAdapter;
-import com.example.administrator.mengbaofushiji.animation.AnimationAdapter;
-import com.example.administrator.mengbaofushiji.animation.SwingBottomInAnimationAdapter;
 import com.example.administrator.mengbaofushiji.view.AllShareActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import github.chenupt.dragtoplayout.DragTopLayout;
 
 public class ShareFragment extends Fragment{
     private ListView lv;
@@ -32,6 +33,7 @@ public class ShareFragment extends Fragment{
     private Map<String,Object> map;
     private List<Map<String,Object>> chats;
     private Map<String,Object> chatMap;
+    private DragTopLayout share_dragtoplayout;
     @Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -83,9 +85,11 @@ public class ShareFragment extends Fragment{
         linearLayout.setVisibility(View.GONE);
         tv= (TextView) view.findViewById(R.id.send);
         lv.setAdapter(adapter);
-        AnimationAdapter animAdapter = new SwingBottomInAnimationAdapter(adapter);
-        animAdapter.setAbsListView(lv);
-        lv.setAdapter(animAdapter);
+//        AnimationAdapter animAdapter = new SwingBottomInAnimationAdapter(adapter);
+//        animAdapter.setAbsListView(lv);
+//        lv.setAdapter(animAdapter);
+        share_dragtoplayout=(DragTopLayout)view.findViewById(R.id.share_dragtoplayout);
+        share_dragtoplayout.setOverDrag(false);
     }
 
 	@Override
