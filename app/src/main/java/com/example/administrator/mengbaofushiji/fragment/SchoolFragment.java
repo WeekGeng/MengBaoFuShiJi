@@ -19,6 +19,8 @@ import com.example.administrator.mengbaofushiji.pagerfragment.PagerSchoolToolsFr
 import java.util.ArrayList;
 import java.util.List;
 
+import github.chenupt.dragtoplayout.DragTopLayout;
+
 public class SchoolFragment extends Fragment {
     private ViewPager school_pager;
     private PagerSchoolToolsFragment toolsFragment;//工具
@@ -26,6 +28,7 @@ public class SchoolFragment extends Fragment {
     private PagerSchoolNutrientFragment nutrientFragment;//营养素
     private List<Fragment> list;
     private PagerSlidingTabStrip pst;
+    private DragTopLayout school_dragtoplayout;
 //    private TextView tools_tv;
 //    private ImageView tools_iv;
 //    private TextView seasoner_tv;
@@ -50,6 +53,9 @@ public class SchoolFragment extends Fragment {
         list.add(seasonerFragment);
         list.add(nutrientFragment);
     }
+    public void onDrag(Boolean b) {
+        school_dragtoplayout.setTouchMode(b);
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -60,6 +66,8 @@ public class SchoolFragment extends Fragment {
 //        setTvAndIv(view);
         pst=(PagerSlidingTabStrip)view.findViewById(R.id.school_tabs);
         pst.setViewPager(school_pager);
+        school_dragtoplayout=(DragTopLayout)view.findViewById(R.id.school_dragtoplayout);
+        school_dragtoplayout.setOverDrag(false);
         setListeners();
 
 //        DisplayMetrics dm = new DisplayMetrics();

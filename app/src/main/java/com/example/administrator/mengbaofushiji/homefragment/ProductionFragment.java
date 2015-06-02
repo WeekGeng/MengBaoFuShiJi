@@ -6,17 +6,21 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.HomeProductionAdapter;
 import com.example.administrator.mengbaofushiji.view.DispalyImageActivity;
+import com.example.administrator.mengbaofushiji.view.MasterRecommendActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import github.chenupt.dragtoplayout.AttachUtil;
 
 /**
  * Created by Administrator on 2015/5/20.
@@ -80,6 +84,16 @@ public class ProductionFragment extends Fragment{
                 intent.putExtra("img",(int)(list.get(position).get("img")));
                 intent.putExtra("title",(String)(list.get(position).get("title")));
                 getActivity().startActivity(intent);
+            }
+        });
+        home_production_gv.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+            }
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                ((MasterRecommendActivity)getActivity()).setDrog(AttachUtil.isAdapterViewAttach(view));
             }
         });
     }

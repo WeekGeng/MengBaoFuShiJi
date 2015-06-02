@@ -17,8 +17,8 @@ import com.example.administrator.mengbaofushiji.adapter.MyPagerShiPuAdapter;
 import com.example.administrator.mengbaofushiji.consts.Const;
 import com.example.administrator.mengbaofushiji.extras.CircleImageView;
 import com.example.administrator.mengbaofushiji.extras.PagerSlidingTabStrip;
+import com.example.administrator.mengbaofushiji.homefragment.HomeMasterShiPuFragment;
 import com.example.administrator.mengbaofushiji.homefragment.ProductionFragment;
-import com.example.administrator.mengbaofushiji.pagerfragment.PagerFuShiSecondFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +37,7 @@ public class MasterRecommendActivity extends ActionBarActivity {
     private ViewPager vp;
     private List<Fragment> list;
     private ProductionFragment firstFragment;
-    private PagerFuShiSecondFragment secondFragment;
+    private HomeMasterShiPuFragment secondFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,14 +45,16 @@ public class MasterRecommendActivity extends ActionBarActivity {
         position=getIntent().getIntExtra("position",0);
         list=new ArrayList<>();
         firstFragment=new ProductionFragment();
-        secondFragment=new PagerFuShiSecondFragment();
+        secondFragment=new HomeMasterShiPuFragment();
         list.add(firstFragment);
         list.add(secondFragment);
         initTooBar();
         initView();
         setListeners();
     }
-
+    public void setDrog(Boolean b){
+        master_dragtoplayout.setTouchMode(b);
+    }
     private void initTooBar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(Color.parseColor("#ffffff"));
@@ -73,6 +75,20 @@ public class MasterRecommendActivity extends ActionBarActivity {
                     master_recommend_tv.setBackgroundResource(R.drawable.master_attention);
                     isAttention=true;
                 }
+            }
+        });
+        vp.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
             }
         });
     }

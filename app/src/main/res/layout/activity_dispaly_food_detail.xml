@@ -73,7 +73,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="    很抱歉，您的电脑或所在的局域网络有异常的访问，此刻我们无法响应您的请求。请输入以下验证码，即可恢复使用"
-                    android:textColor="@color/gray"
+                    android:textColor="@color/black"
                     android:padding="10dp"
                     />
                 <include layout="@layout/display_food_detail_top"></include>
@@ -82,7 +82,90 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     ></com.example.administrator.mengbaofushiji.overrideview.MyListView>
-
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/gray"
+                        android:text="难度"
+                        />
+                    <TextView
+                        android:id="@+id/display_food_hardly_tv"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="初级"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray"
+                        android:text="时间"
+                        android:textSize="16sp"
+                        />
+                    <TextView
+                        android:id="@+id/display_food_time_tv"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:text="10-30分钟"
+                        />
+                </LinearLayout>
+                <com.example.administrator.mengbaofushiji.overrideview.MyListView
+                    android:id="@+id/display_food_ready_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray"
+                    android:text="我想说的"
+                    android:padding="10dp"
+                    android:textSize="16sp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/black"
+                    android:text="Spanned.SPAN_EXCLUSIVE_EXCLUSIVE，这是在setSpan时需要指定的 flag，它的意义我试了很久也没试出来，睡个觉，今天早上才突然有点想法，试之，果然。它是用来标识在 Span 范围内的文本前后输入新的字符时是否把它们也应用这个效果。分别有 "
+                    android:textSize="16sp"
+                    />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:background="@color/red"
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="10dp"
+                        android:drawableLeft="@drawable/camera"
+                        android:text="上传我所做制作的菜谱"
+                        android:gravity="center_vertical"
+                        android:textSize="16sp"
+                        android:drawablePadding="10dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <com.example.administrator.mengbaofushiji.overrideview.MyListView
+                    android:id="@+id/display_food_chat_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
             </LinearLayout>
             <include layout="@layout/display_food_detail_top"></include>
         </FrameLayout>
@@ -98,6 +181,10 @@
             android:hint="说点什么吧....."
             android:layout_marginLeft="5dp"
             android:padding="8dp"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@null"
+            android:focusableInTouchMode="true"
+            android:layout_marginTop="5dp"
             android:background="@drawable/cicle_back_create_baby"
             android:textColorHint="@color/transparent_gray"
             android:layout_height="wrap_content"

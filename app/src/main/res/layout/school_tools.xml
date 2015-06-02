@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="#fff"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Taaaaaaaaaaaaaaext"
-        android:id="@+id/textView3" />
+    <com.example.administrator.mengbaofushiji.extras.AnimatedExpandableListView
+        android:id="@+id/school_tool_explv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    />
 </LinearLayout>

@@ -73,6 +73,7 @@
             android:id="@+id/share_showalldata_lv"
             android:layout_height="wrap_content"
             android:background="#fff"
+            android:layout_marginBottom="15dp"
             />
     </github.chenupt.dragtoplayout.DragTopLayout>
     <LinearLayout

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import github.chenupt.dragtoplayout.AttachUtil;
 import github.chenupt.dragtoplayout.DragTopLayout;
 
 public class ShareFragment extends Fragment{
@@ -53,6 +55,17 @@ public class ShareFragment extends Fragment{
                 return false;
             }
         });
+        lv.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+            }
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                share_dragtoplayout.setTouchMode(AttachUtil.isAdapterViewAttach(view));
+            }
+        });
+
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
