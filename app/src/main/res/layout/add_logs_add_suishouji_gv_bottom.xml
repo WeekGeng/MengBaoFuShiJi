@@ -8,7 +8,7 @@
     <ImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         android:padding="2dp"
         android:src="@drawable/add_logs_add_iv"
         android:id="@+id/add_logs_add_suishouji_bottom_iv"/>

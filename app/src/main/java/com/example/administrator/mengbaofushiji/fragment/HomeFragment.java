@@ -17,6 +17,7 @@ import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.HomeFragAdapter;
@@ -28,8 +29,11 @@ import com.example.administrator.mengbaofushiji.view.HomeShareMasterActivity;
 import com.example.administrator.mengbaofushiji.view.HomeSpringActivity;
 import com.example.administrator.mengbaofushiji.view.HomeStarTodayActivity;
 import com.example.administrator.mengbaofushiji.view.MasterRecommendActivity;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.download.ImageDownloader;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment{
     private ViewPager viewPager;
@@ -52,6 +56,10 @@ public class HomeFragment extends Fragment{
     private CircleImageView home_tuijian_iv_third;
     private CircleImageView home_tuijian_iv_force;
     private CircleImageView home_tuijian_iv_five;
+    private LinearLayout liner_middle;
+    private List<View> list;
+    private int[] tool_imgs;
+    private String[] tool_name;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,7 +69,9 @@ public class HomeFragment extends Fragment{
         datas= Const.HOMEITEMS;
         myHandle=new MyHandle();
         homeAdapter=new HomeFragAdapter(datas);
-
+        list=new ArrayList<>();
+        tool_imgs=new int[]{R.drawable.tools_a_a,R.drawable.tools_a_b,R.drawable.tools_a_c,R.drawable.tools_a_d,R.drawable.tools_a_e,R.drawable.tools_a_f};
+        tool_name=new String[]{"Munchkin彩色软头勺","Sassy弯柄学习勺","Vital Baby吸盘碗","Mother'corn baby 玉米餐具","Baby Bjorn防打翻餐盒","Boon防落食吸盘碗"};
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -171,8 +181,9 @@ public class HomeFragment extends Fragment{
             ViewGroup.LayoutParams ltp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT);
             ImageView imageView = new ImageView(getActivity());
-            imageView.setScaleType(ScaleType.FIT_XY);
-            imageView.setImageResource(imgs[i]);
+            imageView.setScaleType(ScaleType.CENTER_CROP);
+            String url= ImageDownloader.Scheme.DRAWABLE.wrap(String.valueOf(imgs[i]));
+            ImageLoader.getInstance().displayImage(url,imageView);
             layout.addView(imageView, ltp);
             pageViews.add(layout);
         }
@@ -191,6 +202,19 @@ public class HomeFragment extends Fragment{
         home_tuijian_iv_third=(CircleImageView)view.findViewById(R.id.home_tuijian_iv_third);
         home_tuijian_iv_force=(CircleImageView)view.findViewById(R.id.home_tuijian_iv_force);
         home_tuijian_iv_five=(CircleImageView)view.findViewById(R.id.home_tuijian_iv_five);
+        liner_middle=(LinearLayout)view.findViewById(R.id.liner_middle);
+
+        //这个地方是死数据，以后要从服务器获取
+        for (int i=0;i<tool_imgs.length;i++){
+            View liner=LayoutInflater.from(getActivity()).inflate(R.layout.home_liner_middle_item,liner_middle,false);
+            ImageView imageView= (ImageView) liner.findViewById(R.id.home_liner_middle_iv);
+            TextView   textView= (TextView) liner.findViewById(R.id.home_liner_middle_tv_name);
+            String url= ImageDownloader.Scheme.DRAWABLE.wrap(String.valueOf(tool_imgs[i]));
+            ImageLoader.getInstance().displayImage(url, imageView);
+            textView.setText(tool_name[i]);
+            liner_middle.addView(liner);
+        }
+
     }
 
     private void addCircleView() {

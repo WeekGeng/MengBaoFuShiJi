@@ -36,9 +36,12 @@
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".view.WelActivity"
+            android:windowSoftInputMode="adjustPan" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -140,10 +143,6 @@
             android:label="@string/settingsctivity" >
         </activity>
         <activity android:name=".view.SettingDirectionActivity" >
-        </activity>
-        <activity
-            android:name=".view.WelActivity"
-            android:label="@string/title_activity_wel" >
         </activity>
         <activity
             android:name=".view.HomeBreakfirstActivity"

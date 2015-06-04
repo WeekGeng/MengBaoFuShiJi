@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.github.siyamed.shapeimageview.RoundedImageView
+        android:id="@+id/home_liner_middle_iv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:padding="5dp"
+        android:src="@drawable/tools_a"
+        app:siBorderAlpha="0.7"
+        app:siBorderColor="@color/transparent_gray"
+        app:siBorderWidth="0.5dp"
+        app:siRadius="8dp"
+        />
+    <TextView
+        android:id="@+id/home_liner_middle_tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:ellipsize="end"
+        android:padding="5dp"
+        android:textColor="@color/green"
+        />
+</LinearLayout>

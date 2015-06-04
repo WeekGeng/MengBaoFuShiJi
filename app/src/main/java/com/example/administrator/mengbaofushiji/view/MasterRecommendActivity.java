@@ -17,6 +17,7 @@ import com.example.administrator.mengbaofushiji.adapter.MyPagerShiPuAdapter;
 import com.example.administrator.mengbaofushiji.consts.Const;
 import com.example.administrator.mengbaofushiji.extras.CircleImageView;
 import com.example.administrator.mengbaofushiji.extras.PagerSlidingTabStrip;
+import com.example.administrator.mengbaofushiji.extras.ZoomOutPageTransformer;
 import com.example.administrator.mengbaofushiji.homefragment.HomeMasterShiPuFragment;
 import com.example.administrator.mengbaofushiji.homefragment.ProductionFragment;
 
@@ -77,20 +78,7 @@ public class MasterRecommendActivity extends ActionBarActivity {
                 }
             }
         });
-        vp.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-            @Override
-            public void onPageSelected(int position) {
-
-            }
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
+        vp.setPageTransformer(true, new ZoomOutPageTransformer());
     }
     private void initView() {
         master_circle_iv=(CircleImageView)findViewById(R.id.master_circle_iv);
