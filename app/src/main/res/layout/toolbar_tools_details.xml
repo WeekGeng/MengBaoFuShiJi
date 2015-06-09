@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar_tools_details"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/theme_color"
+    android:layout_alignParentTop="true"
+    android:minHeight="?attr/actionBarSize"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+   <!-- <LinearLayout
+        android:id="@+id/titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="6dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="工具详情"
+            android:gravity="center"
+            android:textColor="#9f00"
+            android:textSize="@dimen/txt_size_18"
+            android:id="@+id/toolbar_ground"/>
+    </LinearLayout>-->
+</android.support.v7.widget.Toolbar>

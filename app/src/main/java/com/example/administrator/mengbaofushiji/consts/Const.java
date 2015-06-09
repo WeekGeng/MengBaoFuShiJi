@@ -4,7 +4,7 @@ import com.example.administrator.mengbaofushiji.R;
 
 public class Const {
 	public static final String TITLES_FUSHI[]={"4-6个月","7-9个月","10-12个月","12-18个月","18-24个月"};
-	public static final String MASTER_TITLE[]={"作品","食谱"};
+	public static final String MASTER_TITLE[]={"作品","食谱","笔记"};
 	public static final String SCHOOL_TITLE[]={"工具","调味料","营养素"};
 	public static final String[] SETTINGS={"使用说明","免责声明","意见反馈","关于萌宝辅食"};
 	public static final String[] HOMEITEMS={"萌宝早餐","今日之星","夏日精选","辅食达人","分享达人"};

@@ -76,33 +76,4 @@
             android:layout_marginBottom="15dp"
             />
     </github.chenupt.dragtoplayout.DragTopLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:background="#fff"
-        android:id="@+id/share_huifu_input_liner"
-        android:layout_height="wrap_content">
-        <EditText
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:hint="说点什么吧....."
-            android:padding="10dp"
-            android:focusable="true"
-            android:layout_margin="5dp"
-            android:id="@+id/share_dialog"
-            android:background="@drawable/cicle_back"
-            />
-        <TextView
-            android:id="@+id/send"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#a00f"
-            android:textColor="#fff"
-            android:layout_marginLeft="5dp"
-            android:textSize="16sp"
-            android:padding="8dp"
-            android:layout_marginRight="5dp"
-            android:text="发送"
-            />
-    </LinearLayout>
 </LinearLayout>

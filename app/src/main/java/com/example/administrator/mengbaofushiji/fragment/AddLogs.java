@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -24,7 +25,6 @@ import com.example.administrator.mengbaofushiji.view.AddLogsShiPuActivity;
 import com.example.administrator.mengbaofushiji.view.AddLogsSuiShouActivity;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -61,6 +61,10 @@ public class AddLogs extends Fragment {
     }
     private View initView(LayoutInflater inflater, ViewGroup container) {
         View view=inflater.inflate(R.layout.addlog_fragment,container,false);
+        if (getAllData().size()!=0){
+                LinearLayout liner=(LinearLayout)view.findViewById(R.id.no_logs_liner);
+                liner.setVisibility(View.GONE);
+        }
         retate_iv=(RelativeLayout)view.findViewById(R.id.retate_liner);
         top_fushi=(TextView)view.findViewById(R.id.top_fushi);
         bottom_suishouji=(TextView)view.findViewById(R.id.bottom_suishouji);
@@ -152,15 +156,15 @@ public class AddLogs extends Fragment {
     private List<Map<String, Object>> getAllData() {
         list = new ArrayList<Map<String, Object>>();
 
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("year", "2014");
-        map.put("month", "03/15 09:29");
-        map.put("title", "宝宝买了一个研磨碗");
-        map.put("content", "三、本吧规从发布起生效，适用于所有发布之后的主题和回帖。原来的一些公告和说明如果有冲突的地方以本版为准。");
-        map.put("img", new Object[]{R.drawable.a, R.drawable.b});
-        map.put("isvisible", 0);
-        list.add(map);
-
+//        Map<String, Object> map = new HashMap<String, Object>();
+//        map.put("year", "2014");
+//        map.put("month", "03/15 09:29");
+//        map.put("title", "宝宝买了一个研磨碗");
+//        map.put("content", "三、本吧规从发布起生效，适用于所有发布之后的主题和回帖。原来的一些公告和说明如果有冲突的地方以本版为准。");
+//        map.put("img", new Object[]{R.drawable.a, R.drawable.b});
+//        map.put("isvisible", 0);
+//        list.add(map);
+//
 //        map = new HashMap<String, Object>();
 //        map.put("year", "2014");
 //        map.put("month", "12/1 09:29");

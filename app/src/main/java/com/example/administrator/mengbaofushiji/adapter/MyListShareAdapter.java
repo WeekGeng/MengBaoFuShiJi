@@ -1,16 +1,17 @@
 package com.example.administrator.mengbaofushiji.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.mengbaofushiji.R;
+import com.example.administrator.mengbaofushiji.view.MasterRecommendActivity;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.download.ImageDownloader;
 
@@ -21,13 +22,11 @@ import java.util.Map;
  * Created by Administrator on 2015/4/14.
  */
 public class MyListShareAdapter extends BaseAdapter{
-    LinearLayout liner;
     private Context context;
     private ImageView share_dianzan_icon;
     private List<Map<String,Object>> list;
-    public MyListShareAdapter(LinearLayout liner,Context context,List<Map<String,Object>> list){
+    public MyListShareAdapter(Context context,List<Map<String,Object>> list){
         this.context=context;
-        this.liner=liner;
         this.list=list;
     }
     @Override
@@ -65,16 +64,16 @@ public class MyListShareAdapter extends BaseAdapter{
         holder.share_dianzan_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                View view=inflat.inflate(R.layout.share_toast_item, null);
-                TextView toast_tv= (TextView) view.findViewById(R.id.toast_tv);
-                Toast toast=new Toast(parent.getContext());
-                if (String.valueOf(list.get(position).get("iszan")).equals("0")){
+                View view = inflat.inflate(R.layout.share_toast_item, null);
+                TextView toast_tv = (TextView) view.findViewById(R.id.toast_tv);
+                Toast toast = new Toast(parent.getContext());
+                if (String.valueOf(list.get(position).get("iszan")).equals("0")) {
                     list.get(position).put("iszan", 1);
                     MyListShareAdapter.this.notifyDataSetChanged();
 //                    Toast.makeText(parent.getContext(),"已点赞",Toast.LENGTH_SHORT).show();
                     toast_tv.setText("已点赞");
                     toast.setView(view);
-                }else if (String.valueOf(list.get(position).get("iszan")).equals("1")){
+                } else if (String.valueOf(list.get(position).get("iszan")).equals("1")) {
                     list.get(position).put("iszan", 0);
                     MyListShareAdapter.this.notifyDataSetChanged();
                     toast_tv.setText("取消点赞");
@@ -89,10 +88,15 @@ public class MyListShareAdapter extends BaseAdapter{
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), "点击了", Toast.LENGTH_SHORT).show();
-                liner.setVisibility(View.VISIBLE);
             }
         });
-
+        holder.share_alldata_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(v.getContext(), MasterRecommendActivity.class);
+                v.getContext().startActivity(intent);
+            }
+        });
         return v;
     }
     class ViewHolder{

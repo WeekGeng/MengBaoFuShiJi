@@ -16,6 +16,7 @@
             android:id="@+id/share_alldata_iv"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:focusable="false"
             app:border_color="@color/white"
             android:src="@drawable/ic_launcher"
             />
@@ -67,7 +68,7 @@
             android:id="@+id/share_dianzan_icon"
             android:layout_width="50dp"
             android:layout_height="20dp"
-            android:focusable="true"
+            android:focusable="false"
             android:src="@drawable/dianzan_before"
             android:padding="5dp"
             android:background="@drawable/conner_back"
@@ -79,6 +80,7 @@
             android:layout_marginLeft="70dp"
             android:layout_alignLeft="@+id/share_dianzan_icon"
             android:src="@drawable/pinglun"
+            android:focusable="false"
             android:padding="5dp"
             android:background="@drawable/conner_back"
             />

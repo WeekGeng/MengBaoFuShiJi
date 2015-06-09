@@ -1,10 +1,13 @@
 package com.example.administrator.mengbaofushiji.view;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.administrator.mengbaofushiji.R;
@@ -20,7 +23,6 @@ import java.util.List;
 import java.util.Map;
 
 public class HomeShareMasterActivity extends ActionBarActivity {
-
     private ListView home_share_master_lv;
     private int position;
     private Toolbar toolbar;
@@ -33,8 +35,25 @@ public class HomeShareMasterActivity extends ActionBarActivity {
         position=getIntent().getIntExtra("position",0);
         getData();
         initView();
+        setListeners();
+    }
+    /**
+     * 设置监听器事件
+     */
+    private void setListeners() {
+        home_share_master_lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //此处将用户信息传递过去。头像，作品，食谱3个需要传递的对象
+                Intent intent=new Intent(HomeShareMasterActivity.this,MasterRecommendActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
+    /**
+     * 初始化控件
+     */
     private void initView() {
         home_share_master_lv=(ListView)findViewById(R.id.home_share_master_lv);
         ShareMasterAdapter adapter=new ShareMasterAdapter(list);
@@ -45,6 +64,9 @@ public class HomeShareMasterActivity extends ActionBarActivity {
         initToolBar();
     }
 
+    /**
+     * 初始化toolbar
+     */
     private void initToolBar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(Color.parseColor("#ffffff"));
@@ -64,6 +86,9 @@ public class HomeShareMasterActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * 获取数据源信息
+     */
     public void getData() {
         String drawableUrla = ImageDownloader.Scheme.DRAWABLE.wrap(String.valueOf(R.drawable.mastera));
         String drawableUrlb = ImageDownloader.Scheme.DRAWABLE.wrap(String.valueOf(R.drawable.masterb));

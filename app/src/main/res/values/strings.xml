@@ -28,5 +28,8 @@
     <string name="title_activity_home_share_master">HomeShareMasterActivity</string>
     <string name="title_activity_dispaly_image">DispalyImageActivity</string>
     <string name="title_activity_dispaly_food_detail">DispalyFoodDetailActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_tools_detail">ToolsDetailActivity</string>
+    <string name="title_activity_talk_detail">TalkDetailActivity</string>
 
 </resources>

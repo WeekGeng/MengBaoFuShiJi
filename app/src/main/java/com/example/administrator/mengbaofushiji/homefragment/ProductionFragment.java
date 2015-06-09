@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -65,6 +66,38 @@ public class ProductionFragment extends Fragment{
         map.put("title","龙井虾仁");
         map.put("img",R.drawable.longjingxiaren);
         list.add(map);
+        map=new HashMap<>();
+        map.put("title","白勺虾");
+        map.put("img", R.drawable.baishaoxia);
+        list.add(map);
+        map=new HashMap<>();
+        map.put("title", "回锅肉");
+        map.put("img",R.drawable.huiguorou);
+        list.add(map);
+        map=new HashMap<>();
+        map.put("title", "烤鸭");
+        map.put("img",R.drawable.kaoya);
+        list.add(map);
+        map=new HashMap<>();
+        map.put("title", "糖醋排骨");
+        map.put("img",R.drawable.tangcupaigu);
+        list.add(map);
+        map=new HashMap<>();
+        map.put("title", "剁椒鱼头");
+        map.put("img",R.drawable.duojiaoyutou);
+        list.add(map);
+        map=new HashMap<>();
+        map.put("title", "三黄鸡");
+        map.put("img",R.drawable.sanhuangji);
+        list.add(map);
+        map=new HashMap<>();
+        map.put("title", "水煮鱼");
+        map.put("img",R.drawable.shuizhuyu);
+        list.add(map);
+        map=new HashMap<>();
+        map.put("title","龙井虾仁");
+        map.put("img",R.drawable.longjingxiaren);
+        list.add(map);
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -91,9 +124,33 @@ public class ProductionFragment extends Fragment{
             public void onScrollStateChanged(AbsListView view, int scrollState) {
 
             }
+
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-                ((MasterRecommendActivity)getActivity()).setDrog(AttachUtil.isAdapterViewAttach(view));
+                ((MasterRecommendActivity) getActivity()).setDrog(AttachUtil.isAdapterViewAttach(view));
+            }
+        });
+        home_production_gv.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                int downY=0;
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        downY = (int) event.getY();
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        int upY=(int)event.getY();
+                        int distance=upY-downY;
+                        if (distance>50){
+                            if (home_production_gv.getFirstVisiblePosition()==0) {
+                                ((MasterRecommendActivity) getActivity()).setDrog(true);
+                            }
+                        }
+                        break;
+                }
+                return false;
             }
         });
     }

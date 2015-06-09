@@ -29,6 +29,7 @@ import com.example.administrator.mengbaofushiji.view.HomeShareMasterActivity;
 import com.example.administrator.mengbaofushiji.view.HomeSpringActivity;
 import com.example.administrator.mengbaofushiji.view.HomeStarTodayActivity;
 import com.example.administrator.mengbaofushiji.view.MasterRecommendActivity;
+import com.example.administrator.mengbaofushiji.view.ToolsDetailActivity;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.download.ImageDownloader;
 
@@ -212,6 +213,13 @@ public class HomeFragment extends Fragment{
             String url= ImageDownloader.Scheme.DRAWABLE.wrap(String.valueOf(tool_imgs[i]));
             ImageLoader.getInstance().displayImage(url, imageView);
             textView.setText(tool_name[i]);
+            liner.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(getActivity(), ToolsDetailActivity.class);
+                    startActivity(intent);
+                }
+            });
             liner_middle.addView(liner);
         }
 

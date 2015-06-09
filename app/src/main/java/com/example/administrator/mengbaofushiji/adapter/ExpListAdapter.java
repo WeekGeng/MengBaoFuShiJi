@@ -86,12 +86,12 @@ public class ExpListAdapter extends AnimatedExpandableListView.AnimatedExpandabl
 
     @Override
     public boolean hasStableIds() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
-        return false;
+        return true;
     }
     class GroupViewHolder {
         TextView tv_title;

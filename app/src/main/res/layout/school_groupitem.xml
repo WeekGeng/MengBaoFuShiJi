@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:background="@color/red"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <View
+        android:layout_height="0.1dp"
+        android:layout_width="match_parent"
+        android:background="@color/transparent_gray"
+        ></View>
     <TextView
-        android:paddingLeft="30dp"
+        android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:layout_width="match_parent"
@@ -12,4 +17,9 @@
         android:textSize="18sp"
         android:layout_height="wrap_content"
         android:id="@+id/school_explv_group_tv" />
+    <View
+        android:layout_height="0.1dp"
+        android:layout_width="match_parent"
+        android:background="@color/transparent_gray"
+        ></View>
 </LinearLayout>

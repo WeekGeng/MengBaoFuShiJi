@@ -42,6 +42,7 @@
             android:windowSoftInputMode="adjustPan" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -199,6 +200,18 @@
         <activity
             android:name=".view.DispalyFoodDetailActivity"
             android:label="@string/title_activity_dispaly_food_detail" >
+        </activity>
+        <activity
+            android:name=".view.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name=".view.ToolsDetailActivity"
+            android:label="@string/title_activity_tools_detail" >
+        </activity>
+        <activity
+            android:name=".view.TalkDetailActivity"
+            android:label="@string/title_activity_talk_detail" >
         </activity>
     </application>
 

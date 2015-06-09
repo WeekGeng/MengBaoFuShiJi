@@ -1,5 +1,6 @@
 package com.example.administrator.mengbaofushiji.pagerfragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,11 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.ExpandableListView;
 
 import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.ExpListAdapter;
 import com.example.administrator.mengbaofushiji.extras.AnimatedExpandableListView;
 import com.example.administrator.mengbaofushiji.fragment.SchoolFragment;
+import com.example.administrator.mengbaofushiji.view.ToolsDetailActivity;
 import com.nostra13.universalimageloader.core.download.ImageDownloader;
 
 import java.util.ArrayList;
@@ -30,7 +33,9 @@ public class PagerSchoolToolsFragment extends Fragment {
     GroupItem groupItem3=new GroupItem();
     GroupItem groupItem4=new GroupItem();
     GroupItem groupItem5=new GroupItem();
+    private GroupItem groupItem6=new GroupItem();
     ChildItem childItem;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -179,12 +184,12 @@ public class PagerSchoolToolsFragment extends Fragment {
         groupItem5.title="宝宝用的防水围兜";
         list.add(groupItem5);
 
-        groupItem5.title="其它有意思的辅食工具";
-        list.add(groupItem5);
+        groupItem6.title="其它有意思的辅食工具";
+        list.add(groupItem6);
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.school_tools,container,false);
         expLv= (AnimatedExpandableListView) view.findViewById(R.id.school_tool_explv);
         ExpListAdapter adapter=new ExpListAdapter(list);
@@ -194,9 +199,18 @@ public class PagerSchoolToolsFragment extends Fragment {
             public void onScrollStateChanged(AbsListView view, int scrollState) {
 
             }
+
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-                ((SchoolFragment)getParentFragment()).onDrag(AttachUtil.isAdapterViewAttach(view));
+                ((SchoolFragment) getParentFragment()).onDrag(AttachUtil.isAdapterViewAttach(view));
+            }
+        });
+        expLv.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                Intent intent=new Intent(getActivity(), ToolsDetailActivity.class);
+                getActivity().startActivity(intent);
+                return false;
             }
         });
         return view;

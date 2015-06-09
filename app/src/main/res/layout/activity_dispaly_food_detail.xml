@@ -1,16 +1,16 @@
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
+    android:id="@+id/parent_layout"
     android:layout_height="match_parent"
     tools:context="com.example.administrator.mengbaofushiji.view.DispalyFoodDetailActivity">
     <include layout="@layout/toolbar"></include>
-    <com.example.administrator.mengbaofushiji.extras.MyScrollView
-        android:id="@+id/displayfood_detail"
+    <com.example.administrator.mengbaofushiji.extras.FoodDetailScrollView
+        android:id="@+id/displayfood_detail_sv"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
         >
         <FrameLayout
             android:layout_width="match_parent"
@@ -23,7 +23,7 @@
                     android:id="@+id/display_food_top_iv"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:scaleType="fitXY"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/baishaoxia"
                     />
                 <LinearLayout
@@ -76,7 +76,7 @@
                     android:textColor="@color/black"
                     android:padding="10dp"
                     />
-                <include layout="@layout/display_food_detail_top"></include>
+                <include android:id="@+id/buy" layout="@layout/display_food_detail_top"></include>
                 <com.example.administrator.mengbaofushiji.overrideview.MyListView
                     android:id="@+id/display_food_compare_lv"
                     android:layout_width="match_parent"
@@ -161,41 +161,65 @@
                         android:drawablePadding="10dp"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/b"
+                    android:scaleType="centerCrop"
+                    />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/b"
+                    android:scaleType="centerCrop"
+                    />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/b"
+                    android:scaleType="centerCrop"
+                    />
+
                 <com.example.administrator.mengbaofushiji.overrideview.MyListView
                     android:id="@+id/display_food_chat_lv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
             </LinearLayout>
-            <include layout="@layout/display_food_detail_top"></include>
+            <include android:id="@+id/top_buy_layout" layout="@layout/display_food_detail_top"></include>
         </FrameLayout>
-    </com.example.administrator.mengbaofushiji.extras.MyScrollView>
+    </com.example.administrator.mengbaofushiji.extras.FoodDetailScrollView>
     <LinearLayout
         android:layout_width="match_parent"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/share_huifu_input_liner"
         android:layout_height="wrap_content">
         <EditText
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:hint="说点什么吧....."
-            android:layout_marginLeft="5dp"
-            android:padding="8dp"
-            android:textColor="@color/black"
-            android:textCursorDrawable="@null"
-            android:focusableInTouchMode="true"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/cicle_back_create_baby"
-            android:textColorHint="@color/transparent_gray"
             android:layout_height="wrap_content"
+            android:textColorHint="@color/transparent_gray"
+            android:hint="说点什么吧....."
+            android:padding="6dp"
+            android:textCursorDrawable="@null"
+            android:focusable="true"
+            android:layout_gravity="center"
+            android:textColor="@color/gray"
+            android:layout_margin="5dp"
+            android:id="@+id/share_dialog"
+            android:background="@drawable/cicle_back_talk_detail_send"
             />
-        <TextView
+        <ImageView
+            android:id="@+id/send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/send"
+            android:textColor="#fff"
             android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/cicle_back_talk_detail_send"
             android:layout_marginRight="5dp"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/send"
             />
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

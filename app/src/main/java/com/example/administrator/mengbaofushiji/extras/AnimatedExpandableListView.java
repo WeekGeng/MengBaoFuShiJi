@@ -128,6 +128,10 @@ public class AnimatedExpandableListView extends ExpandableListView {
     public AnimatedExpandableListView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
+    @Override
+    public void setOnChildClickListener(OnChildClickListener onChildClickListener) {
+        super.setOnChildClickListener(onChildClickListener);
+    }
 
     /**
      * @see ExpandableListView#setAdapter(ExpandableListAdapter)

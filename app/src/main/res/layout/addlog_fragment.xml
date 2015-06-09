@@ -5,7 +5,19 @@
 	android:layout_height="match_parent"
 	android:background="#100a"
 	android:orientation="vertical">
-
+	<LinearLayout
+		android:id="@+id/no_logs_liner"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textColor="@color/gray"
+			android:lineSpacingExtra="10dp"
+			android:padding="40dp"
+			android:text="亲~您还没有添加日志，请点击右下角的加号进行日志选择添加吧~"
+			/>
+	</LinearLayout>
 	<ListView
 		android:id="@+id/listview"
 		android:layout_width="match_parent"

@@ -13,13 +13,14 @@
     </com.example.administrator.mengbaofushiji.extras.PagerSlidingTabStrip>
     <Spinner
         android:id="@+id/shipu_spinner"
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:gravity="center_horizontal"
         android:layout_gravity="right"
         android:layout_height="wrap_content"
         android:dropDownWidth="150dp"
         android:scrollbars="none"
-        android:popupBackground="#80ff"
+        android:popupBackground="#fff"
+        android:background="@drawable/spinner_ab_default_smartkids"
         >
     </Spinner>
     <android.support.v4.view.ViewPager

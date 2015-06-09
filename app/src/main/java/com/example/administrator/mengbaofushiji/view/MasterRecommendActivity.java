@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -18,6 +17,7 @@ import com.example.administrator.mengbaofushiji.consts.Const;
 import com.example.administrator.mengbaofushiji.extras.CircleImageView;
 import com.example.administrator.mengbaofushiji.extras.PagerSlidingTabStrip;
 import com.example.administrator.mengbaofushiji.extras.ZoomOutPageTransformer;
+import com.example.administrator.mengbaofushiji.homefragment.BiJiFragment;
 import com.example.administrator.mengbaofushiji.homefragment.HomeMasterShiPuFragment;
 import com.example.administrator.mengbaofushiji.homefragment.ProductionFragment;
 
@@ -39,6 +39,7 @@ public class MasterRecommendActivity extends ActionBarActivity {
     private List<Fragment> list;
     private ProductionFragment firstFragment;
     private HomeMasterShiPuFragment secondFragment;
+    private BiJiFragment biJiFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +48,10 @@ public class MasterRecommendActivity extends ActionBarActivity {
         list=new ArrayList<>();
         firstFragment=new ProductionFragment();
         secondFragment=new HomeMasterShiPuFragment();
+        biJiFragment=new BiJiFragment();
         list.add(firstFragment);
         list.add(secondFragment);
+        list.add(biJiFragment);
         initTooBar();
         initView();
         setListeners();
@@ -88,20 +91,15 @@ public class MasterRecommendActivity extends ActionBarActivity {
         master_recommend_tv=(TextView)findViewById(R.id.master_recommend_tv);
         pst=(PagerSlidingTabStrip)findViewById(R.id.master_tabs);
         vp=(ViewPager)findViewById(R.id.master_pager);
-        vp.setAdapter(new MyPagerShiPuAdapter(getSupportFragmentManager(), Const.MASTER_TITLE,list));
+        vp.setAdapter(new MyPagerShiPuAdapter(getSupportFragmentManager(), Const.MASTER_TITLE, list));
         pst.setViewPager(vp);
     }
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_master_recommend, menu);
-        return true;
-    }
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == android.R.id.home) {
-            finish();
-            return true;
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

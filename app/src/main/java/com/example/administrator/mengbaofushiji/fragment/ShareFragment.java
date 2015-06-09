@@ -8,13 +8,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
-import android.widget.LinearLayout;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.MyListShareAdapter;
 import com.example.administrator.mengbaofushiji.view.AllShareActivity;
+import com.example.administrator.mengbaofushiji.view.TalkDetailActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,8 +28,6 @@ import github.chenupt.dragtoplayout.DragTopLayout;
 public class ShareFragment extends Fragment{
     private ListView lv;
     private MyListShareAdapter adapter;
-    LinearLayout linearLayout;
-    TextView tv;
     TextView share_fried_tv;
     TextView share_my_tv;
     private List<Map<String,Object>> list;
@@ -60,18 +59,19 @@ public class ShareFragment extends Fragment{
             public void onScrollStateChanged(AbsListView view, int scrollState) {
 
             }
+
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
                 share_dragtoplayout.setTouchMode(AttachUtil.isAdapterViewAttach(view));
             }
         });
 
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+//        tv.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
         share_fried_tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,15 +88,19 @@ public class ShareFragment extends Fragment{
                 startActivity(intent);
             }
         });
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(getActivity(),TalkDetailActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
     }
     private void initView(View view) {
         share_my_tv=(TextView)view.findViewById(R.id.share_my_tv);
         share_fried_tv=(TextView)view.findViewById(R.id.share_fried_tv);
-        linearLayout= (LinearLayout) view.findViewById(R.id.share_huifu_input_liner);
         lv=(ListView)view.findViewById(R.id.share_showalldata_lv);
-        adapter=new MyListShareAdapter(linearLayout,getActivity(),list);
-        linearLayout.setVisibility(View.GONE);
-        tv= (TextView) view.findViewById(R.id.send);
+        adapter=new MyListShareAdapter(getActivity(),list);
         lv.setAdapter(adapter);
 //        AnimationAdapter animAdapter = new SwingBottomInAnimationAdapter(adapter);
 //        animAdapter.setAbsListView(lv);
