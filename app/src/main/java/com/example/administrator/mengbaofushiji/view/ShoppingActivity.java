@@ -4,45 +4,44 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 
 import com.example.administrator.mengbaofushiji.R;
-import com.example.administrator.mengbaofushiji.adapter.FoodMasterAdapter;
-import com.example.administrator.mengbaofushiji.animation.AnimationAdapter;
-import com.example.administrator.mengbaofushiji.animation.SwingBottomInAnimationAdapter;
-import com.example.administrator.mengbaofushiji.consts.Const;
+import com.example.administrator.mengbaofushiji.adapter.ShoppingAdapter;
 
-public class HomeFoodMasterActivity extends ActionBarActivity {
-    private ListView home_food_master_lv;
-    private int position;
+public class ShoppingActivity extends ActionBarActivity {
+    ListView gouwuche_lv;
+    ShoppingAdapter adapter;
     private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_food_master);
-        position=getIntent().getIntExtra("position",0);
+        setContentView(R.layout.activity_shopping);
         initView();
-    }
-
-    private void initView() {
-        home_food_master_lv=(ListView)findViewById(R.id.home_food_master_lv);
-        FoodMasterAdapter adapter=new FoodMasterAdapter();
-        home_food_master_lv.setAdapter(adapter);
-        AnimationAdapter animAdapter = new SwingBottomInAnimationAdapter(adapter);
-        animAdapter.setAbsListView(home_food_master_lv);
-        home_food_master_lv.setAdapter(animAdapter);
         initToolBar();
+        setListener();
     }
-
     private void initToolBar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(Color.parseColor("#ffffff"));
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(Const.HOMEITEMS[position][0]);
+        getSupportActionBar().setTitle("购物车");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+    private void setListener() {
+
+    }
+    private void initView() {
+        gouwuche_lv=(ListView)findViewById(R.id.gouwuche_lv);
+        adapter=new ShoppingAdapter();
+        View view= LayoutInflater.from(this).inflate(R.layout.gouwuche_footer,null);
+        gouwuche_lv.addFooterView(view);
+        gouwuche_lv.setAdapter(adapter);
     }
 
     @Override

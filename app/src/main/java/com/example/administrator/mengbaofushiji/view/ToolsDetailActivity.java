@@ -1,25 +1,24 @@
 package com.example.administrator.mengbaofushiji.view;
 
-import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.administrator.mengbaofushiji.R;
-import com.example.administrator.mengbaofushiji.adapter.DialogAdapter;
 import com.example.administrator.mengbaofushiji.extras.FoodDetailScrollView;
 
 public class ToolsDetailActivity extends ActionBarActivity implements FoodDetailScrollView.OnScrollListener{
     private Toolbar toolbar;
     private FoodDetailScrollView tools_detail_sv;
+    private TextView buy_now;
+    private TextView add_to_gouwuche;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,11 +29,26 @@ public class ToolsDetailActivity extends ActionBarActivity implements FoodDetail
     }
 
     private void setListener() {
-
+        tools_detail_sv.setOnScrollListener(this);
+        buy_now.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ToolsDetailActivity.this, ShoppingActivity.class);
+                startActivity(intent);
+            }
+        });
+        add_to_gouwuche.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ToolsDetailActivity.this, ShoppingActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     private void initView() {
         tools_detail_sv=(FoodDetailScrollView)findViewById(R.id.tools_detail_sv);
-        tools_detail_sv.setOnScrollListener(this);
+        buy_now=(TextView)findViewById(R.id.buy_now);
+        add_to_gouwuche=(TextView)findViewById(R.id.add_to_gouwuche);
     }
 
     private void initToolBar() {
@@ -56,13 +70,8 @@ public class ToolsDetailActivity extends ActionBarActivity implements FoodDetail
         int id = item.getItemId();
         switch (id){
             case R.id.gouwuche:
-                View view= LayoutInflater.from(this).inflate(R.layout.gouwuche_dialog,null);
-                ListView lv=(ListView)view.findViewById(R.id.gouwuche_lv);
-                DialogAdapter adapter=new DialogAdapter();
-                lv.setAdapter(adapter);
-                Dialog dialog=new Dialog(this);
-                dialog.addContentView(view,new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-                dialog.show();
+                Intent intent=new Intent(ToolsDetailActivity.this,ShoppingActivity.class);
+                startActivity(intent);
                 break;
             case android.R.id.home:
                 finish();

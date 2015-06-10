@@ -50,7 +50,7 @@ public class HomeBreakfirstActivity extends ActionBarActivity {
             toolbar = (Toolbar) findViewById(R.id.toolbar);
             toolbar.setTitleTextColor(Color.parseColor("#ffffff"));
             setSupportActionBar(toolbar);
-            getSupportActionBar().setTitle(Const.HOMEITEMS[position]);
+            getSupportActionBar().setTitle(Const.HOMEITEMS[position][0]);
             getSupportActionBar().setHomeButtonEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         } catch (NullPointerException e) {

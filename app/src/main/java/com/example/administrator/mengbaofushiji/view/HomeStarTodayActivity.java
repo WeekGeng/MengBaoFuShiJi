@@ -64,7 +64,7 @@ public class HomeStarTodayActivity extends ActionBarActivity {
         try {
             toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
-            getSupportActionBar().setTitle(Const.HOMEITEMS[position]);
+            getSupportActionBar().setTitle(Const.HOMEITEMS[position][0]);
             toolbar.setTitleTextColor(Color.parseColor("#ffffff"));
             getSupportActionBar().setHomeButtonEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

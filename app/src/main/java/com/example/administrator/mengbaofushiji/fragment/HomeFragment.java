@@ -50,7 +50,7 @@ public class HomeFragment extends Fragment{
     private int[] imgs;
     private MyHandle myHandle;
     private ListView lv_item;
-    private String[] datas;
+    private String[][] datas;
     private HomeFragAdapter homeAdapter;
     private CircleImageView home_tuijian_iv_first;
     private CircleImageView home_tuijian_iv_second;

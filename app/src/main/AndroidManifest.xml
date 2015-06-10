@@ -213,6 +213,10 @@
             android:name=".view.TalkDetailActivity"
             android:label="@string/title_activity_talk_detail" >
         </activity>
+        <activity
+            android:name=".view.ShoppingActivity"
+            android:label="@string/title_activity_shopping" >
+        </activity>
     </application>
 
 </manifest>

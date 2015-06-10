@@ -19,10 +19,10 @@ import com.nostra13.universalimageloader.core.download.ImageDownloader;
  * 主页里面的Listview adapter
  */
 public class HomeFragAdapter extends BaseAdapter{
-    private String[] data;
+    private String[][] data;
     private int height;
     private int[] resId={R.drawable.mengbaozaocan,R.drawable.jinrizhixing,R.drawable.chunrixiaoshi,R.drawable.fushidaren,R.drawable.fenxiangdaren};
-    public HomeFragAdapter(String[] data) {
+    public HomeFragAdapter(String[][] data) {
         this.data=data;
     }
     @Override
@@ -47,7 +47,9 @@ public class HomeFragAdapter extends BaseAdapter{
             height=v.getHeight();
         }
         TextView tv=(TextView)v.findViewById(R.id.home_frag_tv_list_biaoti);
-        tv.setText(data[position]);
+        TextView home_frag_tv_list_yindao=(TextView)v.findViewById(R.id.home_frag_tv_list_yindao);
+        tv.setText(data[position][0]);
+        home_frag_tv_list_yindao.setText(data[position][1]);
         RoundedImageView iv=(RoundedImageView)v.findViewById(R.id.home_frag_iv_list_left);
 //        iv.setImageResource(resId[position]);
         String url = ImageDownloader.Scheme.DRAWABLE.wrap(String.valueOf(resId[position]));
