@@ -1,14 +1,20 @@
 package com.example.administrator.mengbaofushiji.view;
 
+import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.example.administrator.mengbaofushiji.R;
+import com.example.administrator.mengbaofushiji.adapter.DialogAdapter;
 import com.example.administrator.mengbaofushiji.extras.FoodDetailScrollView;
 
 public class ToolsDetailActivity extends ActionBarActivity implements FoodDetailScrollView.OnScrollListener{
@@ -48,9 +54,19 @@ public class ToolsDetailActivity extends ActionBarActivity implements FoodDetail
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == android.R.id.home) {
-            finish();
-            return true;
+        switch (id){
+            case R.id.gouwuche:
+                View view= LayoutInflater.from(this).inflate(R.layout.gouwuche_dialog,null);
+                ListView lv=(ListView)view.findViewById(R.id.gouwuche_lv);
+                DialogAdapter adapter=new DialogAdapter();
+                lv.setAdapter(adapter);
+                Dialog dialog=new Dialog(this);
+                dialog.addContentView(view,new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+                dialog.show();
+                break;
+            case android.R.id.home:
+                finish();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
