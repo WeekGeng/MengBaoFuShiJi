@@ -1,47 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="300dp"
-    android:background="@drawable/cicle_back"
-    android:layout_height="150dp"
+    android:background="@drawable/cicle_back_wel_back"
+    android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
     android:gravity="center"
-    android:padding="20dp"
     android:orientation="vertical">
-    <LinearLayout
-        android:orientation="horizontal"
+    <TextView
         android:layout_width="match_parent"
+        android:text="食材添加"
+        android:gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:padding="10dp"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        ></View>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
         android:layout_height="wrap_content">
         <AutoCompleteTextView
             android:id="@+id/add_shicai_dialog_ed"
-            android:hint="输入食材..."
-            android:textColorHint="@color/gray"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:hint="食材..."
+            android:textColorHint="@color/transparent_gray"
+            android:layout_width="match_parent"
             android:layout_marginRight="10dp"
-            android:background="@drawable/cicle_back_create_baby"
-            android:padding="10dp"
+            android:padding="6dp"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
             android:textCursorDrawable="@null"
-            android:textColor="@color/gray"
             android:layout_height="wrap_content" />
         <AutoCompleteTextView
             android:id="@+id/add_shicai_liang_dialog_ed"
-            android:hint="输入量度..."
-            android:textColorHint="@color/gray"
+            android:hint="用量..."
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/transparent_gray"
             android:completionThreshold="1"
             android:inputType="number"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:background="@drawable/cicle_back_create_baby"
-            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:background="@null"
+            android:padding="6dp"
             android:textCursorDrawable="@null"
-            android:textColor="@color/gray"
             android:layout_height="wrap_content" />
     </LinearLayout>
-
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0.5dp"
+        android:background="@color/white"
+        android:layout_marginTop="20dp"
+        ></View>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/revise_nick_record_dialog_bt_ok"
@@ -51,10 +67,13 @@
             android:padding="10dp"
             android:text="确定"
             android:gravity="center_horizontal"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/selector_ui_shape_background_pressed_two"
             android:textColor="@color/white"
             android:textSize="14sp" />
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            ></View>
         <TextView
             android:id="@+id/revise_nick_record_dialog_bt_cancle"
             android:layout_width="0dp"
@@ -62,7 +81,6 @@
             android:padding="10dp"
             android:gravity="center_horizontal"
             android:layout_height="wrap_content"
-            android:background="@drawable/selector_ui_shape_background_pressed_two"
             android:text="取消"
             android:textColor="@color/white"
             android:textSize="14sp" />
