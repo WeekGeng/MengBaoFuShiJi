@@ -61,6 +61,10 @@ public class HomeFragment extends Fragment{
     private List<View> list;
     private int[] tool_imgs;
     private String[] tool_name;
+    private LinearLayout liner_top;
+    private LinearLayout liner_bottom;
+    private int[] fushi_imgs;
+    private String[] fushi_name;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -73,6 +77,8 @@ public class HomeFragment extends Fragment{
         list=new ArrayList<>();
         tool_imgs=new int[]{R.drawable.tools_a_a,R.drawable.tools_a_b,R.drawable.tools_a_c,R.drawable.tools_a_d,R.drawable.tools_a_e,R.drawable.tools_a_f};
         tool_name=new String[]{"Munchkin彩色软头勺","Sassy弯柄学习勺","Vital Baby吸盘碗","Mother'corn baby 玉米餐具","Baby Bjorn防打翻餐盒","Boon防落食吸盘碗"};
+        fushi_imgs=new int[]{R.drawable.fushituijian_a,R.drawable.fushituijian_b,R.drawable.fushituijian_c,R.drawable.fushituijian_d,R.drawable.fushituijian_e,R.drawable.fushituijian_f};
+        fushi_name=new String[]{"老虎爬山","猴子摘桃","乌龟赛跑","镜中望月","海底捞月","江花水月"};
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -204,6 +210,8 @@ public class HomeFragment extends Fragment{
         home_tuijian_iv_force=(CircleImageView)view.findViewById(R.id.home_tuijian_iv_force);
         home_tuijian_iv_five=(CircleImageView)view.findViewById(R.id.home_tuijian_iv_five);
         liner_middle=(LinearLayout)view.findViewById(R.id.liner_middle);
+        liner_top=(LinearLayout)view.findViewById(R.id.liner_top);
+        liner_bottom=(LinearLayout)view.findViewById(R.id.liner_bottom);
 
         //这个地方是死数据，以后要从服务器获取
         for (int i=0;i<tool_imgs.length;i++){
@@ -222,7 +230,41 @@ public class HomeFragment extends Fragment{
             });
             liner_middle.addView(liner);
         }
+        //这个地方是死数据，以后要从服务器获取热门辅食里面的
+        for (int i=0;i<fushi_imgs.length;i++){
+            View liner=LayoutInflater.from(getActivity()).inflate(R.layout.home_liner_middle_item,liner_top,false);
+            ImageView imageView= (ImageView) liner.findViewById(R.id.home_liner_middle_iv);
+            TextView   textView= (TextView) liner.findViewById(R.id.home_liner_middle_tv_name);
+            String url= ImageDownloader.Scheme.DRAWABLE.wrap(String.valueOf(fushi_imgs[i]));
+            ImageLoader.getInstance().displayImage(url, imageView);
+            textView.setText(fushi_name[i]);
+            liner.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(getActivity(), ToolsDetailActivity.class);
+                    startActivity(intent);
+                }
+            });
+            liner_top.addView(liner);
+        }
 
+        //这个地方是死数据，以后要从服务器获取热门辅食里面的
+        for (int i=0;i<fushi_imgs.length;i++){
+            View liner=LayoutInflater.from(getActivity()).inflate(R.layout.home_liner_middle_item,liner_bottom,false);
+            ImageView imageView= (ImageView) liner.findViewById(R.id.home_liner_middle_iv);
+            TextView   textView= (TextView) liner.findViewById(R.id.home_liner_middle_tv_name);
+            String url= ImageDownloader.Scheme.DRAWABLE.wrap(String.valueOf(fushi_imgs[i]));
+            ImageLoader.getInstance().displayImage(url, imageView);
+            textView.setText(fushi_name[i]);
+            liner.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(getActivity(), ToolsDetailActivity.class);
+                    startActivity(intent);
+                }
+            });
+            liner_bottom.addView(liner);
+        }
     }
 
     private void addCircleView() {

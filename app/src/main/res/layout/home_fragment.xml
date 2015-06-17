@@ -32,12 +32,36 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="热门辅食"
+                android:textSize="18sp"
+                android:layout_marginTop="-10dp"
+                android:padding="10dp"
+                android:background="@color/white"
+                android:textColor="@color/red"
+                />
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:scrollbars="none"
+                android:layout_marginTop="-10dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:id="@+id/liner_top"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </LinearLayout>
+            </HorizontalScrollView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="热门工具"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="-13dp"
                 android:textSize="18sp"
                 android:padding="10dp"
                 android:background="@color/white"
-                android:gravity="center_horizontal"
                 android:textColor="@color/red"
                 />
             <HorizontalScrollView
@@ -49,6 +73,31 @@
                    android:paddingTop="10dp"
                     android:paddingBottom="10dp"
                     android:id="@+id/liner_middle"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </LinearLayout>
+            </HorizontalScrollView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="食谱大比拼"
+                android:textSize="18sp"
+                android:layout_marginTop="-10dp"
+                android:padding="10dp"
+                android:background="@color/white"
+                android:textColor="@color/red"
+                />
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:scrollbars="none"
+                android:layout_marginTop="-10dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:id="@+id/liner_bottom"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">

@@ -20,8 +20,7 @@
                 android:padding="10dp"
                 android:textCursorDrawable="@null"
                 android:textColorHint="@color/gray"
-                android:textColor="@color/black"
-                android:layout_marginTop="10dp"
+                android:textColor="@color/gray"
                 android:hint="输入菜谱的名称..."
                 android:background="@drawable/cicle_back_create_baby"
                 />
@@ -29,7 +28,6 @@
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
                 android:padding="10dp"
-                android:layout_marginTop="10dp"
                 android:background="@color/white"
                 android:layout_height="wrap_content">
                 <TextView
@@ -72,7 +70,6 @@
                 android:id="@+id/add_logs_add_shicai_liner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:background="@color/white"
                 android:orientation="vertical"
                 >
@@ -111,7 +108,6 @@
             </LinearLayout>
             <EditText
                 android:id="@+id/add_logs_ed_xinde"
-                android:layout_marginTop="10dp"
                 android:padding="10dp"
                 android:background="@color/white"
                 android:layout_width="match_parent"
@@ -119,6 +115,7 @@
                 android:textColor="@color/gray"
                 android:textCursorDrawable="@null"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
                 android:hint="做这道菜的心得...."
                 />
         </LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:gravity="center_vertical"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.github.siyamed.shapeimageview.RoundedImageView
+        android:layout_width="60dp"
+        android:src="@drawable/tools_h"
+        app:siBorderAlpha="0.8"
+        app:siBorderColor="@color/gray"
+        app:siBorderWidth="0.5dp"
+        app:siRadius="8dp"
+        android:layout_height="60dp" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="辅食工具之夹具"
+            android:lines="1"
+            android:gravity="center_vertical"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="七天退换"
+            android:textSize="12sp"
+            android:padding="3dp"
+            android:textColor="@color/red"
+            android:background="@drawable/cicle_back_qitiantuihuan"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20"
+        android:drawableLeft="@drawable/renminbi"
+        android:textColor="@color/red"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X1"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/gray"
+        />
+</LinearLayout>

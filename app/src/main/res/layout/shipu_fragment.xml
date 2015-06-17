@@ -1,31 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <com.example.administrator.mengbaofushiji.extras.PagerSlidingTabStrip
         android:id="@+id/shipu_tabs"
         android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
         app:pstsIndicatorColor="@color/theme_color"
         android:layout_height="48dip" >
     </com.example.administrator.mengbaofushiji.extras.PagerSlidingTabStrip>
-    <Spinner
-        android:id="@+id/shipu_spinner"
-        android:layout_width="150dp"
-        android:gravity="center_horizontal"
-        android:layout_gravity="right"
-        android:layout_height="wrap_content"
-        android:dropDownWidth="150dp"
-        android:scrollbars="none"
-        android:popupBackground="#fff"
-        android:background="@drawable/spinner_ab_default_smartkids"
-        >
-    </Spinner>
-    <android.support.v4.view.ViewPager
-        android:id="@+id/shipu_pager"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-    </android.support.v4.view.ViewPager>
-</LinearLayout>
+        android:layout_below="@+id/shipu_tabs"
+        android:layout_height="match_parent">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/shipu_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </android.support.v4.view.ViewPager>
+        <TextView
+            android:id="@+id/tv_function"
+            android:layout_width="32dp"
+            android:layout_height="96dp"
+            android:gravity="center"
+            android:lineSpacingExtra="10dp"
+            android:textSize="16sp"
+            android:background="#8f00"
+            android:layout_gravity="center_vertical|right"
+            android:text="功\n能"
+            android:textColor="@color/white"
+            />
+    </FrameLayout>
+</RelativeLayout>

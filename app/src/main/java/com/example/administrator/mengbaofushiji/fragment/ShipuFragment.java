@@ -5,8 +5,9 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.MyPagerShiPuAdapter;
@@ -31,6 +32,7 @@ public class ShipuFragment extends Fragment {
     private PagerFuShiThirdFragment thirdFragment;
     private PagerFuShiForFragment forFragment;
     private PagerFuShiFiveFragment fiveFragment;
+    private TextView tv_function;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,11 +56,21 @@ public class ShipuFragment extends Fragment {
         vp=(ViewPager)view.findViewById(R.id.shipu_pager);
         vp.setAdapter(new MyPagerShiPuAdapter(getChildFragmentManager(), Const.TITLES_FUSHI,list));
         pst.setViewPager(vp);
-        String[] spinners=getActivity().getResources().getStringArray(R.array.spinnername);
-        spinner=(Spinner)view.findViewById(R.id.shipu_spinner);
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(getActivity(),R.layout.spinner_top_select,spinners);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+//        String[] spinners=getActivity().getResources().getStringArray(R.array.spinnername);
+//        spinner=(Spinner)view.findViewById(R.id.shipu_spinner);
+//        ArrayAdapter<String> adapter=new ArrayAdapter<String>(getActivity(),R.layout.spinner_top_select,spinners);
+//        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+//        spinner.setAdapter(adapter);
+//        lv=(ListView)view.findViewById(R.id.shipu_left_function_lv);
+//        ArrayAdapter<String> adapter=new ArrayAdapter<String>(getActivity(),R.layout.shipu_function_lv_item,Const.FUNCTION_LIST);
+//        lv.setAdapter(adapter);
+        tv_function=(TextView)view.findViewById(R.id.tv_function);
+        tv_function.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(),"哈哈哈哈",Toast.LENGTH_SHORT).show();
+            }
+        });
         return view;
     }
 }
