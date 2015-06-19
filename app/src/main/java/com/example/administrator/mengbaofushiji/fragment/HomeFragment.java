@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
@@ -23,11 +22,6 @@ import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.HomeFragAdapter;
 import com.example.administrator.mengbaofushiji.consts.Const;
 import com.example.administrator.mengbaofushiji.extras.CircleImageView;
-import com.example.administrator.mengbaofushiji.view.HomeBreakfirstActivity;
-import com.example.administrator.mengbaofushiji.view.HomeFoodMasterActivity;
-import com.example.administrator.mengbaofushiji.view.HomeShareMasterActivity;
-import com.example.administrator.mengbaofushiji.view.HomeSpringActivity;
-import com.example.administrator.mengbaofushiji.view.HomeStarTodayActivity;
 import com.example.administrator.mengbaofushiji.view.MasterRecommendActivity;
 import com.example.administrator.mengbaofushiji.view.ToolsDetailActivity;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -61,7 +55,7 @@ public class HomeFragment extends Fragment{
     private List<View> list;
     private int[] tool_imgs;
     private String[] tool_name;
-    private LinearLayout liner_top;
+//    private LinearLayout liner_top;
     private LinearLayout liner_bottom;
     private int[] fushi_imgs;
     private String[] fushi_name;
@@ -145,38 +139,38 @@ public class HomeFragment extends Fragment{
                 return false;
             }
         });
-        lv_item.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position){
-                    case 1:
-                        Intent intentBreakfirst=new Intent(getActivity(),HomeBreakfirstActivity.class);
-                        intentBreakfirst.putExtra("position",0);
-                        startActivity(intentBreakfirst);
-                        break;
-                    case 2:
-                        Intent intentStar=new Intent(getActivity(),HomeStarTodayActivity.class);
-                        intentStar.putExtra("position",1);
-                        startActivity(intentStar);
-                        break;
-                    case 3:
-                        Intent intentSpring=new Intent(getActivity(),HomeSpringActivity.class);
-                        intentSpring.putExtra("position",2);
-                        startActivity(intentSpring);
-                        break;
-                    case 4:
-                        Intent intentFood=new Intent(getActivity(),HomeFoodMasterActivity.class);
-                        intentFood.putExtra("position",3);
-                        startActivity(intentFood);
-                        break;
-                    case 5:
-                        Intent intentshare=new Intent(getActivity(),HomeShareMasterActivity.class);
-                        intentshare.putExtra("position",4);
-                        startActivity(intentshare);
-                        break;
-                }
-            }
-        });
+//        lv_item.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                switch (position){
+//                    case 1:
+//                        Intent intentBreakfirst=new Intent(getActivity(),HomeBreakfirstActivity.class);
+//                        intentBreakfirst.putExtra("position",0);
+//                        startActivity(intentBreakfirst);
+//                        break;
+//                    case 2:
+//                        Intent intentStar=new Intent(getActivity(),HomeStarTodayActivity.class);
+//                        intentStar.putExtra("position",1);
+//                        startActivity(intentStar);
+//                        break;
+//                    case 3:
+//                        Intent intentSpring=new Intent(getActivity(),HomeSpringActivity.class);
+//                        intentSpring.putExtra("position",2);
+//                        startActivity(intentSpring);
+//                        break;
+//                    case 4:
+//                        Intent intentFood=new Intent(getActivity(),HomeFoodMasterActivity.class);
+//                        intentFood.putExtra("position",3);
+//                        startActivity(intentFood);
+//                        break;
+//                    case 5:
+//                        Intent intentshare=new Intent(getActivity(),HomeShareMasterActivity.class);
+//                        intentshare.putExtra("position",4);
+//                        startActivity(intentshare);
+//                        break;
+//                }
+//            }
+//        });
     }
 
     private void initView(LayoutInflater inflater,View view) {
@@ -196,11 +190,11 @@ public class HomeFragment extends Fragment{
         }
         GuidePageAdapter adapter=new GuidePageAdapter();
         viewPager.setAdapter(adapter);
-        lv_item=(ListView)view.findViewById(R.id.home_frag_lv);
-        setListViewHeightBasedOnChildren(lv_item);
+//        lv_item=(ListView)view.findViewById(R.id.home_frag_lv);
+//        setListViewHeightBasedOnChildren(lv_item);
         View v=LayoutInflater.from(getActivity()).inflate(R.layout.home_list_header,null);
-        lv_item.addHeaderView(v);
-        lv_item.setAdapter(homeAdapter);
+//        lv_item.addHeaderView(v);
+//        lv_item.setAdapter(homeAdapter);
         ImageView iv= (ImageView) view.findViewById(R.id.home_frag_iv);
         iv.setImageResource(R.drawable.guanggao);
         addCircleView();
@@ -210,7 +204,7 @@ public class HomeFragment extends Fragment{
         home_tuijian_iv_force=(CircleImageView)view.findViewById(R.id.home_tuijian_iv_force);
         home_tuijian_iv_five=(CircleImageView)view.findViewById(R.id.home_tuijian_iv_five);
         liner_middle=(LinearLayout)view.findViewById(R.id.liner_middle);
-        liner_top=(LinearLayout)view.findViewById(R.id.liner_top);
+//        liner_top=(LinearLayout)view.findViewById(R.id.liner_top);
         liner_bottom=(LinearLayout)view.findViewById(R.id.liner_bottom);
 
         //这个地方是死数据，以后要从服务器获取
@@ -230,23 +224,23 @@ public class HomeFragment extends Fragment{
             });
             liner_middle.addView(liner);
         }
-        //这个地方是死数据，以后要从服务器获取热门辅食里面的
-        for (int i=0;i<fushi_imgs.length;i++){
-            View liner=LayoutInflater.from(getActivity()).inflate(R.layout.home_liner_middle_item,liner_top,false);
-            ImageView imageView= (ImageView) liner.findViewById(R.id.home_liner_middle_iv);
-            TextView   textView= (TextView) liner.findViewById(R.id.home_liner_middle_tv_name);
-            String url= ImageDownloader.Scheme.DRAWABLE.wrap(String.valueOf(fushi_imgs[i]));
-            ImageLoader.getInstance().displayImage(url, imageView);
-            textView.setText(fushi_name[i]);
-            liner.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent=new Intent(getActivity(), ToolsDetailActivity.class);
-                    startActivity(intent);
-                }
-            });
-            liner_top.addView(liner);
-        }
+//        //这个地方是死数据，以后要从服务器获取热门辅食里面的
+//        for (int i=0;i<fushi_imgs.length;i++){
+//            View liner=LayoutInflater.from(getActivity()).inflate(R.layout.home_liner_middle_item,liner_top,false);
+//            ImageView imageView= (ImageView) liner.findViewById(R.id.home_liner_middle_iv);
+//            TextView   textView= (TextView) liner.findViewById(R.id.home_liner_middle_tv_name);
+//            String url= ImageDownloader.Scheme.DRAWABLE.wrap(String.valueOf(fushi_imgs[i]));
+//            ImageLoader.getInstance().displayImage(url, imageView);
+//            textView.setText(fushi_name[i]);
+//            liner.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Intent intent=new Intent(getActivity(), ToolsDetailActivity.class);
+//                    startActivity(intent);
+//                }
+//            });
+//            liner_top.addView(liner);
+//        }
 
         //这个地方是死数据，以后要从服务器获取热门辅食里面的
         for (int i=0;i<fushi_imgs.length;i++){

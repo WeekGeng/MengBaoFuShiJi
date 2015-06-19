@@ -130,6 +130,10 @@ public class MainActivity extends ActionBarActivity {
                 Fragment home=new HomeFragment();
                 position=0;
                 setFragmentChose(home);
+                tv_shouye.setSelected(true);
+                tv_fushi.setSelected(false);
+                tv_ketang.setSelected(false);
+                tv_share.setSelected(false);
             }
         });
         tv_fushi.setOnClickListener(new View.OnClickListener() {
@@ -138,6 +142,10 @@ public class MainActivity extends ActionBarActivity {
                 Fragment fushi=new ShipuFragment();
                 position=1;
                 setFragmentChose(fushi);
+                tv_fushi.setSelected(true);
+                tv_shouye.setSelected(false);
+                tv_ketang.setSelected(false);
+                tv_share.setSelected(false);
             }
         });
         iv_addlogs.setOnClickListener(new View.OnClickListener() {
@@ -146,6 +154,10 @@ public class MainActivity extends ActionBarActivity {
                 Fragment addlogs = new AddLogs();
                 position=2;
                 setFragmentChose(addlogs);
+                tv_fushi.setSelected(false);
+                tv_shouye.setSelected(false);
+                tv_ketang.setSelected(false);
+                tv_share.setSelected(false);
             }
         });
         tv_ketang.setOnClickListener(new View.OnClickListener() {
@@ -154,6 +166,10 @@ public class MainActivity extends ActionBarActivity {
                 Fragment ketang=new SchoolFragment();
                 position=3;
                 setFragmentChose(ketang);
+                tv_fushi.setSelected(false);
+                tv_shouye.setSelected(false);
+                tv_ketang.setSelected(true);
+                tv_share.setSelected(false);
             }
         });
         tv_share.setOnClickListener(new View.OnClickListener() {
@@ -162,6 +178,10 @@ public class MainActivity extends ActionBarActivity {
                 Fragment share=new ShareFragment();
                 position=4;
                 setFragmentChose(share);
+                tv_fushi.setSelected(false);
+                tv_shouye.setSelected(false);
+                tv_ketang.setSelected(false);
+                tv_share.setSelected(true);
             }
         });
 
@@ -235,6 +255,8 @@ public class MainActivity extends ActionBarActivity {
         iv_setImg=(ImageView)findViewById(R.id.cebian_person_img);
 //        listViewSet();
         toolBarSet();
+        tv_shouye.setSelected(true);
+        tv_fushi.setSelected(false);
     }
 
     /**

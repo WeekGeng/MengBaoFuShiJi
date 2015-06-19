@@ -1,8 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".MainActivity">
     <include layout="@layout/toolbar" />
@@ -364,9 +364,9 @@
                 android:layout_width="match_parent"
                 android:layout_gravity="bottom"
                 android:layout_height="0dp"
-                android:drawableTop="@drawable/shouye"
+                android:drawableTop="@drawable/shouye_sel"
                 android:layout_weight="1"
-                android:textColor="@color/gray"
+                android:textColor="@drawable/textcolor_sel"
                 android:gravity="bottom|center_horizontal"
                 />
         </LinearLayout>
@@ -388,11 +388,11 @@
                 android:layout_width="match_parent"
                 android:layout_gravity="bottom"
                 android:layout_height="0dp"
-                android:textColor="@color/gray"
+                android:textColor="@drawable/textcolor_sel"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:paddingTop="10dp"
-                android:drawableTop="@drawable/shipu"
+                android:drawableTop="@drawable/caipu_sel"
                 android:gravity="bottom|center_horizontal"
                 />
         </LinearLayout>
@@ -407,7 +407,7 @@
                 app:border_color="#a08f90"
                 app:border_width="1dp"
                 android:layout_centerInParent="true"
-                android:src="@drawable/addimg"
+                android:src="@drawable/add_logs"
                 />
         </RelativeLayout>
         <LinearLayout
@@ -426,11 +426,10 @@
                 android:text="课堂"
                 android:layout_width="match_parent"
                 android:layout_gravity="bottom"
-                android:textColor="@color/gray"
-                android:background="@color/white"
+                android:textColor="@drawable/textcolor_sel"
                 android:layout_height="0dp"
                 android:paddingTop="10dp"
-                android:drawableTop="@drawable/ketang"
+                android:drawableTop="@drawable/school_sel"
                 android:layout_weight="1"
                 android:layout_marginBottom="10dp"
                 android:gravity="bottom|center_horizontal"
@@ -454,10 +453,9 @@
                 android:layout_gravity="bottom"
                 android:layout_height="0dp"
                 android:paddingTop="10dp"
-                android:background="@color/white"
-                android:drawableTop="@drawable/share"
+                android:drawableTop="@drawable/share_sel"
                 android:layout_marginBottom="10dp"
-                android:textColor="@color/gray"
+                android:textColor="@drawable/textcolor_sel"
                 android:layout_weight="1"
                 android:gravity="bottom|center_horizontal"
                 />
