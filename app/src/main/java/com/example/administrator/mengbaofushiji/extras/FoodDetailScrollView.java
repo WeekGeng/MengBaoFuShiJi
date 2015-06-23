@@ -9,7 +9,6 @@ import android.widget.ScrollView;
  */
 public class FoodDetailScrollView extends ScrollView {
     private OnScrollListener onScrollListener;
-
     public FoodDetailScrollView(Context context) {
         this(context, null);
     }
@@ -44,9 +43,6 @@ public class FoodDetailScrollView extends ScrollView {
             onScrollListener.onScroll(t);
         }
     }
-
-
-
     /**
      *
      * 滚动的回调接口

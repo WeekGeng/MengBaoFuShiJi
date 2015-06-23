@@ -221,6 +221,10 @@
             android:name=".view.ShopPayActivity"
             android:label="@string/title_activity_shop_pay" >
         </activity>
+        <activity
+            android:name=".view.TestActivity"
+            android:label="@string/title_activity_test" >
+        </activity>
     </application>
 
 </manifest>

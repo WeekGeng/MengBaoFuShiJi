@@ -39,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="热门辅食"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:padding="10dp"
                 android:background="@color/white"
                 android:textColor="@color/gray"
@@ -128,7 +128,7 @@
                 android:layout_width="match_parent"
                 android:padding="5dp"
                 android:background="@color/white"
-                android:layout_height="130dp">
+                android:layout_height="120dp">
                 <LinearLayout
                     android:layout_width="0dp"
                     android:orientation="vertical"
@@ -327,7 +327,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="食谱大比拼"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:padding="10dp"
                 android:background="@color/white"
                 android:textColor="@color/gray"
@@ -351,7 +351,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="热门工具"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:padding="10dp"
                 android:layout_marginTop="-10dp"
                 android:background="@color/white"
@@ -395,7 +395,7 @@
                 android:text="推荐达人"
                 android:layout_marginTop="0.2dp"
                 android:textColor="@color/gray"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:background="@color/white"
                 android:padding="10dp"
                 />

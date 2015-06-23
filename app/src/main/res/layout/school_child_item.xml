@@ -1,88 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:paddingLeft="10dp"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp"
-    android:layout_height="match_parent">
-    <com.github.siyamed.shapeimageview.RoundedImageView
-        android:id="@+id/school_explv_child_iv"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:padding="5dp"
-        app:border_color="@color/white"
-        android:src="@drawable/tools_a"
-        app:siBorderAlpha="0.7"
-        app:siBorderColor="@color/transparent_gray"
-        app:siBorderWidth="0.5dp"
-        app:siRadius="8dp"
-        />
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_marginLeft="10dp"
-        android:layout_height="wrap_content">
-        <TextView
-            android:lines="1"
-            android:paddingRight="10dp"
-            android:ellipsize="end"
-            android:id="@+id/school_explv_child_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Beaba电动辅食机"
-            android:textColor="@color/gray"
-            android:paddingLeft="5dp"
-            android:textSize="16sp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:lines="3"
-            android:textColor="@color/gray"
-            android:ellipsize="end"
+    android:id="@+id/shipu_list_item_cardview"
+    app:cardCornerRadius="4dp"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_height="match_parent">
+        <com.github.siyamed.shapeimageview.RoundedImageView
+            android:id="@+id/school_explv_child_iv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:padding="5dp"
-            android:textSize="14sp"
-            android:text="Beaba电动辅食机是这次生了二宝以后买的，果然是众多妈妈推荐的神物，蒸和搅拌一次完成，非常方便，而且打出来的泥状食物非常细腻，夏天天气炎热，可以给宝宝做些开胃的水果泥和蔬菜泥."
-            android:id="@+id/school_explv_child_content" />
+            app:border_color="@color/white"
+            android:src="@drawable/tools_a"
+            app:siBorderAlpha="0.7"
+            app:siBorderColor="@color/transparent_gray"
+            app:siBorderWidth="0.5dp"
+            app:siRadius="8dp"
+            />
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:paddingLeft="10dp"
-            android:gravity="bottom"
-            android:layout_weight="1">
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content">
             <TextView
-                android:id="@+id/school_explv_child_tv_liulan"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:text="1000"
-                android:textColor="@color/gray"
-                android:drawablePadding="5dp"
-                android:drawableLeft="@drawable/liulan"
-                />
-            <TextView
-                android:id="@+id/school_explv_child_tv_shoucang"
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:lines="1"
+                android:paddingRight="10dp"
+                android:ellipsize="end"
+                android:id="@+id/school_explv_child_title"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1000"
+                android:text="Beaba电动辅食机"
                 android:textColor="@color/gray"
-                android:drawablePadding="5dp"
-                android:drawableLeft="@drawable/shoucang"
+                android:paddingLeft="5dp"
+                android:textSize="16sp"
                 />
             <TextView
-                android:id="@+id/school_explv_child_tv_goumai"
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1000"
+                android:lines="3"
                 android:textColor="@color/gray"
-                android:drawablePadding="5dp"
-                android:drawableLeft="@drawable/goumailiang"
-                />
+                android:ellipsize="end"
+                android:padding="5dp"
+                android:textSize="14sp"
+                android:text="Beaba电动辅食机是这次生了二宝以后买的，果然是众多妈妈推荐的神物，蒸和搅拌一次完成，非常方便，而且打出来的泥状食物非常细腻，夏天天气炎热，可以给宝宝做些开胃的水果泥和蔬菜泥."
+                android:id="@+id/school_explv_child_content" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:paddingLeft="10dp"
+                android:gravity="bottom"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/school_explv_child_tv_liulan"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="1000"
+                    android:textColor="@color/gray"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/liulan"
+                    />
+                <TextView
+                    android:id="@+id/school_explv_child_tv_shoucang"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="1000"
+                    android:textColor="@color/gray"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/shoucang"
+                    />
+                <TextView
+                    android:id="@+id/school_explv_child_tv_goumai"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="1000"
+                    android:textColor="@color/gray"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/goumailiang"
+                    />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</android.support.v7.widget.CardView>

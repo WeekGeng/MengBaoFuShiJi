@@ -1,14 +1,14 @@
 <RelativeLayout
-    android:id="@+id/tools_detail_dragtoplayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.example.administrator.mengbaofushiji.extras.FoodDetailScrollView
-        android:id="@+id/tools_detail_sv"
-        android:scrollbars="none"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/toolbar"></include>
+    <github.chenupt.dragtoplayout.DragTopLayout
+        android:id="@+id/tools_detail_dragtoplayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_below="@+id/toolbar"
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,66 +39,85 @@
                     android:paddingLeft="5dp"
                     />
             </RelativeLayout>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:text="旅行盒套装"
-                android:gravity="center"
-                android:textSize="16sp"
-                android:padding="10dp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawablePadding="20dp"
-                android:layout_gravity="center_horizontal"
-                android:drawableLeft="@drawable/shanpinmiaoshu"
-                android:drawableRight="@drawable/shanpinmiaoshu"
-                android:textColor="#9f00"
-                android:gravity="center_horizontal"
-                android:text="商品描述"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="12sp"
-                android:padding="10dp"
-                android:lineSpacingExtra="5dp"
-                android:text="飞利浦新安怡的这款辅食机也是相当好用的一款，相比Beaba来说价格更适中，使用起来也非常省心，先蒸煮，再翻转即可打泥，不用再几个容器倒腾来倒腾去，弄的哪里都是，或者手忙脚乱，从食材放入都收获泥糊一气呵成，最后倒出来就能直接喂给宝宝吃，是给宝宝添加健康辅食不可或缺的得力助手。"
-                />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/tools_a_a"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:scaleType="centerInside"
-                />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/tools_a_b"
-                android:scaleType="centerInside"
-                />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/tools_a_a"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:scaleType="centerInside"
-                />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/tools_a_b"
-                android:scaleType="centerInside"
-                />
         </LinearLayout>
-    </com.example.administrator.mengbaofushiji.extras.FoodDetailScrollView>
-    <include layout="@layout/toolbar_tools_details"></include>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.example.administrator.mengbaofushiji.extras.PagerSlidingTabStrip
+                android:id="@+id/tools_detail_tabs"
+                android:layout_width="match_parent"
+                app:pstsIndicatorColor="@color/red"
+                app:pstsUnderlineHeight="1dp"
+                app:pstsIndicatorHeight="5dp"
+                android:layout_height="48dp" >
+            </com.example.administrator.mengbaofushiji.extras.PagerSlidingTabStrip>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/tools_detail_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+            </android.support.v4.view.ViewPager>
+
+        </LinearLayout>
+    </github.chenupt.dragtoplayout.DragTopLayout>
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textColor="@color/gray"-->
+    <!--android:text="旅行盒套装"-->
+    <!--android:gravity="center"-->
+    <!--android:textSize="16sp"-->
+    <!--android:padding="10dp"-->
+    <!--/>-->
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:drawablePadding="20dp"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:drawableLeft="@drawable/shanpinmiaoshu"-->
+    <!--android:drawableRight="@drawable/shanpinmiaoshu"-->
+    <!--android:textColor="#9f00"-->
+    <!--android:gravity="center_horizontal"-->
+    <!--android:text="商品描述"-->
+    <!--/>-->
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textColor="@color/gray"-->
+    <!--android:textSize="12sp"-->
+    <!--android:padding="10dp"-->
+    <!--android:lineSpacingExtra="5dp"-->
+    <!--android:text="飞利浦新安怡的这款辅食机也是相当好用的一款，相比Beaba来说价格更适中，使用起来也非常省心，先蒸煮，再翻转即可打泥，不用再几个容器倒腾来倒腾去，弄的哪里都是，或者手忙脚乱，从食材放入都收获泥糊一气呵成，最后倒出来就能直接喂给宝宝吃，是给宝宝添加健康辅食不可或缺的得力助手。"-->
+    <!--/>-->
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="200dp"-->
+    <!--android:src="@drawable/tools_a_a"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_marginBottom="10dp"-->
+    <!--android:scaleType="centerInside"-->
+    <!--/>-->
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="200dp"-->
+    <!--android:src="@drawable/tools_a_b"-->
+    <!--android:scaleType="centerInside"-->
+    <!--/>-->
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="200dp"-->
+    <!--android:src="@drawable/tools_a_a"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_marginBottom="10dp"-->
+    <!--android:scaleType="centerInside"-->
+    <!--/>-->
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="200dp"-->
+    <!--android:src="@drawable/tools_a_b"-->
+    <!--android:scaleType="centerInside"-->
+    <!--/>-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

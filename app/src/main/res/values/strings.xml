@@ -33,5 +33,6 @@
     <string name="title_activity_talk_detail">TalkDetailActivity</string>
     <string name="title_activity_shopping">ShoppingActivity</string>
     <string name="title_activity_shop_pay">ShopPayActivity</string>
+    <string name="title_activity_test">TestActivity</string>
 
 </resources>

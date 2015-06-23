@@ -35,7 +35,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.administrator.mengbaofushiji.fragment.AddLogs;
+import com.example.administrator.mengbaofushiji.fragment.AddLogsFragment;
 import com.example.administrator.mengbaofushiji.fragment.HomeFragment;
 import com.example.administrator.mengbaofushiji.fragment.SchoolFragment;
 import com.example.administrator.mengbaofushiji.fragment.ShareFragment;
@@ -151,7 +151,7 @@ public class MainActivity extends ActionBarActivity {
         iv_addlogs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment addlogs = new AddLogs();
+                Fragment addlogs = new AddLogsFragment();
                 position=2;
                 setFragmentChose(addlogs);
                 tv_fushi.setSelected(false);

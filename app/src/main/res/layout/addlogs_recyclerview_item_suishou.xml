@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/shipu_list_item_cardview"
+    app:cardCornerRadius="4dp"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:background="#1f00"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.github.siyamed.shapeimageview.CircularImageView
+            android:layout_width="48dp"
+            android:layout_margin="2dp"
+            android:src="@drawable/baby"
+            android:layout_height="48dp" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/timeline_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="@color/gray"
+                    android:text="2015/01/28"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:padding="10dp"
+                    android:text="宝宝成长记"
+                    android:textSize="16sp"
+                    android:textColor="@color/red"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/transparent_gray"></View>
+            <TextView
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/gray"
+                android:text="宝宝的第一次呼唤"
+                android:lines="1"
+                android:ellipsize="end"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="@color/gray"
+                android:padding="10dp"
+                android:layout_height="wrap_content"
+                android:text="开启评论审核后，非好友对您说说的回复经过审核才能显示"
+                />
+            <GridView
+                android:id="@+id/add_logs_recyclerview_item_gv"
+                android:layout_width="match_parent"
+                android:numColumns="3"
+                android:horizontalSpacing="5dp"
+                android:layout_height="wrap_content"></GridView>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

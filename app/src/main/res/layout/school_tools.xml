@@ -3,10 +3,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.example.administrator.mengbaofushiji.extras.AnimatedExpandableListView
-        android:id="@+id/school_tool_explv"
+    <!--<com.example.administrator.mengbaofushiji.extras.AnimatedExpandableListView-->
+        <!--android:id="@+id/school_tool_explv"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:groupIndicator="@null"-->
+    <!--/>-->
+    <ListView
+        android:id="@+id/school_tools_lv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:groupIndicator="@null"
-    />
+        android:layout_height="match_parent">
+
+    </ListView>
 </LinearLayout>
