@@ -122,6 +122,48 @@
                         android:text="10-30分钟"
                         />
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/gray"
+                        android:text="年龄"
+                        />
+                    <TextView
+                        android:id="@+id/display_food_age_tv"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="3-5岁"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray"
+                        android:text="工具"
+                        android:textSize="16sp"
+                        />
+                    <TextView
+                        android:id="@+id/display_food_tools_tv"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:lines="1"
+                        android:ellipsize="end"
+                        android:text="电动辅食机"
+                        />
+                </LinearLayout>
                 <com.example.administrator.mengbaofushiji.overrideview.MyListView
                     android:id="@+id/display_food_ready_lv"
                     android:layout_width="match_parent"
@@ -202,10 +244,10 @@
             android:hint="说点什么吧....."
             android:padding="6dp"
             android:textCursorDrawable="@null"
-            android:focusable="true"
             android:layout_gravity="center"
             android:textColor="@color/gray"
             android:layout_margin="5dp"
+            android:focusable="false"
             android:id="@+id/share_dialog"
             android:background="@drawable/cicle_back_talk_detail_send"
             />
