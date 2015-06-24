@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.HomeFragAdapter;
 import com.example.administrator.mengbaofushiji.consts.Const;
@@ -58,6 +59,7 @@ public class HomeFragment extends Fragment{
     private LinearLayout liner_bottom;
     private int[] fushi_imgs;
     private String[] fushi_name;
+    private LinearLayout home_liner;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,7 +70,7 @@ public class HomeFragment extends Fragment{
         myHandle=new MyHandle();
         homeAdapter=new HomeFragAdapter(datas);
         list=new ArrayList<>();
-        tool_imgs=new int[]{R.drawable.tools_a_a,R.drawable.tools_a_b,R.drawable.tools_a_c,R.drawable.tools_a_d,R.drawable.tools_a_e,R.drawable.tools_a_f};
+        tool_imgs=new int[]{R.drawable.t_a,R.drawable.t_b,R.drawable.t_l,R.drawable.t_m,R.drawable.t_o,R.drawable.t_t};
         tool_name=new String[]{"Munchkin彩色软头勺","Sassy弯柄学习勺","Vital Baby吸盘碗","Mother'corn baby 玉米餐具","Baby Bjorn防打翻餐盒","Boon防落食吸盘碗"};
         fushi_imgs=new int[]{R.drawable.fushituijian_a,R.drawable.fushituijian_b,R.drawable.fushituijian_c,R.drawable.fushituijian_d,R.drawable.fushituijian_e,R.drawable.fushituijian_f};
         fushi_name=new String[]{"老虎爬山","猴子摘桃","乌龟赛跑","镜中望月","海底捞月","江花水月"};
@@ -173,6 +175,9 @@ public class HomeFragment extends Fragment{
     }
 
     private void initView(LayoutInflater inflater,View view) {
+        home_liner=(LinearLayout)view.findViewById(R.id.home_liner);
+        View child=inflater.inflate(R.layout.home_everyday_push, home_liner, false);
+        home_liner.addView(child);
         group=(LinearLayout)view.findViewById(R.id.home_fragment_viewGroup);
         viewPager= (ViewPager)view.findViewById(R.id.home_frag_viewpager);
         pageViews = new ArrayList<View>();

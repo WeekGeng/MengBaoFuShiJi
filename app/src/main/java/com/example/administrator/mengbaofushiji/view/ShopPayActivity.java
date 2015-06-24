@@ -9,8 +9,6 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.CheckedTextView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -22,7 +20,7 @@ import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.PopupListAdapter;
 import com.example.administrator.mengbaofushiji.adapter.ShopingPayAdapter;
 
-public class ShopPayActivity extends ActionBarActivity{
+public class ShopPayActivity extends ActionBarActivity implements PopupListAdapter.Get{
     PopupWindow popupWindow;
     private Toolbar toolbar;
     private ListView shop_detail_lv;
@@ -43,19 +41,19 @@ public class ShopPayActivity extends ActionBarActivity{
             public void onClick(View v) {
                 View view = LayoutInflater.from(ShopPayActivity.this).inflate(R.layout.popupwindow_dalog, null);
                 ListView popoup_window_lv = (ListView) view.findViewById(R.id.popoup_window_lv);
-                PopupListAdapter adapter = new PopupListAdapter();
+                PopupListAdapter adapter = new PopupListAdapter(ShopPayActivity.this);
                 popoup_window_lv.setAdapter(adapter);
                 popupWindow = new PopupWindow(view, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 popupWindow.setOutsideTouchable(true);
                 popupWindow.setFocusable(false);
                 popupWindow.showAsDropDown(shopping_pay_address_change);
-                popoup_window_lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        shopping_pay_address_change.setText(((CheckedTextView) view).getText().toString());
-                        popupWindow.dismiss();
-                    }
-                });
+//                popoup_window_lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                    @Override
+//                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//
+//
+//                    }
+//                });
             }
         });
         shop_pay_sv.setOnTouchListener(new View.OnTouchListener() {
@@ -121,5 +119,11 @@ public class ShopPayActivity extends ActionBarActivity{
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void getData(String text) {
+        shopping_pay_address_change.setText(text);
+        popupWindow.dismiss();
     }
 }

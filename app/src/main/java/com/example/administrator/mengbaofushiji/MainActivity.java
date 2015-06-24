@@ -13,7 +13,6 @@ import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -40,6 +39,7 @@ import com.example.administrator.mengbaofushiji.fragment.HomeFragment;
 import com.example.administrator.mengbaofushiji.fragment.SchoolFragment;
 import com.example.administrator.mengbaofushiji.fragment.ShareFragment;
 import com.example.administrator.mengbaofushiji.fragment.ShipuFragment;
+import com.example.administrator.mengbaofushiji.view.SearchShiPuActivity;
 import com.example.administrator.mengbaofushiji.view.SettingActivity;
 import com.example.administrator.mengbaofushiji.view.YaoYiYaoActivity;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -270,22 +270,22 @@ public class MainActivity extends ActionBarActivity {
 //        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
 	    /* 菜单的监听可以在toolbar里设置，也可以像ActionBar那样，通过下面的两个回调方法来处理 */
-        mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.action_settings:
-                        Toast.makeText(MainActivity.this, "action_settings", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.action_share:
-                        Toast.makeText(MainActivity.this, "action_share", Toast.LENGTH_SHORT).show();
-                        break;
-                    default:
-                        break;
-                }
-                return true;
-            }
-        });
+//        mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                switch (item.getItemId()) {
+//                    case R.id.ab_search:
+//
+//                        break;
+//                    case R.id.action_share:
+////                        Toast.makeText(MainActivity.this, "action_share", Toast.LENGTH_SHORT).show();
+//                        break;
+//                    default:
+//                        break;
+//                }
+//                return false;
+//            }
+//        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         /* findView */
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
@@ -325,14 +325,28 @@ public class MainActivity extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
 		/* ShareActionProvider */
-        mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menu
-                .findItem(R.id.action_share));
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("text/*");
-        mShareActionProvider.setShareIntent(intent);
+//        mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menu
+//                .findItem(R.id.action_share));
+//        Intent intent = new Intent(Intent.ACTION_SEND);
+//        intent.setType("text/*");
+//        mShareActionProvider.setShareIntent(intent);
+
         return super.onCreateOptionsMenu(menu);
     }
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.ab_search) {
+            Intent intent=new Intent(MainActivity.this, SearchShiPuActivity.class);
+            startActivity(intent);
+            return true;
+        }else if (id==R.id.action_share){
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/*");
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
     /**
      * 构建ListView的对象
      */

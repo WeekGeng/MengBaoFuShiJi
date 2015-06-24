@@ -34,5 +34,6 @@
     <string name="title_activity_shopping">ShoppingActivity</string>
     <string name="title_activity_shop_pay">ShopPayActivity</string>
     <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_search_shi_pu">SearchShiPuActivity</string>
 
 </resources>

@@ -225,6 +225,10 @@
             android:name=".view.TestActivity"
             android:label="@string/title_activity_test" >
         </activity>
+        <activity
+            android:name=".view.SearchShiPuActivity"
+            android:label="@string/title_activity_search_shi_pu" >
+        </activity>
     </application>
 
 </manifest>

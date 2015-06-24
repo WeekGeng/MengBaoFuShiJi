@@ -10,11 +10,9 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.MyListShareAdapter;
-import com.example.administrator.mengbaofushiji.view.AllShareActivity;
 import com.example.administrator.mengbaofushiji.view.TalkDetailActivity;
 
 import java.util.ArrayList;
@@ -28,8 +26,6 @@ import github.chenupt.dragtoplayout.DragTopLayout;
 public class ShareFragment extends Fragment{
     private ListView lv;
     private MyListShareAdapter adapter;
-    TextView share_fried_tv;
-    TextView share_my_tv;
     private List<Map<String,Object>> list;
     private Map<String,Object> map;
     private List<Map<String,Object>> chats;
@@ -72,22 +68,22 @@ public class ShareFragment extends Fragment{
 //
 //            }
 //        });
-        share_fried_tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AllShareActivity.class);
-                intent.putExtra("position", 0);
-                startActivity(intent);
-            }
-        });
-        share_my_tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AllShareActivity.class);
-                intent.putExtra("position", 1);
-                startActivity(intent);
-            }
-        });
+//        share_fried_tv.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), AllShareActivity.class);
+//                intent.putExtra("position", 0);
+//                startActivity(intent);
+//            }
+//        });
+//        share_my_tv.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), AllShareActivity.class);
+//                intent.putExtra("position", 1);
+//                startActivity(intent);
+//            }
+//        });
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -97,8 +93,8 @@ public class ShareFragment extends Fragment{
         });
     }
     private void initView(View view) {
-        share_my_tv=(TextView)view.findViewById(R.id.share_my_tv);
-        share_fried_tv=(TextView)view.findViewById(R.id.share_fried_tv);
+//        share_my_tv=(TextView)view.findViewById(R.id.share_my_tv);
+//        share_fried_tv=(TextView)view.findViewById(R.id.share_fried_tv);
         lv=(ListView)view.findViewById(R.id.share_showalldata_lv);
         adapter=new MyListShareAdapter(getActivity(),list);
         lv.setAdapter(adapter);

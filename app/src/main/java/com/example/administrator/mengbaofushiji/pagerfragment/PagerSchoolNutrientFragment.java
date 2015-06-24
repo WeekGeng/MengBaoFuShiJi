@@ -20,7 +20,7 @@ public class PagerSchoolNutrientFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.talk_yunyingzhuanqu,container,false);
+        View view=inflater.inflate(R.layout.school_nutrient_fragment,container,false);
         return view;
     }
 }

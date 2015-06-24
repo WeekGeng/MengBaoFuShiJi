@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:background="@color/white"
+    android:layout_height="120dp">
+    <com.github.siyamed.shapeimageview.RoundedImageView
+        android:layout_width="130dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tools_a"
+        app:siRadius="5dp"
+        app:siBorderColor="@color/white"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:textColor="@color/red"
+            android:text="限时抢购"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="23:20:30"
+
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:gravity="center_vertical"
+        android:layout_height="match_parent">
+        <TextView
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:text="67"
+            android:gravity="center_horizontal"
+            android:textColor="@color/red"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/renminbi"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:text="49"
+            android:textColor="@color/red"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/renminbi"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

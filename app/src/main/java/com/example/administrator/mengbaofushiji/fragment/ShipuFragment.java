@@ -1,13 +1,16 @@
 package com.example.administrator.mengbaofushiji.fragment;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.MyPagerShiPuAdapter;
@@ -33,6 +36,10 @@ public class ShipuFragment extends Fragment {
     private PagerFuShiForFragment forFragment;
     private PagerFuShiFiveFragment fiveFragment;
     private TextView tv_function;
+    private int width;
+    private LinearLayout right_functon;
+    private ListView lv_function;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,21 +63,44 @@ public class ShipuFragment extends Fragment {
         vp=(ViewPager)view.findViewById(R.id.shipu_pager);
         vp.setAdapter(new MyPagerShiPuAdapter(getChildFragmentManager(), Const.TITLES_FUSHI,list));
         pst.setViewPager(vp);
-//        String[] spinners=getActivity().getResources().getStringArray(R.array.spinnername);
-//        spinner=(Spinner)view.findViewById(R.id.shipu_spinner);
-//        ArrayAdapter<String> adapter=new ArrayAdapter<String>(getActivity(),R.layout.spinner_top_select,spinners);
-//        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-//        spinner.setAdapter(adapter);
-//        lv=(ListView)view.findViewById(R.id.shipu_left_function_lv);
-//        ArrayAdapter<String> adapter=new ArrayAdapter<String>(getActivity(),R.layout.shipu_function_lv_item,Const.FUNCTION_LIST);
-//        lv.setAdapter(adapter);
         tv_function=(TextView)view.findViewById(R.id.tv_function);
+//        tv_function.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(getActivity(),"哈哈哈哈",Toast.LENGTH_SHORT).show();
+//            }
+//        });
+        initFunciton(view);
+        return view;
+    }
+
+    private void initFunciton(View view) {
+//        WindowManager wm = (WindowManager) getActivity().getSystemService(Context.WINDOW_SERVICE);
+//        width = wm.getDefaultDisplay().getWidth();
+        right_functon = (LinearLayout)view.findViewById(R.id.right_functon);
+        tv_function = (TextView)view.findViewById(R.id.tv_function);
+        lv_function=(ListView)view.findViewById(R.id.lv_function);
+        ArrayAdapter adapter=new ArrayAdapter(getActivity(),android.R.layout.simple_list_item_single_choice,android.R.id.text1,Const.FUNCTION_LIST);
+        lv_function.setAdapter(adapter);
         tv_function.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(),"哈哈哈哈",Toast.LENGTH_SHORT).show();
+
             }
         });
-        return view;
     }
+
+//    private void moveViewWithFinger(float rawX) {
+//        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)right_functon
+//                .getLayoutParams();
+//        int a = (int) (width - rawX);
+//        if (a < 96) {
+//            a = 96;
+//        }
+//        if (a > 350) {
+//            a = 350;
+//        }
+//        params.leftMargin = -a;
+//        right_functon.setLayoutParams(params);
+//    }
 }

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/school_seasoner_list_item_cardview"
+    app:cardCornerRadius="4dp"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.example.administrator.mengbaofushiji.extras.CircleImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:border_color="@color/white"
+                android:src="@drawable/baby"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/theme_color"
+                android:text="萌宝小编"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:layout_gravity="center_vertical"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:text="2015-6-18"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="宝宝各阶段所需盐量大公开"
+            android:textColor="@color/color_transparent_black"
+            android:padding="10dp"
+            android:id="@+id/tv_title"
+            android:textSize="16sp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:lines="5"
+                android:padding="5dp"
+                android:textColor="@color/gray"
+                android:ellipsize="end"
+                android:text="宝宝各个阶段所需盐的数量都不一样，具体标准如下:0-6个月：每天钠的摄入量不超过200毫克。6-12个月：每天钠的摄入量不超过500毫克。12-36个月：每天钠的摄入量不超过650毫克。摄入过量的盐，对宝宝的健康将产生以下危害：
+●宝宝的肾脏功能还未发育完全，不足以渗透过多的盐，摄盐过多会加重肾脏负担，同时增加心脏负担，从而影响宝宝的生长发育。●摄盐过多会抑制口腔黏膜上皮细胞的繁殖，使得口腔唾液分泌减少，并导致唾液里所含的溶菌酶的数量减少。溶菌酶有杀菌的作用，它的减少会降低口腔对细菌、病毒的防御功能，从而削弱宝宝的抗病能力。
+●宝宝的味觉极为灵敏，只要一点点盐，他们就会感觉很有滋味。摄盐过多的话，宝宝即使感觉很咸但由于不会表达，只能慢慢适应这样的咸度，最终口味变得越来越重，味觉发育受到严重影响。
+●摄盐过多会影响锌的吸收，并增加钙等其他矿物质的排泄。●从小养成重盐的饮食习惯，长大后不容易纠正，容易引起高血压等疾病。"
+                />
+            <com.github.siyamed.shapeimageview.RoundedImageView
+                android:layout_width="90dp"
+                android:id="@+id/seasoner_iv"
+                android:src="@drawable/b"
+                app:siBorderColor="@color/white"
+                app:siRadius="4dp"
+                android:layout_height="90dp" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
