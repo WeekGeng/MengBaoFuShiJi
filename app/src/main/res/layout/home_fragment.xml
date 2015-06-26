@@ -7,7 +7,7 @@
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
         android:scrollbars="none"
-        android:background="#2ff0"
+        android:background="@color/white"
         android:layout_height="match_parent"
         >
         <LinearLayout
@@ -54,7 +54,7 @@
                         android:padding="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="200dp">
-                        <LinearLayout
+                        <RelativeLayout
                             android:orientation="vertical"
                             android:layout_width="0dp"
                             android:layout_marginRight="2dp"
@@ -63,63 +63,147 @@
                             <com.github.siyamed.shapeimageview.RoundedImageView
                                 android:id="@+id/home_liner_middle_iv"
                                 android:layout_width="match_parent"
-                                android:layout_height="190dp"
+                                android:layout_height="200dp"
                                 android:src="@drawable/fushituijian_d"
                                 app:siBorderAlpha="0.7"
+                                app:siRadius="4dp"
                                 app:siBorderColor="@color/transparent_gray"
                                 app:siBorderWidth="0.5dp"
                                 />
-                            <TextView
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_alignParentBottom="true"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="-25dp"
-                                android:padding="3dp"
-                                android:background="#4000"
-                                android:lines="1"
-                                android:ellipsize="end"
-                                android:gravity="center_horizontal"
-                                android:text="燕麦小米粥"
-                                />
-                        </LinearLayout>
+                                android:background="#2000"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="热门辅食"
+                                    android:padding="2dp"
+                                    android:textSize="10sp"
+                                    android:background="@color/red"
+                                    android:textColor="@color/white"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:gravity="center_vertical"
+                                    />
+                                <TextView
+                                    android:textSize="12sp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@+id/tv_remen"
+                                    android:paddingTop="1dp"
+                                    android:paddingBottom="1dp"
+                                    android:lines="1"
+                                    android:layout_alignParentBottom="true"
+                                    android:paddingLeft="5dp"
+                                    android:textColor="@color/white"
+                                    android:ellipsize="end"
+                                    android:gravity="center_vertical"
+                                    android:text="燕麦小米粥"
+                                    />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
                         <LinearLayout
                             android:layout_width="130dp"
                             android:orientation="vertical"
                             android:layout_height="wrap_content">
-                            <ImageView
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
-                                android:scaleType="centerCrop"
-                                android:layout_weight="1"
-                                android:src="@drawable/fushituijian_f"
-                                />
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_marginTop="-25dp"
-                                android:text="小薏米粥"
-                                android:padding="3dp"
-                                android:lines="1"
-                                android:background="#4000"
-                                android:ellipsize="end"
-                                android:gravity="center_horizontal"
-                                android:layout_height="wrap_content" />
-                            <ImageView
+                                android:layout_weight="1">
+                                <com.github.siyamed.shapeimageview.RoundedImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:siRadius="4dp"
+                                    app:siBorderColor="@color/white"
+                                    android:src="@drawable/fushituijian_f"
+                                    />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_width="match_parent"
+                                    android:background="#2000"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:textSize="10sp"
+                                        android:text="热门辅食"
+                                        android:padding="2dp"
+                                        android:background="@color/red"
+                                        android:textColor="@color/white"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentBottom="true"
+                                        android:gravity="center_vertical"
+                                        />
+                                    <TextView
+                                        android:textSize="12sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/tv_remen"
+                                        android:paddingTop="1dp"
+                                        android:paddingBottom="1dp"
+                                        android:lines="1"
+                                        android:layout_alignParentBottom="true"
+                                        android:paddingLeft="5dp"
+                                        android:textColor="@color/white"
+                                        android:ellipsize="end"
+                                        android:gravity="center_vertical"
+                                        android:text="燕麦小米粥"
+                                        />
+                                </LinearLayout>
+                            </RelativeLayout>
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:layout_marginTop="2dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/fushituijian_e"
-                                />
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_marginTop="-25dp"
-                                android:text="菠萝烩饭"
-                                android:padding="3dp"
-                                android:background="#4000"
-                                android:lines="1"
-                                android:ellipsize="end"
-                                android:gravity="center_horizontal"
-                                android:layout_height="wrap_content" />
+                                >
+                                <com.github.siyamed.shapeimageview.RoundedImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginTop="2dp"
+                                    app:siBorderColor="@color/white"
+                                    app:siRadius="4dp"
+                                    android:src="@drawable/fushituijian_e"
+                                    />
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_width="match_parent"
+                                    android:background="#2000"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:textSize="10sp"
+                                        android:text="热门辅食"
+                                        android:padding="2dp"
+                                        android:background="@color/red"
+                                        android:textColor="@color/white"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentBottom="true"
+                                        android:gravity="center_vertical"
+                                        />
+                                    <TextView
+                                        android:textSize="12sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/tv_remen"
+                                        android:paddingTop="1dp"
+                                        android:paddingBottom="1dp"
+                                        android:lines="1"
+                                        android:layout_alignParentBottom="true"
+                                        android:paddingLeft="5dp"
+                                        android:textColor="@color/white"
+                                        android:ellipsize="end"
+                                        android:gravity="center_vertical"
+                                        android:text="燕麦小米粥"
+                                        />
+                                </LinearLayout>
+                            </RelativeLayout>
                         </LinearLayout>
                     </LinearLayout>
 
@@ -129,74 +213,146 @@
                         android:padding="5dp"
                         android:background="@color/white"
                         android:layout_height="120dp">
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="0dp"
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:layout_marginRight="2dp"
                             android:layout_height="match_parent">
-                            <ImageView
+                            <com.github.siyamed.shapeimageview.RoundedImageView
                                 android:layout_width="match_parent"
                                 android:src="@drawable/fushituijian_a"
                                 android:scaleType="centerCrop"
+                                app:siBorderColor="@color/white"
+                                app:siRadius="4dp"
                                 android:layout_height="match_parent" />
-                            <TextView
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_alignParentBottom="true"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:padding="3dp"
-                                android:background="#4f00"
-                                android:layout_marginTop="-25dp"
-                                android:text="芝麻饼"
-                                android:lines="1"
-                                android:ellipsize="end"
-                                android:gravity="center_horizontal"
-                                />
-                        </LinearLayout>
-                        <LinearLayout
+                                android:background="#2000"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:textSize="10sp"
+                                    android:text="热门辅食"
+                                    android:padding="2dp"
+                                    android:background="@color/red"
+                                    android:textColor="@color/white"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:gravity="center_vertical"
+                                    />
+                                <TextView
+                                    android:textSize="12sp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@+id/tv_remen"
+                                    android:paddingTop="1dp"
+                                    android:paddingBottom="1dp"
+                                    android:lines="1"
+                                    android:layout_alignParentBottom="true"
+                                    android:paddingLeft="5dp"
+                                    android:textColor="@color/white"
+                                    android:ellipsize="end"
+                                    android:gravity="center_vertical"
+                                    android:text="燕麦小米粥"
+                                    />
+                            </LinearLayout>
+                        </RelativeLayout>
+                        <RelativeLayout
                             android:layout_width="0dp"
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:layout_marginRight="2dp"
                             android:layout_height="match_parent">
-                            <ImageView
+                            <com.github.siyamed.shapeimageview.RoundedImageView
                                 android:layout_width="match_parent"
                                 android:src="@drawable/fushituijian_b"
                                 android:scaleType="centerCrop"
+                                app:siBorderColor="@color/white"
+                                app:siRadius="4dp"
                                 android:layout_height="match_parent" />
-                            <TextView
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_alignParentBottom="true"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:padding="3dp"
-                                android:background="#4f00"
-                                android:layout_marginTop="-25dp"
-                                android:text="芝麻饼"
-                                android:lines="1"
-                                android:ellipsize="end"
-                                android:gravity="center_horizontal"
-                                />
-                        </LinearLayout>
-                        <LinearLayout
+                                android:background="#2000"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:textSize="10sp"
+                                    android:text="热门辅食"
+                                    android:padding="2dp"
+                                    android:background="@color/red"
+                                    android:textColor="@color/white"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:gravity="center_vertical"
+                                    />
+                                <TextView
+                                    android:textSize="12sp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@+id/tv_remen"
+                                    android:paddingTop="1dp"
+                                    android:paddingBottom="1dp"
+                                    android:lines="1"
+                                    android:layout_alignParentBottom="true"
+                                    android:paddingLeft="5dp"
+                                    android:textColor="@color/white"
+                                    android:ellipsize="end"
+                                    android:gravity="center_vertical"
+                                    android:text="燕麦小米粥"
+                                    />
+                            </LinearLayout>
+                        </RelativeLayout>
+                        <RelativeLayout
                             android:layout_width="0dp"
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:layout_height="match_parent">
-                            <ImageView
+                            <com.github.siyamed.shapeimageview.RoundedImageView
                                 android:layout_width="match_parent"
+                                app:siBorderColor="@color/white"
+                                app:siRadius="4dp"
                                 android:src="@drawable/fushituijian_c"
                                 android:scaleType="centerCrop"
                                 android:layout_height="match_parent" />
-                            <TextView
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_alignParentBottom="true"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:padding="3dp"
-                                android:background="#4f00"
-                                android:layout_marginTop="-25dp"
-                                android:text="芝麻饼"
-                                android:lines="1"
-                                android:ellipsize="end"
-                                android:gravity="center_horizontal"
-                                />
-                        </LinearLayout>
+                                android:background="#2000"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:textSize="10sp"
+                                    android:text="热门辅食"
+                                    android:padding="2dp"
+                                    android:background="@color/red"
+                                    android:textColor="@color/white"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:gravity="center_vertical"
+                                    />
+                                <TextView
+                                    android:textSize="12sp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@+id/tv_remen"
+                                    android:paddingTop="1dp"
+                                    android:paddingBottom="1dp"
+                                    android:lines="1"
+                                    android:layout_alignParentBottom="true"
+                                    android:paddingLeft="5dp"
+                                    android:textColor="@color/white"
+                                    android:ellipsize="end"
+                                    android:gravity="center_vertical"
+                                    android:text="燕麦小米粥"
+                                    />
+                            </LinearLayout>
+                        </RelativeLayout>
                     </LinearLayout>
                 </LinearLayout>
             </android.support.v7.widget.CardView>

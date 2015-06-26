@@ -1,2 +1,4 @@
 include ':app'
 include ':shape-imageview-lib'
+include ':IMLib'
+include ':IMKit'

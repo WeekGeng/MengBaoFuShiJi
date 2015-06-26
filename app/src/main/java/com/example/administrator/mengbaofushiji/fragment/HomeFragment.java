@@ -1,6 +1,7 @@
 package com.example.administrator.mengbaofushiji.fragment;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -60,6 +61,7 @@ public class HomeFragment extends Fragment{
     private int[] fushi_imgs;
     private String[] fushi_name;
     private LinearLayout home_liner;
+    private TextView tv_old_price;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -177,6 +179,8 @@ public class HomeFragment extends Fragment{
     private void initView(LayoutInflater inflater,View view) {
         home_liner=(LinearLayout)view.findViewById(R.id.home_liner);
         View child=inflater.inflate(R.layout.home_everyday_push, home_liner, false);
+        tv_old_price=(TextView)child.findViewById(R.id.tv_old_price);
+        tv_old_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
         home_liner.addView(child);
         group=(LinearLayout)view.findViewById(R.id.home_fragment_viewGroup);
         viewPager= (ViewPager)view.findViewById(R.id.home_frag_viewpager);

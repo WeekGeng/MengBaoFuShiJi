@@ -42,13 +42,14 @@
         android:gravity="center_vertical"
         android:layout_height="match_parent">
         <TextView
+            android:id="@+id/tv_old_price"
             android:padding="10dp"
             android:layout_width="match_parent"
             android:text="67"
             android:gravity="center_horizontal"
-            android:textColor="@color/red"
+            android:textColor="@color/transparent_gray"
             android:drawablePadding="10dp"
-            android:drawableLeft="@drawable/renminbi"
+            android:drawableLeft="@drawable/renminbi_old_price"
             android:layout_height="wrap_content" />
         <TextView
             android:padding="10dp"

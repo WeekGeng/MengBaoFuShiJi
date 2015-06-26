@@ -12,41 +12,56 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             >
-            <EditText
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:hint="请输入标题..."
-                android:textCursorDrawable="@null"
-                android:textColorHint="@color/gray"
-                android:textColor="@color/gray"
-                android:background="@null"
-                />
-            <EditText
+                >
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:hint="请输入标题..."
+                    android:textCursorDrawable="@null"
+                    android:textColorHint="@color/gray"
+                    android:textColor="@color/gray"
+                    android:background="@null"
+                    />
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:lines="4"
-                android:paddingLeft="10dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="2dp"
-                android:gravity="top"
-                android:textColor="@color/gray"
-                android:background="@null"
-                android:textColorHint="@color/gray"
-                android:textCursorDrawable="@null"
-                android:hint="说点什么吧..."
-                />
-            <com.example.administrator.mengbaofushiji.overrideview.MyGridView
-                android:id="@+id/ad_logs_add_shuishouji_gv"
+                >
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="4"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="2dp"
+                    android:gravity="top"
+                    android:paddingTop="2dp"
+                    android:textColor="@color/gray"
+                    android:background="@null"
+                    android:textColorHint="@color/gray"
+                    android:textCursorDrawable="@null"
+                    android:hint="说点什么吧..."
+                    />
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:horizontalSpacing="5dp"
-                android:verticalSpacing="5dp"
-                android:numColumns="4"
-                android:layout_margin="10dp"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                >
+                <com.example.administrator.mengbaofushiji.overrideview.MyGridView
+                    android:id="@+id/ad_logs_add_shuishouji_gv"
+                    android:layout_width="match_parent"
+                    android:horizontalSpacing="5dp"
+                    android:verticalSpacing="5dp"
+                    android:numColumns="4"
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content">
 
-            </com.example.administrator.mengbaofushiji.overrideview.MyGridView>
-
+                </com.example.administrator.mengbaofushiji.overrideview.MyGridView>
+            </android.support.v7.widget.CardView>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
