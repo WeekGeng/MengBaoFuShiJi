@@ -53,7 +53,6 @@ public class AddLogs extends Fragment {
         instance=this;
         retateCircle= AnimationUtils.loadAnimation(getActivity(), R.anim.retateout);
         retateCircleIn= AnimationUtils.loadAnimation(getActivity(), R.anim.retatein);
-
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
