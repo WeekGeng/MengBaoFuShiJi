@@ -12,6 +12,7 @@ import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.MyPagerShiPuAdapter;
 import com.example.administrator.mengbaofushiji.consts.Const;
 import com.example.administrator.mengbaofushiji.extras.PagerSlidingTabStrip;
+import com.example.administrator.mengbaofushiji.pagerfragment.PagerSchoolConsultantFragment;
 import com.example.administrator.mengbaofushiji.pagerfragment.PagerSchoolNutrientFragment;
 import com.example.administrator.mengbaofushiji.pagerfragment.PagerSchoolSeasonerFragment;
 import com.example.administrator.mengbaofushiji.pagerfragment.PagerSchoolToolsFragment;
@@ -26,17 +27,10 @@ public class SchoolFragment extends Fragment {
     private PagerSchoolToolsFragment toolsFragment;//工具
     private PagerSchoolSeasonerFragment seasonerFragment;//调味料
     private PagerSchoolNutrientFragment nutrientFragment;//营养素
+    private PagerSchoolConsultantFragment consultantFragment;//营养素
     private List<Fragment> list;
     private PagerSlidingTabStrip pst;
     private DragTopLayout school_dragtoplayout;
-//    private TextView tools_tv;
-//    private ImageView tools_iv;
-//    private TextView seasoner_tv;
-//    private TextView nutrient_tv;
-//    private int index;
-//    private TextView[] tv;
-//    private SlidingTabLayout school_slidingtabLayout;
-//    private int offset;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,14 +38,15 @@ public class SchoolFragment extends Fragment {
         initView();
     }
     private void initView() {
-//        tv=new TextView[3];
         list=new ArrayList<Fragment>();
         toolsFragment=new PagerSchoolToolsFragment();
         seasonerFragment=new PagerSchoolSeasonerFragment();
         nutrientFragment=new PagerSchoolNutrientFragment();
+        consultantFragment=new PagerSchoolConsultantFragment();
         list.add(toolsFragment);
         list.add(seasonerFragment);
         list.add(nutrientFragment);
+        list.add(consultantFragment);
     }
     public void onDrag(Boolean b) {
         school_dragtoplayout.setTouchMode(b);

@@ -54,14 +54,14 @@ public class SearchShiPuActivity extends ActionBarActivity {
     private List<Tag> createTags(){
         //创建的列表标记人气值和相关的url
         List<Tag> tempList = new ArrayList<Tag>();
-        tempList.add(new Tag("个人资料", 7, "个人资料"));  //1,4,7,... 假定受欢迎的值
-        tempList.add(new Tag("摇一摇", 3, "摇一摇"));
-        tempList.add(new Tag("辅食笔记", 4, "辅食笔记"));
-        tempList.add(new Tag("好友分享", 5, "好友分享"));
-        tempList.add(new Tag("我的关注", 5, "我的关注"));
-        tempList.add(new Tag("我的收藏", 7, "我的收藏"));
-        tempList.add(new Tag("Youtube", 3, "Youtube"));
-        tempList.add(new Tag("版本更新", 5, "版本更新"));
+        tempList.add(new Tag("香蕉", 7, "香蕉"));  //1,4,7,... 假定受欢迎的值
+        tempList.add(new Tag("苹果", 3, "苹果"));
+        tempList.add(new Tag("大豆", 4, "大豆"));
+        tempList.add(new Tag("小米", 5, "小米"));
+        tempList.add(new Tag("花生", 5, "花生"));
+        tempList.add(new Tag("薏米", 7, "薏米"));
+        tempList.add(new Tag("橙子", 3, "橙子"));
+        tempList.add(new Tag("玉米", 5, "玉米"));
         tempList.add(new Tag("Bing", 3, "Bing"));
         tempList.add(new Tag("Wikipedia", 8, "Wikipedia"));
         tempList.add(new Tag("Twitter", 5, "Twitter"));

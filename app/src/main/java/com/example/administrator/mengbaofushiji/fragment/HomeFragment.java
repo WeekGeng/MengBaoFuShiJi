@@ -23,8 +23,10 @@ import com.example.administrator.mengbaofushiji.R;
 import com.example.administrator.mengbaofushiji.adapter.HomeFragAdapter;
 import com.example.administrator.mengbaofushiji.consts.Const;
 import com.example.administrator.mengbaofushiji.extras.CircleImageView;
+import com.example.administrator.mengbaofushiji.view.DispalyFoodDetailActivity;
 import com.example.administrator.mengbaofushiji.view.MasterRecommendActivity;
 import com.example.administrator.mengbaofushiji.view.ToolsDetailActivity;
+import com.github.siyamed.shapeimageview.RoundedImageView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.download.ImageDownloader;
 
@@ -62,6 +64,12 @@ public class HomeFragment extends Fragment{
     private String[] fushi_name;
     private LinearLayout home_liner;
     private TextView tv_old_price;
+    private RoundedImageView home_liner_middle_iv;
+    private RoundedImageView home_liner_middle_top_iv;
+    private RoundedImageView home_liner_middle_bottom_iv;
+    private RoundedImageView home_liner_middle_bottom_first_iv;
+    private RoundedImageView home_liner_middle_bottom_second_iv;
+    private RoundedImageView home_liner_middle_bottom_third_iv;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -142,41 +150,61 @@ public class HomeFragment extends Fragment{
                 return false;
             }
         });
-//        lv_item.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                switch (position){
-//                    case 1:
-//                        Intent intentBreakfirst=new Intent(getActivity(),HomeBreakfirstActivity.class);
-//                        intentBreakfirst.putExtra("position",0);
-//                        startActivity(intentBreakfirst);
-//                        break;
-//                    case 2:
-//                        Intent intentStar=new Intent(getActivity(),HomeStarTodayActivity.class);
-//                        intentStar.putExtra("position",1);
-//                        startActivity(intentStar);
-//                        break;
-//                    case 3:
-//                        Intent intentSpring=new Intent(getActivity(),HomeSpringActivity.class);
-//                        intentSpring.putExtra("position",2);
-//                        startActivity(intentSpring);
-//                        break;
-//                    case 4:
-//                        Intent intentFood=new Intent(getActivity(),HomeFoodMasterActivity.class);
-//                        intentFood.putExtra("position",3);
-//                        startActivity(intentFood);
-//                        break;
-//                    case 5:
-//                        Intent intentshare=new Intent(getActivity(),HomeShareMasterActivity.class);
-//                        intentshare.putExtra("position",4);
-//                        startActivity(intentshare);
-//                        break;
-//                }
-//            }
-//        });
+        home_liner_middle_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), DispalyFoodDetailActivity.class);
+                startActivity(intent);
+            }
+        });
+          home_liner_middle_top_iv.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  Intent intent=new Intent(getActivity(), DispalyFoodDetailActivity.class);
+                  startActivity(intent);
+              }
+          });
+          home_liner_middle_bottom_iv.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  Intent intent=new Intent(getActivity(), DispalyFoodDetailActivity.class);
+                  startActivity(intent);
+              }
+          });
+          home_liner_middle_bottom_first_iv.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  Intent intent=new Intent(getActivity(), DispalyFoodDetailActivity.class);
+                  startActivity(intent);
+              }
+          });
+          home_liner_middle_bottom_second_iv.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  Intent intent=new Intent(getActivity(), DispalyFoodDetailActivity.class);
+                  startActivity(intent);
+              }
+          });
+          home_liner_middle_bottom_third_iv.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  Intent intent=new Intent(getActivity(), DispalyFoodDetailActivity.class);
+                  startActivity(intent);
+              }
+          });
     }
 
     private void initView(LayoutInflater inflater,View view) {
+        //中间热门推荐的initview
+        home_liner_middle_iv=(RoundedImageView)view.findViewById(R.id.home_liner_middle_iv);
+        home_liner_middle_top_iv=(RoundedImageView)view.findViewById(R.id.home_liner_middle_top_iv);
+        home_liner_middle_bottom_iv=(RoundedImageView)view.findViewById(R.id.home_liner_middle_bottom_iv);
+        home_liner_middle_bottom_first_iv=(RoundedImageView)view.findViewById(R.id.home_liner_middle_bottom_first_iv);
+        home_liner_middle_bottom_second_iv=(RoundedImageView)view.findViewById(R.id.home_liner_middle_bottom_second_iv);
+        home_liner_middle_bottom_third_iv=(RoundedImageView)view.findViewById(R.id.home_liner_middle_bottom_third_iv);
+        
+        
+        
         home_liner=(LinearLayout)view.findViewById(R.id.home_liner);
         View child=inflater.inflate(R.layout.home_everyday_push, home_liner, false);
         tv_old_price=(TextView)child.findViewById(R.id.tv_old_price);
@@ -261,7 +289,7 @@ public class HomeFragment extends Fragment{
             liner.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent=new Intent(getActivity(), ToolsDetailActivity.class);
+                    Intent intent=new Intent(getActivity(), DispalyFoodDetailActivity.class);
                     startActivity(intent);
                 }
             });

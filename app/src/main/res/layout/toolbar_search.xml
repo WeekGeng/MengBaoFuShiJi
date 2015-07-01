@@ -17,6 +17,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:lines="1"
+            android:ellipsize="end"
+            android:hint="请输入食材名称或者食谱进行查询...."
             android:drawableLeft="@drawable/abc_ic_search_api_mtrl_alpha"
             android:layout_height="wrap_content" />
         <TextView

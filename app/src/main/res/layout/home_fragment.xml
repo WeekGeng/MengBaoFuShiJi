@@ -116,6 +116,7 @@
                                 android:layout_weight="1">
                                 <com.github.siyamed.shapeimageview.RoundedImageView
                                     android:layout_width="match_parent"
+                                    android:id="@+id/home_liner_middle_top_iv"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     app:siRadius="4dp"
@@ -162,6 +163,7 @@
                                 android:layout_weight="1"
                                 >
                                 <com.github.siyamed.shapeimageview.RoundedImageView
+                                    android:id="@+id/home_liner_middle_bottom_iv"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
@@ -220,6 +222,7 @@
                             android:layout_marginRight="2dp"
                             android:layout_height="match_parent">
                             <com.github.siyamed.shapeimageview.RoundedImageView
+                                android:id="@+id/home_liner_middle_bottom_first_iv"
                                 android:layout_width="match_parent"
                                 android:src="@drawable/fushituijian_a"
                                 android:scaleType="centerCrop"
@@ -271,6 +274,7 @@
                                 android:src="@drawable/fushituijian_b"
                                 android:scaleType="centerCrop"
                                 app:siBorderColor="@color/white"
+                                android:id="@+id/home_liner_middle_bottom_second_iv"
                                 app:siRadius="4dp"
                                 android:layout_height="match_parent" />
                             <LinearLayout
@@ -316,6 +320,7 @@
                                 android:layout_width="match_parent"
                                 app:siBorderColor="@color/white"
                                 app:siRadius="4dp"
+                                android:id="@+id/home_liner_middle_bottom_third_iv"
                                 android:src="@drawable/fushituijian_c"
                                 android:scaleType="centerCrop"
                                 android:layout_height="match_parent" />

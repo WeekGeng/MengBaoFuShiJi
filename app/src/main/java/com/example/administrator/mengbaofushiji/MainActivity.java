@@ -94,7 +94,7 @@ public class MainActivity extends ActionBarActivity {
      * 设置RadioGroup的监听器
      */
     private void setListeners() {
-        home_liner_nick.setOnClickListener(new View.OnClickListener() {
+        cebian_person_tv_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 reviseNick();
@@ -236,7 +236,6 @@ public class MainActivity extends ActionBarActivity {
      */
     private void initViews() {
         home_liner_share=(LinearLayout)findViewById(R.id.home_liner_share);
-        home_liner_nick=(LinearLayout)findViewById(R.id.home_liner_nick);
         cebian_person_tv_name=(TextView)findViewById(R.id.cebian_person_tv_name);
         tv_title=new String[5];
         tv_fushi=(TextView)findViewById(R.id.shipu);

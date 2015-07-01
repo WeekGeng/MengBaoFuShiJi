@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Beaba电动辅食机"
-                android:textColor="@color/gray"
+                android:textColor="@color/theme_color"
                 android:paddingLeft="5dp"
                 android:textSize="16sp"
                 />

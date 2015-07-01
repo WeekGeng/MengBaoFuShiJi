@@ -18,16 +18,23 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/mengbaofushiji/view/HomeBreakfirstActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/mengbaofushiji/view/SettingDirectionActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/add_log_del.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/add_logs.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/baby1.jpg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/baby2.jpg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/baby3.jpg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/baby4.jpeg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/biaoji.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/guanggao.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/home_star_taday_header.jpg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/img_header.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/page_indicator_unfocused.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/school.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/school_back.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/share.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/share_back.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/spinner_ab_default_smartkids.9.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/star_today_back.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/vpe.jpg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/add.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/sp_back.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/spinner_ab_default_smartkids.9.png" charset="GBK" />
@@ -35,6 +42,7 @@
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/spinner_ab_default_smartkids.9.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/add_log_add_img.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/home_food_master_lv_header.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/home_fragment.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/home_star_today_lv_header.xml" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
